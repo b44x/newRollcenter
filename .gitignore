@@ -1,0 +1,52 @@
+# =========================
+# PrestaShop 8+ .gitignore
+# =========================
+
+# Logs and cache
+/var/cache/
+/var/logs/
+/var/sessions/
+/var/tmp/
+
+# Uploads and downloads (dynamic files)
+/upload/
+/download/
+
+# Sensitive configuration files
+/config/settings.inc.php
+/config/parameters.php
+
+# Composer dependencies
+/vendor/
+/composer.lock
+
+# Node.js dependencies
+/node_modules/
+/package-lock.json
+/yarn.lock
+
+# IDE / OS specific
+.idea/
+/.vscode/
+*.sublime-project
+*.sublime-workspace
+.DS_Store
+Thumbs.db
+
+# Backup and temp files
+*.log
+*.tmp
+*.bak
+*.zip
+*.tar.gz
+*.sql
+*.swp
+*.old
+
+# Optional: Ignore Prestashop auto-generated modules if not developing them
+# /modules/*/vendor/
+# /modules/*/node_modules/
+
+# Optional: Ignore Smarty compiled templates if desired
+/templates_c/
+

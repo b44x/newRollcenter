@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<module>
+    <name>leofeature</name>
+    <displayName><![CDATA[Leo Feature]]></displayName>
+    <version><![CDATA[2.1.6]]></version>
+    <description><![CDATA[Leo feature for prestashop 1.7: ajax cart, dropdown cart, fly cart, review, compare, wishlist at product list]]></description>
+    <author><![CDATA[Leotheme]]></author>
+    <tab><![CDATA[front_office_features]]></tab>
+    <is_configurable>1</is_configurable>
+    <need_instance>0</need_instance>
+    <limited_countries></limited_countries>
+</module>

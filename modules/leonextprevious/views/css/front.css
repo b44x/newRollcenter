@@ -1,0 +1,56 @@
+/**
+ * 2007-2017 Leotheme
+ *
+ * NOTICE OF LICENSE
+ *
+ * Leo Next Previous for prestashop 1.7: Displays links to the previous and next product on the product pages
+ *
+ * DISCLAIMER
+ *
+ *  @Module Name: Leo Next Previous
+ *  @author    leotheme <leotheme@gmail.com>
+ *  @copyright 2007-2017 Leotheme
+ *  @license   http://leotheme.com - prestashop template provider
+ */
+
+.leonextprevious-container {
+	margin: 0 -5px;
+}
+
+.leonextprevious-container > div{
+	width:50%;
+	float:left;
+	padding: 0 5px;
+	margin: 20px 0;
+}
+
+#main > .leonextprevious-container:first-child > div {
+	margin-top: 0;
+}
+
+.leo-button-next {
+	text-align:right;
+	white-space: normal;
+}
+.leo-button-prev {
+	text-align:left;
+}
+.leonextprevious-btn p {
+	color: #fff;
+	margin-bottom: 5px;
+}
+.leonextprevious-btn p.small {
+	text-align: left;
+	margin-left: 5px;
+	float: left;
+}
+.leo-button-next p {
+	text-align: right;
+}
+.leo-button-prev p {
+	text-align: left;
+}
+.leo-button-next img, .leo-button-prev img {
+	float: left;
+	width: 50px;
+} 

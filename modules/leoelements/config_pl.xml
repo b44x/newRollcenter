@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<module>
+    <name>leoelements</name>
+    <displayName><![CDATA[Leo Elements - Pages And Content Builder]]></displayName>
+    <version><![CDATA[1.0.4]]></version>
+    <description><![CDATA[This Module build Multiple Profile to use for: Homepage, Landing Page, Product Page, Category Page, CMS Page and content anywhere with live edit. Manage Hook and live to change style of shop]]></description>
+    <author><![CDATA[LeoTheme]]></author>
+    <tab><![CDATA[front_office_features]]></tab>
+    <is_configurable>1</is_configurable>
+    <need_instance>0</need_instance>
+</module>

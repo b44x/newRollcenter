@@ -1,0 +1,42 @@
+name: Pull request
+
+on:
+  pull_request:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  pull_request:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: 7.1
+          extensions: none, curl, dom, mbstring, simplexml, tokenizer, xml, xmlwriter, json
+          coverage: none
+
+      - run: composer install --no-dev
+
+      - run: git archive --output=tpay-prestashop.zip HEAD --prefix=tpay/
+
+      - run: mkdir tpay && mv vendor tpay/
+      - run: zip -ur tpay-prestashop.zip tpay/
+
+      - run: mkdir plugin && unzip tpay-prestashop.zip -d plugin
+
+      - uses: actions/upload-artifact@v4
+        id: plugin-upload
+        with:
+          name: 'tpay-prestashop'
+          path: 'plugin/'
+
+      - uses: mshick/add-pr-comment@v2
+        with:
+          message: |
+            Tpay Prestashop plugin - ${{ steps.plugin-upload.outputs.artifact-url }}

@@ -1,0 +1,241 @@
+/**
+* 2007-2019 PrestaShop
+*
+* NOTICE OF LICENSE
+*
+* This source file is subject to the Academic Free License (AFL 3.0)
+* that is bundled with this package in the file LICENSE.txt.
+* It is also available through the world-wide-web at this URL:
+* http://opensource.org/licenses/afl-3.0.php
+* If you did not receive a copy of the license and are unable to
+* obtain it through the world-wide-web, please send an email
+* to license@prestashop.com so we can send you a copy immediately.
+*
+* DISCLAIMER
+*
+* Do not edit or add to this file if you wish to upgrade PrestaShop to newer
+* versions in the future. If you wish to customize PrestaShop for your
+* needs please refer to http://www.prestashop.com for more information.
+*
+*  @author    PrestaShop SA <contact@prestashop.com>
+*  @copyright 2007-2019 PrestaShop SA
+*  @license   http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+*  International Registered Trademark & Property of PrestaShop SA
+*
+* Don't forget to prefix your containers with your own identifier
+* to avoid any conflicts with others containers.
+*/
+
+.leo-button {
+	cursor: pointer;
+}
+.product-notification {
+	position: fixed;
+	background: #fff;
+	width: 300px;
+	opacity: 0;
+	z-index: 999;
+	border: 1px solid #eee;
+	border-radius: 4px;
+	visibility: hidden;
+	transition: all ease 1s;
+	height: 145px;
+}
+.product-notification.active {
+	opacity: 1;
+	bottom: 10vh;
+	visibility: visible
+}
+.product-notification .close-notifi {
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	width: 100%;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	-moz-align-items: center;
+	-ms-align-items: center;
+	-o-align-items: center;
+	align-items: center;
+	-webkit-justify-content: center;
+	-moz-justify-content: center;
+	-ms-justify-content: center;
+	justify-content: center;
+	width: 27px;
+	height: 27px;
+	position: absolute;
+	right: 0;
+	top: 0;
+	color: #999999;
+    font-size: 27px;
+}
+.product-notification .close-notifi:hover {
+	color: #fff
+}
+.product-notification .product-suggest {
+	background: white;
+	width: 100%;
+}
+.product-notification .product-name {
+	text-transform: uppercase;
+}
+.product-notification .product-image {
+	width: 80px;
+	display: block;
+}
+.product-notification .column-right {
+	padding: 0px 15px;
+	line-height: 20px;
+	font-size: 13px
+}
+.product-notification label {
+	display: block;
+	padding: 5px 10px;
+    text-align: left;
+    background: #eaeaea;
+    margin-bottom: 0;
+}
+@media (max-width:480px) {
+	.product-notification {
+		display: none;
+	}
+}
+@media (max-width:767px) {
+	.product-notification {
+		left: 20px;
+	}
+}
+.product-notification .product-image img{
+	width: 100%;
+}
+
+.leo-form-setting .leo-button{
+	padding: 0;
+	width: 50px;
+	height: 50px;
+	line-height: 46px;
+	text-align: center;
+	border-radius: 5px;
+	position: fixed;
+    right: 0;
+    top: 40%;
+    z-index: 99;
+}
+
+.leo-form-setting .leo-button .leo-icon{
+	margin: 0;
+}
+
+.leo-form-setting .leo-form{
+	position: fixed;
+	right: -300px;
+	-webkit-transition: all 0.6s;
+	-o-transition: all 0.6s;
+	transition: all 0.6s;
+	top: 0;
+	max-width: 300px;
+	background: #ffffff;
+	padding: 20px;
+}
+
+.leo-form-setting .leo-form .form-control-label{
+	text-align: left;
+}
+.leo-button.btn-primary{
+	-webkit-transition: all 0.6s;
+	-o-transition: all 0.6s;
+	transition: all 0.6s;
+}
+.leo-button.btn-primary.active{
+	right:300px;
+}
+.leo-button.btn-primary.active+.leo-form{
+	right:0;
+}
+
+/* sample theme */
+.product-suggest{
+	box-shadow: 2px 2px 8px 0 rgba(0,0,0,.2);
+	-webkit-box-shadow: 2px 2px 8px 0 rgba(0,0,0,.2);
+	-o-box-shadow: 2px 2px 8px 0 rgba(0,0,0,.2);
+	border-radius: 5px;
+	overflow: hidden;
+}
+
+.product-suggest-content{
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	-moz-align-items: center;
+	-ms-align-items: center;
+	-o-align-items: center;
+	align-items: center;
+	padding: 10px;
+}
+
+.leo-phone, .leo-address{
+	font-size: 13px;
+    color: #666666;
+    margin-bottom: 0;
+}
+
+/* basic type*/
+.leo-basic.product-notification label{
+	background: #2fb5d2;
+	color: #ffffff;
+}
+
+.leo-basic.product-notification .close-notifi{
+	color: #ffffff;
+}
+
+/* model type*/
+.leo-model .product-suggest-content.has-bg{
+	background-image: linear-gradient(#4b4784, #6f22c3);
+}
+
+.leo-model.product-notification label{
+	background: #363090;
+	color: #eaeaea;
+}
+
+.leo-model.product-notification .product-name{
+	color: #c2beff;
+}
+
+.leo-model.product-notification .leo-phone{
+	color: #c4bdcc;
+}
+
+.leo-model.product-notification .close-notifi{
+	color: #ffffff;
+}
+
+
+/* smart type */
+.leo-smart.product-notification label{
+	background: #f18ba2;
+	color: #ffffff;
+}
+
+.leo-smart.product-notification .close-notifi{
+	color: #ffffff;
+}
+.product-notification.position1 {
+	top: 10px;
+	left: 10px;
+}
+.product-notification.position2 {
+	top: 10px;
+	right: 10px;
+}
+.product-notification.position4 {
+	bottom: 10px;
+	right: 10px;
+}
+.product-notification.position3 {
+	bottom: 10px;
+	left: 10px;
+}

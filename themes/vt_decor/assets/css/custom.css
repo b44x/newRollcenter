@@ -1,0 +1,31 @@
+#dp_din_secret_impress,
+#dp_din_black_gold,
+#dp_din_paradise,
+#dp_din_blackout_poem {
+}
+
+#dp_din_secret_impress li.dp-thumbnail .dp_thumb,
+#dp_din_black_gold li.dp-thumbnail .dp_thumb,
+#dp_din_paradise li.dp-thumbnail .dp_thumb,
+#dp_din_blackout_poem li.dp-thumbnail .dp_thumb {
+  width: 100px !important;
+  height: 100px !important;
+  overflow: hidden !important;
+  position: relative;
+}
+
+#dp_din_secret_impress li.dp-thumbnail .dp_thumb img,
+#dp_din_black_gold li.dp-thumbnail .dp_thumb img,
+#dp_din_paradise li.dp-thumbnail .dp_thumb img,
+#dp_din_blackout_poem li.dp-thumbnail .dp_thumb img, .dp_thumb.svelte-1f7hrkt {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  display: block !important;
+}
+
+img.logo.img-fluid {
+    max-height: 200px;
+}

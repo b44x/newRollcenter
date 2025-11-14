@@ -1,0 +1,15 @@
+#subtab-DpRedirect > a::before {
+  content: "";
+  background: transparent url("../../logo.png");
+  background-size: 100% 100%;
+  display: table-cell;
+  width: 16px;
+  height: 16px;
+  margin-right: 3px;
+  position: relative;
+  top: -2px;
+}
+
+body.page-sidebar-closed #subtab-DpRedirect > a::before {
+  top: 0;
+}

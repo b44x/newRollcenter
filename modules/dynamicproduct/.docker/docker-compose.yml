@@ -1,0 +1,54 @@
+services:
+  mysql:
+    container_name: ${COMPOSE_PROJECT_NAME}-mysql
+    image: mariadb:10.5.8
+    environment:
+      MYSQL_ROOT_PASSWORD: admin
+      MYSQL_DATABASE: prestashop
+    networks:
+      - prestashop_network
+  prestashop:
+    container_name: ${COMPOSE_PROJECT_NAME}-prestashop
+    image: prestashop/prestashop:8.1.5-apache # Latest stable version of the PrestaShop, to see all available images go to ...
+    ports:
+      - "8080:80"
+    environment:
+      DB_SERVER: ${COMPOSE_PROJECT_NAME}-mysql
+      DB_NAME: prestashop
+      DB_USER: root
+      DB_PASSWD: admin
+      PS_MODULES: ${PS_MODULES}
+      PS_DEV_MODE: 1
+      PS_INSTALL_AUTO: 0
+      PS_DOMAIN: localhost:8080
+      PS_FOLDER_ADMIN: backoffice
+      E2E: ${E2E}
+      SOCK_IP: host.docker.internal
+    networks:
+      - prestashop_network
+    volumes:
+      - type: bind
+        source: ../
+        target: /var/www/html/modules/dynamicproduct
+      - type: bind
+        source: ../../productdesigner
+        target: /var/www/html/modules/productdesigner
+      - type: bind
+        source: ./prestashop/classes
+        target: /var/www/html/classes
+      - ./init-scripts:/tmp/init-scripts
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: ${COMPOSE_PROJECT_NAME}-phpmyadmin
+    links:
+      - mysql
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+      PMA_ARBITRARY: 1
+    ports:
+      - 8081:80
+    networks:
+      - prestashop_network
+networks:
+  prestashop_network:

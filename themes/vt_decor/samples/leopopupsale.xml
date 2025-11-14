@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataSample>
+  <configurations>
+    <config><name><![CDATA[LEOPOPUPSALE_BG]]></name><value><![CDATA[]]></value></config>
+    <config><name><![CDATA[LEOPOPUPSALE_CATEGORY]]></name><value><![CDATA[2]]></value></config>
+    <config><name><![CDATA[LEOPOPUPSALE_CAT_LIMIT]]></name><value><![CDATA[10]]></value></config>
+    <config><name><![CDATA[LEOPOPUPSALE_CAT_SORT]]></name><value><![CDATA[DESC]]></value></config>
+    <config><name><![CDATA[LEOPOPUPSALE_CONFIG_ACTIVE]]></name><value><![CDATA[0]]></value></config>
+    <config><name><![CDATA[LEOPOPUPSALE_DELEPHONE]]></name><value><![CDATA[1]]></value></config>
+    <config><name><![CDATA[LEOPOPUPSALE_IMG_SIZE]]></name><value><![CDATA[cart]]></value></config>
+    <config><name><![CDATA[LEOPOPUPSALE_INVERVAL]]></name><value><![CDATA[2000]]></value></config>
+    <config><name><![CDATA[LEOPOPUPSALE_LABLE_BG]]></name><value><![CDATA[]]></value></config>
+    <config><name><![CDATA[LEOPOPUPSALE_LABLE_TEXT]]></name><value><![CDATA[]]></value></config>
+    <config><name><![CDATA[LEOPOPUPSALE_ORDER_LIMIT]]></name><value><![CDATA[10]]></value></config>
+    <config><name><![CDATA[LEOPOPUPSALE_ORDER_SORT]]></name><value><![CDATA[DESC]]></value></config>
+    <config><name><![CDATA[LEOPOPUPSALE_POSITION]]></name><value><![CDATA[3]]></value></config>
+    <config><name><![CDATA[LEOPOPUPSALE_SELECT_THEME]]></name><value><![CDATA[smart]]></value></config>
+    <config><name><![CDATA[LEOPOPUPSALE_SELECT_TYPE]]></name><value><![CDATA[2]]></value></config>
+    <config><name><![CDATA[LEOPOPUPSALE_SHOWADDRESS]]></name><value><![CDATA[1]]></value></config>
+    <config><name><![CDATA[LEOPOPUPSALE_SHOWNAME]]></name><value><![CDATA[1]]></value></config>
+    <config><name><![CDATA[LEOPOPUPSALE_SHOWPHONE]]></name><value><![CDATA[1]]></value></config>
+    <config><name><![CDATA[LEOPOPUPSALE_TEXT_COLOR]]></name><value><![CDATA[]]></value></config>
+    <config><name><![CDATA[LEOPOPUPSALE_TIME]]></name><value><![CDATA[1000]]></value></config>
+</configurations>
+
+<sql>
+<![CDATA[]]></sql>
+
+  <hooks>
+    <hook module="leopopupsale" hook="displayFooter" position="2" exceptions=""/>
+    <hook module="leopopupsale" hook="displayFooterAfter" position="3" exceptions=""/>
+    <hook module="leopopupsale" hook="actionAdminControllerSetMedia" position="8" exceptions=""/>
+    <hook module="leopopupsale" hook="header" position="9" exceptions=""/>
+  </hooks>
+</dataSample>

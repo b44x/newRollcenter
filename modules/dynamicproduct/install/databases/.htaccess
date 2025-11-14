@@ -1,0 +1,6 @@
+<FilesMatch "\.php$">
+Deny from all
+</FilesMatch>
+<FilesMatch "index\.php">
+Allow from all
+</FilesMatch>

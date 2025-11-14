@@ -1,0 +1,325 @@
+/***************************************************
+  Mixins Themes 
+/***************************************************/
+/* Mixin Normal*/
+/* Mixin Clear */
+/* Mixin Border */
+/*background RGBA
+============================================*/
+/***************************************************
+  Mixins RTL Themes 
+/***************************************************/
+/************************************ 
+	Override Bootstrap 
+*************************************/
+/**
+ * Web Application Prefix Apply For Making Owner Styles
+ */
+/**
+ *   Blocks Layout Selectors 
+ */
+/***********************************************************************/
+/* block top search */
+span.no-result {
+  padding: 10px; }
+
+form#searchbox {
+  padding-top: 5px; }
+  form#searchbox label {
+    color: #333;
+    margin-bottom: 1px; }
+  form#searchbox input#leo_search_query_block {
+    border: 1px solid #CCCCCC;
+    -webkit-border-radius: 3px !important;
+    -moz-border-radius: 3px !important;
+    border-radius: 3px !important;
+    height: 18px;
+    margin-top: 10px; }
+  form#searchbox input#search_button {
+    padding: 1px 4px; }
+
+.list-cate-wrapper {
+  position: relative; }
+
+.list-cate {
+  width: 100%;
+  padding: 0px; }
+
+.cate-item {
+  display: block;
+  padding: 10px; }
+
+#leosearchtopbox a.cate-item.active, #leosearchtopbox a.cate-item:hover, #leosearchbox a.cate-item.active, #leosearchbox a.cate-item:hover {
+  background: var(--theme-color-default);
+  color: #fff; }
+
+#dropdownListCate, #dropdownListCateTop {
+  cursor: pointer;
+  display: block;
+  padding: 5px 0px 5px 5px; }
+
+#leosearchtopbox #dropdownListCateTop:hover, #leosearchbox #dropdownListCate:hover {
+  color: #414141; }
+
+.search-by-category .block_content {
+  padding: 0 0 0 170px; }
+  .rtl .search-by-category .block_content {
+    padding: 0 170px 0 0; }
+
+#leo_search_block_top .leoproductsearch-content {
+  position: relative;
+  display: flex; }
+#leo_search_block_top .block_content {
+  position: relative;
+  border: 1px solid #eaeaea; }
+  @media (max-width: 575px) {
+    #leo_search_block_top .block_content {
+      padding: 0 0 0 0px; }
+      .rtl #leo_search_block_top .block_content {
+        padding: 0 0px 0 0; } }
+#leo_search_block_top .list-cate-wrapper {
+  position: absolute;
+  top: 0;
+  width: 170px;
+  height: 45px;
+  left: 0; }
+  .rtl #leo_search_block_top .list-cate-wrapper {
+    right: 0;
+    left: auto; }
+  @media (max-width: 575px) {
+    #leo_search_block_top .list-cate-wrapper {
+      display: none; } }
+  #leo_search_block_top .list-cate-wrapper:before {
+    content: "";
+    width: 1px;
+    height: 25px;
+    position: absolute;
+    top: 10px;
+    right: 0;
+    background: #eee; }
+    .rtl #leo_search_block_top .list-cate-wrapper:before {
+      left: 0;
+      right: auto; }
+  #leo_search_block_top .list-cate-wrapper .select-title {
+    height: 45px;
+    overflow: hidden;
+    line-height: 45px;
+    color: #999; }
+    #leo_search_block_top .list-cate-wrapper .select-title i {
+      position: absolute;
+      top: 14px;
+      right: 10px; }
+      .rtl #leo_search_block_top .list-cate-wrapper .select-title i {
+        left: 10px;
+        right: auto; }
+  #leo_search_block_top .list-cate-wrapper .dropdown-menu {
+    font-size: 13px;
+    max-height: 230px;
+    overflow: auto;
+    overflow-x: hidden; }
+#leo_search_block_top #dropdownListCateTop {
+  padding: 0 25px;
+  position: relative;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; }
+  #leo_search_block_top #dropdownListCateTop i {
+    font-size: 14px; }
+#leo_search_block_top .form-control {
+  background: none;
+  border: 0;
+  height: 43px;
+  line-height: 43px;
+  padding: 0 45px 0 15px;
+  border-radius: 0;
+  outline: 0;
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1); }
+  .rtl #leo_search_block_top .form-control {
+    padding: 0 15px 0 45px; }
+  @media (max-width: 767px) {
+    #leo_search_block_top .form-control {
+      font-size: 12px; } }
+#leo_search_block_top .btn {
+  width: 50px;
+  height: 43px;
+  line-height: 43px;
+  border: 0;
+  padding: 0;
+  font-size: 16px;
+  text-align: center;
+  background: #222;
+  color: #fff;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transition: 0.2s all ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .rtl #leo_search_block_top .btn {
+    left: 0;
+    right: auto; }
+  #leo_search_block_top .btn i {
+    font-size: 0;
+    font-family: "Decor-icon";
+    width: 16px;
+    height: 16px;
+    text-align: center;
+    line-height: 16px;
+    margin-bottom: 0;
+    cursor: pointer;
+    margin-top: -2px; }
+    #leo_search_block_top .btn i::before {
+      content: "\e924";
+      font-size: 16px; }
+  #leo_search_block_top .btn:hover {
+    background-color: var(--theme-color-default); }
+
+#leo_search_block_top.show_search .title_block {
+  display: block;
+  font-size: 0;
+  color: #000;
+  margin: 0;
+  height: 22px;
+  line-height: 22px;
+  cursor: pointer; }
+  #leo_search_block_top.show_search .title_block:before {
+    content: "\f002";
+    font-size: 25px;
+    display: inline-block;
+    transform: rotateY(180deg);
+    font-weight: 900; }
+  #leo_search_block_top.show_search .title_block:hover:before {
+    color: var(--theme-color-default); }
+#leo_search_block_top.show_search #leosearchtopbox {
+  position: absolute;
+  width: 300px;
+  top: 150%;
+  transition: all .3s;
+  right: 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  z-index: 999;
+  background: #fff; }
+  @media (max-width: 767px) {
+    #leo_search_block_top.show_search #leosearchtopbox {
+      right: -100px; }
+      .rtl #leo_search_block_top.show_search #leosearchtopbox {
+        left: -100px;
+        right: auto; } }
+#leo_search_block_top.active #leosearchtopbox {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0); }
+
+.leoproductsearch-result {
+  position: relative; }
+  .leoproductsearch-result .ac_results {
+    border: 1px solid #eaeaea;
+    padding-bottom: 0;
+    border-radius: 3px; }
+    .leoproductsearch-result .ac_results li {
+      padding: 5px 15px; }
+      .leoproductsearch-result .ac_results li.ac_over {
+        background-color: transparent; }
+      .leoproductsearch-result .ac_results li > a {
+        display: flex; }
+      .leoproductsearch-result .ac_results li .lps-result-img {
+        width: 50px;
+        margin-right: 15px; }
+        .rtl .leoproductsearch-result .ac_results li .lps-result-img {
+          margin-left: 15px;
+          margin-right: inherit; }
+      .leoproductsearch-result .ac_results li .lps-result-content {
+        flex: 1; }
+      .leoproductsearch-result .ac_results li .lps-result-title {
+        font-family: var(--font-family-heading);
+        font-size: 14px;
+        margin-bottom: 8px; }
+      .leoproductsearch-result .ac_results li .lps-result-price {
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--theme-color-default); }
+  .leoproductsearch-result .search-value-title {
+    padding: 10px 15px;
+    font-size: 14px;
+    line-height: 24px;
+    color: #332F2C; }
+  .leoproductsearch-result .all-search-product {
+    text-align: center;
+    padding: 15px; }
+    .leoproductsearch-result .all-search-product a {
+      display: inline-block;
+      padding: 8px 20px;
+      font-size: 12px;
+      line-height: 20px;
+      font-weight: 400;
+      letter-spacing: 1px;
+      background-color: #222;
+      color: #fff;
+      transition: 0.2s all ease-in-out; }
+      .leoproductsearch-result .all-search-product a:hover {
+        background-color: var(--theme-color-default); }
+
+.ac_results {
+  text-align: left; }
+  .rtl .ac_results {
+    text-align: right; }
+
+.input_hidden #leo_search_block_top form {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: calc(100% + 40px);
+  right: 0;
+  z-index: 2;
+  transform: translateY(20px);
+  min-width: 285px;
+  transition: 0.25s all ease-in-out; }
+  .rtl .input_hidden #leo_search_block_top form {
+    left: 0;
+    right: auto; }
+  @media (max-width: 480px) {
+    .input_hidden #leo_search_block_top form {
+      right: -80px; }
+      .rtl .input_hidden #leo_search_block_top form {
+        left: -80px;
+        right: auto; } }
+  .input_hidden #leo_search_block_top form .block_content {
+    background-color: #fff;
+    border-radius: 3px;
+    display: block; }
+  .input_hidden #leo_search_block_top form .form-control {
+    padding: 0 40px 0 25px; }
+.input_hidden #leo_search_block_top .title_block {
+  font-size: 0;
+  font-family: "Decor-icon";
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+  margin-bottom: 0;
+  color: #222;
+  cursor: pointer;
+  transition: 0.2s all ease-in-out; }
+  .input_hidden #leo_search_block_top .title_block::before {
+    content: "\e924";
+    font-size: 20px; }
+  .input_hidden #leo_search_block_top .title_block:hover {
+    color: var(--theme-color-default); }
+.input_hidden #leo_search_block_top.active form {
+  top: calc(100% + 20px); }
+.input_hidden #leo_search_block_top.active .title_block::before {
+  content: '\e910';
+  font-size: 18px; }
+
+.leoproductsearch-loading {
+  position: absolute;
+  top: 10px;
+  right: 65px; }
+  .rtl .leoproductsearch-loading {
+    left: 65px;
+    right: auto; }
+
+/*# sourceMappingURL=leosearch.css.map */

@@ -1,0 +1,85 @@
+<?php
+/**
+ * 2007-2022 Leotheme
+ *
+ * NOTICE OF LICENSE
+ *
+ * LeoElements is module help you can build content for your shop
+ *
+ * DISCLAIMER
+ *
+ *  @author    Leotheme <leotheme@gmail.com>
+ *  @copyright 2007-2022 Leotheme
+ *  @license   http://leotheme.com - prestashop template provider
+ */
+
+namespace LeoElements;
+
+use LeoElements\Leo_Helper; 
+
+if ( ! defined( '_PS_VERSION_' ) ) {
+	exit; // Exit if accessed directly.
+}
+
+/**
+ * Elementor tab control.
+ *
+ * A base control for creating tab control. Displays a tab header for a set of
+ * controls.
+ *
+ * Note: Do not use it directly, instead use: `$widget->start_controls_tab()`
+ * and in the end `$widget->end_controls_tab()`.
+ *
+ * @since 1.0.0
+ */
+class Control_Tab extends Base_UI_Control {
+
+	/**
+	 * Get tab control type.
+	 *
+	 * Retrieve the control type, in this case `tab`.
+	 *
+	 * @since 1.0.0
+	 * @access public
+	 *
+	 * @return string Control type.
+	 */
+	public function get_type() {
+		return 'tab';
+	}
+
+	/**
+	 * Render tab control output in the editor.
+	 *
+	 * Used to generate the control HTML in the editor using Underscore JS
+	 * template. The variables for the class are available using `data` JS
+	 * object.
+	 *
+	 * @since 1.0.0
+	 * @access public
+	 */
+	public function content_template() {
+		?>
+			<div class="elementor-panel-tab-heading">
+				{{{ data.label }}}
+			</div>
+		<?php
+	}
+
+	/**
+	 * Get tab control default settings.
+	 *
+	 * Retrieve the default settings of the tab control. Used to return the
+	 * default settings while initializing the tab control.
+	 *
+	 * @since 1.0.0
+	 * @access protected
+	 *
+	 * @return array Control default settings.
+	 */
+	protected function get_default_settings() {
+		return [
+			'separator' => 'none',
+		];
+	}
+}

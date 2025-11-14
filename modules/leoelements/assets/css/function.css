@@ -1,0 +1,187 @@
+.readmore-wrap.more .more{display: inline-block;}
+.readmore-wrap.more .less{display: none;}
+.readmore-wrap .more{display: none;}
+.readmore-wrap .dots{display: inline-block;}
+
+#btn_view_product {
+    padding: 5px 0;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+	justify-content: center;
+}
+
+#btn_view_product .grid-select {
+    min-width: 12px;
+    height: 26px;
+    display: block;
+    border: 1px solid #dcdcdc;
+    margin-left: 5px;
+    position: relative;
+    cursor: pointer
+}
+
+#btn_view_product .grid-select:first-of-type {
+    margin-left: 0
+}
+
+#btn_view_product .grid-select:before {
+    background: #dcdcdc;
+    content: "";
+    top: 3px;
+    position: absolute;
+    left: 3px
+}
+
+#btn_view_product .grid-select.grid-select-list,
+#btn_view_product .grid-select.view-3 {
+    width: 26px
+}
+
+#btn_view_product .grid-select.grid-select-list:before {
+    width: 18px;
+    height: 4px;
+    box-shadow: 0px 7px 0 #dcdcdc, 0px 14px 0 #dcdcdc
+}
+
+#btn_view_product .grid-select.grid-select-grid:before {
+    width: 4px;
+    height: 18px
+}
+
+#btn_view_product .grid-select.view-2 {
+    width: 19px
+}
+
+#btn_view_product .grid-select.view-2:before {
+    box-shadow: 7px 0 0 #dcdcdc
+}
+
+#btn_view_product .grid-select.view-3:before {
+    box-shadow: 7px 0 0 #dcdcdc, 14px 0 0 #dcdcdc
+}
+
+#btn_view_product .grid-select.view-4 {
+    width: 33px
+}
+
+#btn_view_product .grid-select.view-4:before {
+    box-shadow: 7px 0 0 #dcdcdc, 14px 0 0 #dcdcdc, 21px 0 0 #dcdcdc
+}
+
+#btn_view_product .grid-select.view-5 {
+    width: 40px
+}
+
+#btn_view_product .grid-select.view-5:before {
+    box-shadow: 7px 0 0 #dcdcdc, 14px 0 0 #dcdcdc, 21px 0 0 #dcdcdc, 28px 0 0 #dcdcdc
+}
+
+#btn_view_product .grid-select.active {
+    border-color: #323232
+}
+
+#btn_view_product .grid-select.active:before {
+    background-color: #323232
+}
+
+#btn_view_product .grid-select.active.grid-select-list:before {
+    box-shadow: 0px 7px 0 #323232, 0px 14px 0 #323232
+}
+
+#btn_view_product .grid-select.active.view-2:before {
+    box-shadow: 7px 0 0 #323232
+}
+
+#btn_view_product .grid-select.active.view-3:before {
+    box-shadow: 7px 0 0 #323232, 14px 0 0 #323232
+}
+
+#btn_view_product .grid-select.active.view-4:before {
+    box-shadow: 7px 0 0 #323232, 14px 0 0 #323232, 21px 0 0 #323232
+}
+
+#btn_view_product .grid-select.active.view-5:before {
+    box-shadow: 7px 0 0 #323232, 14px 0 0 #323232, 21px 0 0 #323232, 28px 0 0 #323232
+}
+
+/* begin filter button*/
+#content-wrapper.filter-toggle {
+    width: 100%;
+}
+.total-products.filter-toggle p {
+    margin-left: 30px;
+}
+.filter-toggle .filter-toggle-button {
+    position: absolute;
+}
+.filter-toggle .filter-toggle-button i {
+    font-size: 26px;
+}
+#left-column.filter-toggle, #right-column.filter-toggle {
+    position: fixed;
+    top: 0px;
+    width: 235px;
+    z-index: 99999;
+    text-align: left;
+    -webkit-transition: all 0.6s ease 0s;
+    -o-transition: all 0.6s ease 0s;
+    transition: all 0.6s ease 0s;
+    left: -235px;
+    background: #fff;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 100%;
+}
+#left-column.filter-toggle .close, #right-column.filter-toggle .close {
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+#left-column.filter-toggle.active-filter, #right-column.filter-toggle.active-filter {
+    left: 0;
+    transition: all 0.6s;
+}
+.overlay-filter {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    opacity: 0;
+    background-color: rgba(0,0,0,.7);
+    visibility: hidden;
+    -webkit-transition: opacity .25s ease,visibility 0s ease;
+    transition: opacity .25s ease,visibility 0s ease;
+}
+.overlay-filter.active {
+    opacity: 1;
+    visibility: visible;
+}
+#horizontal_filters.filter-toggle {
+    display: none;
+}
+
+.pagination .loading-icon {
+  display: none;
+  width: 40px !important;
+  height: 40px;
+  background: url('../images/loading_icon.png');
+  position: absolute;
+  background-size: cover;
+  left: calc(50% - 40px);
+  animation: spin 1s linear infinite;
+}
+.pagination.loading #pagination_summary {
+  display: none;
+}
+.pagination.loading .loading-icon {
+  display: block;
+}
+/* end filter button*/

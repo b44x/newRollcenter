@@ -1,0 +1,189 @@
+/** * 2007-2019 PrestaShop * * NOTICE OF LICENSE * * This source file is subject to the Academic Free License (AFL 3.0) * that is bundled with this package in the file LICENSE.txt. * It is also available through the world-wide-web at this URL: * http://opensource.org/licenses/afl-3.0.php * If you did not receive a copy of the license and are unable to * obtain it through the world-wide-web, please send an email * to license@prestashop.com so we can send you a copy immediately. * * DISCLAIMER * * Do not edit or add to this file if you wish to upgrade PrestaShop to newer * versions in the future. If you wish to customize PrestaShop for your * needs please refer to http://www.prestashop.com for more information. * * @author PrestaShop SA <contact@prestashop.com> * @copyright 2007-2019 PrestaShop SA * @license http://opensource.org/licenses/afl-3.0.php Academic Free License (AFL 3.0) * International Registered Trademark & Property of PrestaShop SA * * Don't forget to prefix your containers with your own identifier * to avoid any conflicts with others containers. */
+ .leo-product-tag {
+     margin-bottom: 35px;
+}
+ .leo-tagger-Tag {
+     border: 1px solid #bbcdd2;
+     border-radius: 35px;
+     padding: 10px 30px 10px 10px;
+     position: relative;
+     margin: 15px;
+}
+ .leo-remove {
+     cursor: pointer;
+     margin-left: 10px;
+     position: absolute;
+     top: 7px;
+     right: 5px;
+}
+ .leo-error {
+     display: none;
+}
+ #leo-search-product {
+     position: relative;
+}
+ .leo-loading {
+     position: absolute;
+     z-index: 9999999;
+     bottom: -8px;
+     left: 245px;
+     display: none;
+}
+ .cssload-container {
+     width: 100%;
+     height: 49px;
+     text-align: center;
+}
+ .cssload-double-torus {
+     width: 49px;
+     height: 49px;
+     margin: 0 auto;
+     border: 4px double;
+     border-radius: 50%;
+     border-color: transparent rgba(0,0,0,0.9) rgba(0,0,0,0.9);
+     animation: cssload-spin 690ms infinite linear;
+     -o-animation: cssload-spin 690ms infinite linear;
+     -ms-animation: cssload-spin 690ms infinite linear;
+     -webkit-animation: cssload-spin 690ms infinite linear;
+     -moz-animation: cssload-spin 690ms infinite linear;
+}
+ @keyframes cssload-spin {
+     100%{
+         transform: rotate(360deg);
+         transform: rotate(360deg);
+    }
+}
+ @-o-keyframes cssload-spin {
+     100%{
+         -o-transform: rotate(360deg);
+         transform: rotate(360deg);
+    }
+}
+ @-ms-keyframes cssload-spin {
+     100%{
+         -ms-transform: rotate(360deg);
+         transform: rotate(360deg);
+    }
+}
+ @-webkit-keyframes cssload-spin {
+     100%{
+         -webkit-transform: rotate(360deg);
+         transform: rotate(360deg);
+    }
+}
+ @-moz-keyframes cssload-spin {
+     100%{
+         -moz-transform: rotate(360deg);
+         transform: rotate(360deg);
+    }
+}
+ .leo-res .product-list .leo-product-list{
+     list-style: none;
+     display: flex;
+     flex-wrap: wrap;
+}
+ .leo-res .product-list .leo-product-item{
+     display: flex;
+     flex-direction: column;
+     padding: 20px;
+}
+ .leo-res .product-list .leo-product-item img{
+     margin-bottom: 20px;
+}
+.leo-res .leo-close{
+     cursor: pointer;
+     display: none;
+     width: 40px;
+     height: 40px;
+     border: 1px solid #bbcdd2;
+     border-radius: 50%;
+     text-align: center;
+}
+.leo-res .leo-close i{
+     line-height: 39px;
+}
+.leo-add, .leo-cat-add{
+     display: inline-block;
+     text-align: center;
+     vertical-align: middle;
+     -webkit-user-select: none;
+     -moz-user-select: none;
+     -ms-user-select: none;
+     user-select: none;
+     border: 1px solid transparent;
+     border-top-color: transparent;
+     border-top-width: 1px;
+     border-right-color: transparent;
+     border-right-width: 1px;
+     border-bottom-color: transparent;
+     border-bottom-width: 1px;
+     border-left-color: transparent;
+     border-left-width: 1px;
+     padding: 6px 13.408px;
+     padding: .375rem .838rem;
+     font-size: 14px;
+     font-size: .875rem;
+     line-height: 1.5;
+     border-radius: 0;
+     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+     color: #25b9d7;
+     background-color:transparent;
+     background-image: none;
+     border-color:#25b9d7;
+     border-width: 1px;
+     font-weight: 600;
+     border-radius: .063rem;
+     white-space: nowrap;
+}
+ .leo-add i, .leo-cat-add i{
+     display: inline-block;
+     vertical-align: middle;
+}
+ .leo-add:hover, .leo-cat-add:hover {
+     color: #fff;
+     background-color: #3ed2f0;
+     border-color: #3ed2f0;
+}
+.leospform {
+    padding: .375rem .4375rem;
+    height: auto;
+}
+.leo-autosuggest-form {
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    z-index: 100;
+    display: none;
+    width: 100%;
+    border: 1px solid #6c868e;
+    background:#fff;
+    padding: 5px 0;
+    padding: .3125rem 0;
+    max-height: 312px;
+    max-height: 19.5rem;
+    overflow: auto;
+}
+.leo-element {
+    display: inline-block;
+    padding: 6.4px;
+    padding: .4rem;
+    margin: 1.6px;
+    margin: .1rem;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    vertical-align: baseline;
+    background-color:#25b9d7;
+}
+.leo-element .leo-element-label{
+    white-space: nowrap;
+}
+
+.leospform input.leo-search-product[type="text"] {
+    display: inline-block;
+    border: 0;
+    outline: none;
+    background-color: 
+    transparent;
+    max-width: 100%;
+}

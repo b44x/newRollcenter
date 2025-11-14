@@ -1,0 +1,346 @@
+{
+  "../../../../node_modules/.pnpm/axios@1.7.7_debug@4.3.7/node_modules/axios/index-legacy.js": {
+    "file": "assets/index-legacy-Csh5HiDS.js",
+    "name": "index",
+    "src": "../../../../node_modules/.pnpm/axios@1.7.7_debug@4.3.7/node_modules/axios/index-legacy.js",
+    "isDynamicEntry": true
+  },
+  "../../../../node_modules/.pnpm/axios@1.7.7_debug@4.3.7/node_modules/axios/index.js": {
+    "file": "assets/index-CARxNfzi.js",
+    "name": "index",
+    "src": "../../../../node_modules/.pnpm/axios@1.7.7_debug@4.3.7/node_modules/axios/index.js",
+    "isDynamicEntry": true
+  },
+  "../../../../node_modules/.pnpm/glightbox@3.3.0/node_modules/glightbox/dist/css/glightbox-legacy.css": {
+    "file": "assets/glightbox-legacy-BaWO-JSx.js",
+    "name": "glightbox",
+    "src": "../../../../node_modules/.pnpm/glightbox@3.3.0/node_modules/glightbox/dist/css/glightbox-legacy.css",
+    "isDynamicEntry": true
+  },
+  "../../../../node_modules/.pnpm/glightbox@3.3.0/node_modules/glightbox/dist/css/glightbox.css": {
+    "file": "assets/glightbox-DF2UYtzC.css",
+    "src": "../../../../node_modules/.pnpm/glightbox@3.3.0/node_modules/glightbox/dist/css/glightbox.css"
+  },
+  "../../vite/legacy-polyfills-legacy": {
+    "file": "assets/polyfills-legacy-DtCxGC5R.js",
+    "name": "polyfills",
+    "src": "../../vite/legacy-polyfills-legacy",
+    "isEntry": true
+  },
+  "../img/colorpicker/colorpicker_overlay.png": {
+    "file": "assets/colorpicker_overlay-OBgXniE1.png",
+    "src": "../img/colorpicker/colorpicker_overlay.png"
+  },
+  "../scss/front/product-buttons-legacy.scss": {
+    "file": "assets/product-buttons-legacy-B2FKOnz2.js",
+    "name": "product-buttons",
+    "src": "../scss/front/product-buttons-legacy.scss",
+    "isDynamicEntry": true
+  },
+  "../scss/front/product-buttons.scss": {
+    "file": "assets/product-buttons-BWelXd7T.css",
+    "src": "../scss/front/product-buttons.scss"
+  },
+  "_await_block-CLYzRB-j.js": {
+    "file": "assets/await_block-CLYzRB-j.js",
+    "name": "await_block",
+    "imports": [
+      "_scheduler-DiObPZzU.js",
+      "_trans-helper-DC6ZyHVT.js"
+    ]
+  },
+  "_await_block-legacy-aiWJuOL3.js": {
+    "file": "assets/await_block-legacy-aiWJuOL3.js",
+    "name": "await_block",
+    "imports": [
+      "_scheduler-legacy-Dbdx7ujG.js",
+      "_trans-helper-legacy-CqHHI95M.js"
+    ]
+  },
+  "_codemirror-BOLm7OpV.js": {
+    "file": "assets/codemirror-BOLm7OpV.js",
+    "name": "codemirror"
+  },
+  "_codemirror-legacy-DRrcr9zf.js": {
+    "file": "assets/codemirror-legacy-DRrcr9zf.js",
+    "name": "codemirror"
+  },
+  "_glightbox-CV-SXnhz.js": {
+    "file": "assets/glightbox-CV-SXnhz.js",
+    "name": "glightbox",
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-DwQ3pmSw.js"
+    ]
+  },
+  "_glightbox-legacy-Bg9EoZ5Q.js": {
+    "file": "assets/glightbox-legacy-Bg9EoZ5Q.js",
+    "name": "glightbox",
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-legacy-BS_xlRzj.js"
+    ]
+  },
+  "_index-DwQ3pmSw.js": {
+    "file": "assets/index-DwQ3pmSw.js",
+    "name": "index",
+    "imports": [
+      "_scheduler-DiObPZzU.js",
+      "_utils-Ccsy0NBg.js",
+      "_trans-helper-DC6ZyHVT.js"
+    ]
+  },
+  "_index-legacy-BS_xlRzj.js": {
+    "file": "assets/index-legacy-BS_xlRzj.js",
+    "name": "index",
+    "imports": [
+      "_scheduler-legacy-Dbdx7ujG.js",
+      "_utils-legacy-DY-ZizlI.js",
+      "_trans-helper-legacy-CqHHI95M.js"
+    ]
+  },
+  "_pickr.es5.min-DQvDdNtO.js": {
+    "file": "assets/pickr.es5.min-DQvDdNtO.js",
+    "name": "pickr.es5.min",
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-DwQ3pmSw.js"
+    ]
+  },
+  "_pickr.es5.min-legacy-BpSUNbSL.js": {
+    "file": "assets/pickr.es5.min-legacy-BpSUNbSL.js",
+    "name": "pickr.es5.min",
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-legacy-BS_xlRzj.js"
+    ]
+  },
+  "_product-config-!~{00c}~.js": {
+    "file": "assets/product-config-s2py6NGx.css",
+    "src": "_product-config-!~{00c}~.js"
+  },
+  "_product-config-legacy-tnRa-JDn.js": {
+    "file": "assets/product-config-legacy-tnRa-JDn.js",
+    "name": "product-config",
+    "assets": [
+      "assets/colorpicker_overlay-OBgXniE1.png"
+    ]
+  },
+  "_scheduler-DiObPZzU.js": {
+    "file": "assets/scheduler-DiObPZzU.js",
+    "name": "scheduler"
+  },
+  "_scheduler-legacy-Dbdx7ujG.js": {
+    "file": "assets/scheduler-legacy-Dbdx7ujG.js",
+    "name": "scheduler"
+  },
+  "_trans-helper-DC6ZyHVT.js": {
+    "file": "assets/trans-helper-DC6ZyHVT.js",
+    "name": "trans-helper",
+    "imports": [
+      "_scheduler-DiObPZzU.js"
+    ]
+  },
+  "_trans-helper-legacy-CqHHI95M.js": {
+    "file": "assets/trans-helper-legacy-CqHHI95M.js",
+    "name": "trans-helper",
+    "imports": [
+      "_scheduler-legacy-Dbdx7ujG.js"
+    ]
+  },
+  "_utils-Ccsy0NBg.js": {
+    "file": "assets/utils-Ccsy0NBg.js",
+    "name": "utils"
+  },
+  "_utils-legacy-DY-ZizlI.js": {
+    "file": "assets/utils-legacy-DY-ZizlI.js",
+    "name": "utils"
+  },
+  "admin/module-form-legacy.ts": {
+    "file": "assets/module_form-legacy-aZ2jJvxq.js",
+    "name": "module_form",
+    "src": "admin/module-form-legacy.ts",
+    "isEntry": true
+  },
+  "admin/module-form.ts": {
+    "file": "assets/module_form-5di6yX62.js",
+    "name": "module_form",
+    "src": "admin/module-form.ts",
+    "isEntry": true,
+    "css": [
+      "assets/module_form-CAsCZrbn.css"
+    ]
+  },
+  "admin/order-legacy.ts": {
+    "file": "assets/order-legacy-B6ZRQ4IT.js",
+    "name": "order",
+    "src": "admin/order-legacy.ts",
+    "isEntry": true,
+    "imports": [
+      "_scheduler-legacy-Dbdx7ujG.js",
+      "_trans-helper-legacy-CqHHI95M.js",
+      "_await_block-legacy-aiWJuOL3.js"
+    ]
+  },
+  "admin/order.ts": {
+    "file": "assets/order-DpqIUxoC.js",
+    "name": "order",
+    "src": "admin/order.ts",
+    "isEntry": true,
+    "imports": [
+      "_scheduler-DiObPZzU.js",
+      "_trans-helper-DC6ZyHVT.js",
+      "_await_block-CLYzRB-j.js"
+    ],
+    "css": [
+      "assets/order-JPscWui5.css"
+    ]
+  },
+  "admin/product-config-legacy.ts": {
+    "file": "assets/product_config-legacy-DajwIFYk.js",
+    "name": "product_config",
+    "src": "admin/product-config-legacy.ts",
+    "isEntry": true,
+    "imports": [
+      "_product-config-legacy-tnRa-JDn.js",
+      "_index-legacy-BS_xlRzj.js",
+      "_scheduler-legacy-Dbdx7ujG.js",
+      "_utils-legacy-DY-ZizlI.js",
+      "_await_block-legacy-aiWJuOL3.js",
+      "_trans-helper-legacy-CqHHI95M.js",
+      "_codemirror-legacy-DRrcr9zf.js"
+    ],
+    "dynamicImports": [
+      "_pickr.es5.min-legacy-BpSUNbSL.js"
+    ]
+  },
+  "admin/product-config.ts": {
+    "file": "assets/product_config-rq6YHwRk.js",
+    "name": "product_config",
+    "src": "admin/product-config.ts",
+    "isEntry": true,
+    "imports": [
+      "_index-DwQ3pmSw.js",
+      "_scheduler-DiObPZzU.js",
+      "_utils-Ccsy0NBg.js",
+      "_await_block-CLYzRB-j.js",
+      "_trans-helper-DC6ZyHVT.js",
+      "_codemirror-BOLm7OpV.js"
+    ],
+    "dynamicImports": [
+      "_pickr.es5.min-DQvDdNtO.js"
+    ],
+    "css": [
+      "assets/product_config-CTJuiGem.css",
+      "assets/product-config-s2py6NGx.css"
+    ],
+    "assets": [
+      "assets/colorpicker_overlay-OBgXniE1.png"
+    ]
+  },
+  "admin/products-list-legacy.ts": {
+    "file": "assets/products_list-legacy-B8wLwqZJ.js",
+    "name": "products_list",
+    "src": "admin/products-list-legacy.ts",
+    "isEntry": true,
+    "imports": [
+      "_product-config-legacy-tnRa-JDn.js"
+    ]
+  },
+  "admin/products-list.ts": {
+    "file": "assets/products_list-ChubiUE2.js",
+    "name": "products_list",
+    "src": "admin/products-list.ts",
+    "isEntry": true,
+    "css": [
+      "assets/product-config-s2py6NGx.css"
+    ],
+    "assets": [
+      "assets/colorpicker_overlay-OBgXniE1.png"
+    ]
+  },
+  "front/cart-summary-legacy.ts": {
+    "file": "assets/cart_summary-legacy-DQ6FTM1g.js",
+    "name": "cart_summary",
+    "src": "front/cart-summary-legacy.ts",
+    "isEntry": true
+  },
+  "front/cart-summary.ts": {
+    "file": "assets/cart_summary-BePTo7uY.js",
+    "name": "cart_summary",
+    "src": "front/cart-summary.ts",
+    "isEntry": true,
+    "css": [
+      "assets/cart_summary-CMHaHoMD.css"
+    ]
+  },
+  "front/product-buttons-legacy.ts": {
+    "file": "assets/product_buttons-legacy-NUkGS9HI.js",
+    "name": "product_buttons",
+    "src": "front/product-buttons-legacy.ts",
+    "isEntry": true,
+    "imports": [
+      "_utils-legacy-DY-ZizlI.js",
+      "_scheduler-legacy-Dbdx7ujG.js"
+    ],
+    "dynamicImports": [
+      "../scss/front/product-buttons-legacy.scss",
+      "product/index-legacy.ts"
+    ]
+  },
+  "front/product-buttons.ts": {
+    "file": "assets/product_buttons-Bf3WZU-4.js",
+    "name": "product_buttons",
+    "src": "front/product-buttons.ts",
+    "isEntry": true,
+    "imports": [
+      "_utils-Ccsy0NBg.js",
+      "_scheduler-DiObPZzU.js"
+    ],
+    "dynamicImports": [
+      "product/index.ts"
+    ]
+  },
+  "product/index-legacy.ts": {
+    "file": "assets/index-legacy-B4H_WPSM.js",
+    "name": "index",
+    "src": "product/index-legacy.ts",
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-legacy-BS_xlRzj.js",
+      "_scheduler-legacy-Dbdx7ujG.js",
+      "_trans-helper-legacy-CqHHI95M.js",
+      "_utils-legacy-DY-ZizlI.js",
+      "front/product-buttons-legacy.ts"
+    ],
+    "dynamicImports": [
+      "_pickr.es5.min-legacy-BpSUNbSL.js",
+      "_glightbox-legacy-Bg9EoZ5Q.js",
+      "../../../../node_modules/.pnpm/glightbox@3.3.0/node_modules/glightbox/dist/css/glightbox-legacy.css",
+      "../../../../node_modules/.pnpm/axios@1.7.7_debug@4.3.7/node_modules/axios/index-legacy.js",
+      "../../../../node_modules/.pnpm/axios@1.7.7_debug@4.3.7/node_modules/axios/index-legacy.js"
+    ]
+  },
+  "product/index.ts": {
+    "file": "assets/index-CdmjHiet.js",
+    "name": "index",
+    "src": "product/index.ts",
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-DwQ3pmSw.js",
+      "_scheduler-DiObPZzU.js",
+      "_trans-helper-DC6ZyHVT.js",
+      "_utils-Ccsy0NBg.js",
+      "front/product-buttons.ts"
+    ],
+    "dynamicImports": [
+      "_pickr.es5.min-DQvDdNtO.js",
+      "_glightbox-CV-SXnhz.js",
+      "../../../../node_modules/.pnpm/axios@1.7.7_debug@4.3.7/node_modules/axios/index.js",
+      "../../../../node_modules/.pnpm/axios@1.7.7_debug@4.3.7/node_modules/axios/index.js"
+    ],
+    "css": [
+      "assets/index-C0dpXEFF.css"
+    ]
+  }
+}

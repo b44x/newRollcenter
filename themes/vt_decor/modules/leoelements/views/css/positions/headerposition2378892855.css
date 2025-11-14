@@ -1,0 +1,83 @@
+/***************************************************
+  Mixins Themes 
+/***************************************************/
+/* Mixin Normal*/
+/* Mixin Clear */
+/* Mixin Border */
+/*background RGBA
+============================================*/
+/***************************************************
+  Mixins RTL Themes 
+/***************************************************/
+/************************************ 
+	Override Bootstrap 
+*************************************/
+/**
+ * Web Application Prefix Apply For Making Owner Styles
+ */
+/**
+ *   Blocks Layout Selectors 
+ */
+/***********************************************************************/
+@media (min-width: 992px) {
+  #index #header {
+    background-color: transparent;
+    position: relative; }
+    #index #header .header-top {
+      background-color: transparent;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 2; } }
+
+@media (max-width: 767px) {
+  .col_logo, .col_menu {
+    flex: 1; } }
+@media (max-width: 360px) {
+  .col_logo {
+    max-width: 120px; } }
+.leo-megamenu .navbar-nav > li.aligned-fullwidth {
+  position: relative; }
+
+.leo-megamenu .navbar-nav > li > a {
+  padding: 20px; }
+  .leo-megamenu .navbar-nav > li > a::before {
+    bottom: 16px; }
+
+.leo-megamenu .dropdown-menu {
+  top: 0;
+  left: calc(100% + 30px); }
+  .rtl .leo-megamenu .dropdown-menu {
+    right: calc(100% + 30px);
+    left: auto; }
+
+.leo-megamenu .dropdown:hover > .dropdown-menu {
+  left: calc(100% + 30px); }
+  .rtl .leo-megamenu .dropdown:hover > .dropdown-menu {
+    right: calc(100% + 30px);
+    left: auto; }
+
+.leo-megamenu .dropdown.aligned-fullwidth > .dropdown-menu {
+  transform: translateY(20px);
+  left: calc(100% + 30px);
+  top: 0;
+  width: calc(100vw - 350px) !important;
+  max-width: 1000px; }
+  .rtl .leo-megamenu .dropdown.aligned-fullwidth > .dropdown-menu {
+    right: calc(100% + 30px);
+    left: auto; }
+  [dir] .leo-megamenu .dropdown.aligned-fullwidth > .dropdown-menu {
+    transform: translateY(20px); }
+
+.leo-megamenu .dropdown:hover.aligned-fullwidth > .dropdown-menu {
+  left: calc(100% + 30px);
+  transform: none;
+  left: calc(100% + 30px); }
+  .rtl .leo-megamenu .dropdown:hover.aligned-fullwidth > .dropdown-menu {
+    right: calc(100% + 30px);
+    left: auto; }
+  [dir] .leo-megamenu .dropdown:hover.aligned-fullwidth > .dropdown-menu {
+    transform: none; }
+
+/*# sourceMappingURL=headerposition2378892855.css.map */

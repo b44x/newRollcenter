@@ -1,0 +1,8 @@
+@font-face {
+font-family:'Sans Serif';
+font-style:normal;
+font-weight:400;
+src:local('Sans Serif'),url(../../../../assets/fonts/BebasNeue-Regular.ttf) format('ttf');}
+:root {
+--font-family-megamenu: 'Sans Serif', sans-serif;
+}

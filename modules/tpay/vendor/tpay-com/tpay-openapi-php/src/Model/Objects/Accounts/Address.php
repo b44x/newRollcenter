@@ -23,13 +23,13 @@ class Address extends Objects
         'country' => Country::class,
         'friendlyName' => FriendlyName::class,
         'houseNumber' => HouseNumber::class,
+        'roomNumber' => RoomNumber::class,
         'isCorrespondence' => IsCorrespondence::class,
         'isInvoice' => IsInvoice::class,
         'isMain' => IsMain::class,
         'name' => Name::class,
         'phone' => Phone::class,
         'postalCode' => PostalCode::class,
-        'roomNumber' => RoomNumber::class,
         'street' => Street::class,
     ];
 
@@ -44,6 +44,9 @@ class Address extends Objects
 
     /** @var HouseNumber */
     public $houseNumber;
+
+    /** @var RoomNumber */
+    public $roomNumber;
 
     /** @var IsCorrespondence */
     public $isCorrespondence;
@@ -62,9 +65,6 @@ class Address extends Objects
 
     /** @var PostalCode */
     public $postalCode;
-
-    /** @var RoomNumber */
-    public $roomNumber;
 
     /** @var Street */
     public $street;

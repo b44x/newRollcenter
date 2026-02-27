@@ -3,6 +3,7 @@
 namespace Tpay\OpenApi\Api\Transactions;
 
 use Tpay\OpenApi\Api\ApiAction;
+use Tpay\OpenApi\Model\Objects\RequestBody\InitApplePay;
 use Tpay\OpenApi\Model\Objects\RequestBody\Pay;
 use Tpay\OpenApi\Model\Objects\RequestBody\PayWithInstantRedirection;
 use Tpay\OpenApi\Model\Objects\RequestBody\Refund;
@@ -23,6 +24,31 @@ class TransactionsApi extends ApiAction
     public function getTransactionById($transactionId)
     {
         return $this->run(static::GET, sprintf('/transactions/%s', $transactionId));
+    }
+
+    public function getTransactionQR($transactionId, $size = 'M', $logoPath = null, $desiredType = 'image/png')
+    {
+        $image = null;
+        $imageType = null;
+        if (null !== $logoPath && file_exists($logoPath) && is_readable($logoPath)) {
+            $image = base64_encode(file_get_contents($logoPath));
+            $imageType = mime_content_type($logoPath);
+        }
+
+        $fields = [
+            'size' => $size,
+            'logo' => $image,
+            'logoType' => $imageType,
+            'outputType' => $desiredType,
+        ];
+
+        return $this
+            ->sendRequest(
+                sprintf('/transactions/%s/qr', $transactionId),
+                static::POST,
+                $fields
+            )
+            ->getRequestResult(false);
     }
 
     /**
@@ -79,7 +105,12 @@ class TransactionsApi extends ApiAction
      */
     public function createInstantPaymentByTransactionId($fields, $transactionId)
     {
-        return $this->run(static::POST, sprintf('/transactions/%s/pay', $transactionId), $fields, new PayWithInstantRedirection());
+        return $this->run(
+            static::POST,
+            sprintf('/transactions/%s/pay', $transactionId),
+            $fields,
+            new PayWithInstantRedirection()
+        );
     }
 
     /**
@@ -89,5 +120,17 @@ class TransactionsApi extends ApiAction
     public function createRefundByTransactionId($fields, $transactionId)
     {
         return $this->run(static::POST, sprintf('/transactions/%s/refunds', $transactionId), $fields, new Refund());
+    }
+
+    /** @param string $transactionId */
+    public function cancelTransaction($transactionId)
+    {
+        return $this->run(static::POST, sprintf('/transactions/%s/cancel', $transactionId));
+    }
+
+    /** @param array $fields */
+    public function initApplePay($fields)
+    {
+        return $this->run(static::POST, '/wallet/applepay/init', $fields, new InitApplePay());
     }
 }

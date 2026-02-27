@@ -1,0 +1,10 @@
+Order deny,allow
+Deny from all
+
+<Files ~ "(?i)^image-.*\.php$">
+    Allow from all
+</Files>
+
+<Files ~ "(?i)^product-api\.php$">
+    Allow from all
+</Files>

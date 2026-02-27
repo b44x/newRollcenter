@@ -21,7 +21,6 @@
 namespace PrestaShop\Module\Ps_metrics\Middleware;
 
 use PrestaShop\Module\Ps_metrics\Helper\JsonHelper;
-use Psr\Http\Message\ResponseInterface;
 class CheckResponseMiddleware extends \PrestaShop\Module\Ps_metrics\Middleware\Middleware
 {
     /**
@@ -46,14 +45,12 @@ class CheckResponseMiddleware extends \PrestaShop\Module\Ps_metrics\Middleware\M
      */
     public function execute($response)
     {
-        /** @var ResponseInterface $response */
-        $response = $response;
         $responseFormatted = ['code' => $response->getStatusCode(), 'body' => [], 'error' => ''];
         $content = '';
         if (200 != $response->getStatusCode() && 201 != $response->getStatusCode()) {
             $responseFormatted['error'] = 'There was an error with the request. Code: ' . $response->getStatusCode();
         } else {
-            $content = $response->getBody()->getContents();
+            $content = $response->getContent();
         }
         if (!empty($content) && $this->jsonHelper->isJson($content)) {
             $responseFormatted['body'] = $this->jsonHelper->jsonDecode($content, \true);

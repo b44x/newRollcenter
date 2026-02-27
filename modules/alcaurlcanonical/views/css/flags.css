@@ -1,0 +1,284 @@
+/**
+ * 2024 ALCALINK E-COMMERCE & SEO, S.L.L.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@prestashop.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ *
+ * @author ALCALINK E-COMMERCE & SEO, S.L.L. <info@alcalink.com>
+ * @copyright  2024 ALCALINK E-COMMERCE & SEO, S.L.L.
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ *
+ * Registered Trademark & Property of ALCALINK E-COMMERCE & SEO, S.L.L.
+*/
+#alc_modules .alc_flag{display:block;position: relative;width:16px;height:11px;background:url('../img/flags.png') no-repeat;margin-left:8px;margin-top:2px;float:right;}
+#alc_modules .alc_flag.alc_flag-gu{background-position:-96px -55px}
+#alc_modules .alc_flag.alc_flag-mn{background-position:-208px -88px}
+#alc_modules .alc_flag.alc_flag-va{background-position:-48px -154px}
+#alc_modules .alc_flag.alc_flag-tibet{background-position:-32px -143px}
+#alc_modules .alc_flag.alc_flag-fo{background-position:-64px -44px}
+#alc_modules .alc_flag.alc_flag-th{background-position:-16px -143px}
+#alc_modules .alc_flag.alc_flag-tr{background-position:-144px -143px}
+#alc_modules .alc_flag.alc_flag-tl{background-position:-80px -143px}
+#alc_modules .alc_flag.alc_flag-kz{background-position:-144px -77px}
+#alc_modules .alc_flag.alc_flag-zm{background-position:-16px -165px}
+#alc_modules .alc_flag.alc_flag-uz{background-position:-32px -154px}
+#alc_modules .alc_flag.alc_flag-dk{background-position:-64px -33px}
+#alc_modules .alc_flag.alc_flag-scotland{background-position:-176px -121px}
+#alc_modules .alc_flag.alc_flag-gi{background-position:-224px -44px}
+#alc_modules .alc_flag.alc_flag-gy{background-position:-128px -55px}
+#alc_modules .alc_flag.alc_flag-bj{background-position:-112px -11px}
+#alc_modules .alc_flag.alc_flag-fr{background-position:-80px -44px}
+#alc_modules .alc_flag.alc_flag-mo{background-position:-224px -88px}
+#alc_modules .alc_flag.alc_flag-ir{background-position:-112px -66px}
+#alc_modules .alc_flag.alc_flag-io{background-position:-80px -66px}
+#alc_modules .alc_flag.alc_flag-tm{background-position:-96px -143px}
+#alc_modules .alc_flag.alc_flag-ch{background-position:-96px -22px}
+#alc_modules .alc_flag.alc_flag-mt{background-position:-32px -99px}
+#alc_modules .alc_flag.alc_flag-nl{background-position:-240px -99px}
+#alc_modules .alc_flag.alc_flag-gp{background-position:-16px -55px}
+#alc_modules .alc_flag.alc_flag-im{background-position:-48px -66px}
+#alc_modules .alc_flag.alc_flag-tv{background-position:-176px -143px}
+#alc_modules .alc_flag.alc_flag-mu{background-position:-48px -99px}
+#alc_modules .alc_flag.alc_flag-pe{background-position:-96px -110px}
+#alc_modules .alc_flag.alc_flag-vi{background-position:-112px -154px}
+#alc_modules .alc_flag.alc_flag-hn{background-position:-176px -55px}
+#alc_modules .alc_flag.alc_flag-ss{background-position:-128px -132px}
+#alc_modules .alc_flag.alc_flag-ae{background-position:-16px 0}
+#alc_modules .alc_flag.alc_flag-td{background-position:-240px -132px}
+#alc_modules .alc_flag.alc_flag-pw{background-position:0 -121px}
+#alc_modules .alc_flag.alc_flag-nu{background-position:-32px -110px}
+#alc_modules .alc_flag.alc_flag-bt{background-position:-208px -11px}
+#alc_modules .alc_flag.alc_flag-ms{background-position:-16px -99px}
+#alc_modules .alc_flag.alc_flag-cv{background-position:-240px -22px}
+#alc_modules .alc_flag.alc_flag-es{background-position:-224px -33px}
+#alc_modules .alc_flag.alc_flag-mh{background-position:-144px -88px}
+#alc_modules .alc_flag.alc_flag-la{background-position:-160px -77px}
+#alc_modules .alc_flag.alc_flag-vn{background-position:-128px -154px}
+#alc_modules .alc_flag.alc_flag-py{background-position:-16px -121px}
+#alc_modules .alc_flag.alc_flag-br{background-position:-176px -11px}
+#alc_modules .alc_flag.alc_flag-ye{background-position:-224px -154px}
+#alc_modules .alc_flag.alc_flag-ie{background-position:0 -66px}
+#alc_modules .alc_flag.alc_flag-gh{background-position:-208px -44px}
+#alc_modules .alc_flag.alc_flag-cg{background-position:-80px -22px}
+#alc_modules .alc_flag.alc_flag-cu{background-position:-224px -22px}
+#alc_modules .alc_flag.alc_flag-hu{background-position:-224px -55px}
+#alc_modules .alc_flag.alc_flag-sg{background-position:-224px -121px}
+#alc_modules .alc_flag.alc_flag-at{background-position:-176px 0}
+#alc_modules .alc_flag.alc_flag-lk{background-position:-224px -77px}
+#alc_modules .alc_flag.alc_flag-vu{background-position:-144px -154px}
+#alc_modules .alc_flag.alc_flag-bo{background-position:-160px -11px}
+#alc_modules .alc_flag.alc_flag-jo{background-position:-208px -66px}
+#alc_modules .alc_flag.alc_flag-er{background-position:-208px -33px}
+#alc_modules .alc_flag.alc_flag-za{background-position:-256px -154px}
+#alc_modules .alc_flag.alc_flag-rs{background-position:-80px -121px}
+#alc_modules .alc_flag.alc_flag-nr{background-position:-16px -110px}
+#alc_modules .alc_flag.alc_flag-ls{background-position:-256px -77px}
+#alc_modules .alc_flag.alc_flag-jm{background-position:-192px -66px}
+#alc_modules .alc_flag.alc_flag-tz{background-position:-208px -143px}
+#alc_modules .alc_flag.alc_flag-ki{background-position:-16px -77px}
+#alc_modules .alc_flag.alc_flag-sj{background-position:0 -132px}
+#alc_modules .alc_flag.alc_flag-cz{background-position:-16px -33px}
+#alc_modules .alc_flag.alc_flag-pg{background-position:-128px -110px}
+#alc_modules .alc_flag.alc_flag-lv{background-position:-32px -88px}
+#alc_modules .alc_flag.alc_flag-do{background-position:-96px -33px}
+#alc_modules .alc_flag.alc_flag-lu{background-position:-16px -88px}
+#alc_modules .alc_flag.alc_flag-no{background-position:-256px -99px}
+#alc_modules .alc_flag.alc_flag-kw{background-position:-112px -77px}
+#alc_modules .alc_flag.alc_flag-mx{background-position:-96px -99px}
+#alc_modules .alc_flag.alc_flag-yt{background-position:-240px -154px}
+#alc_modules .alc_flag.alc_flag-ly{background-position:-48px -88px}
+#alc_modules .alc_flag.alc_flag-cy{background-position:0 -33px}
+#alc_modules .alc_flag.alc_flag-ph{background-position:-144px -110px}
+#alc_modules .alc_flag.alc_flag-my{background-position:-112px -99px}
+#alc_modules .alc_flag.alc_flag-sm{background-position:-48px -132px}
+#alc_modules .alc_flag.alc_flag-et{background-position:-240px -33px}
+#alc_modules .alc_flag.alc_flag-ru{background-position:-96px -121px}
+#alc_modules .alc_flag.alc_flag-tj{background-position:-48px -143px}
+#alc_modules .alc_flag.alc_flag-ai{background-position:-64px 0}
+#alc_modules .alc_flag.alc_flag-pl{background-position:-176px -110px}
+#alc_modules .alc_flag.alc_flag-kp{background-position:-64px -77px}
+#alc_modules .alc_flag.alc_flag-uy{background-position:-16px -154px}
+#alc_modules .alc_flag.alc_flag-gb{background-position:-112px -44px}
+#alc_modules .alc_flag.alc_flag-gs{background-position:-64px -55px}
+#alc_modules .alc_flag.alc_flag-kurdistan{background-position:-96px -77px}
+#alc_modules .alc_flag.alc_flag-rw{background-position:-112px -121px}
+#alc_modules .alc_flag.alc_flag-ec{background-position:-128px -33px}
+#alc_modules .alc_flag.alc_flag-mm{background-position:-192px -88px}
+#alc_modules .alc_flag.alc_flag-pa{background-position:-80px -110px}
+#alc_modules .alc_flag.alc_flag-wales{background-position:-160px -154px}
+#alc_modules .alc_flag.alc_flag-kg{background-position:-256px -66px}
+#alc_modules .alc_flag.alc_flag-ve{background-position:-80px -154px}
+#alc_modules .alc_flag.alc_flag-tk{background-position:-64px -143px}
+#alc_modules .alc_flag.alc_flag-ca{background-position:-16px -22px}
+#alc_modules .alc_flag.alc_flag-is{background-position:-128px -66px}
+#alc_modules .alc_flag.alc_flag-ke{background-position:-240px -66px}
+#alc_modules .alc_flag.alc_flag-ro{background-position:-64px -121px}
+#alc_modules .alc_flag.alc_flag-gq{background-position:-32px -55px}
+#alc_modules .alc_flag.alc_flag-pt{background-position:-256px -110px}
+#alc_modules .alc_flag.alc_flag-tf{background-position:-256px -132px}
+#alc_modules .alc_flag.alc_flag-ad{background-position:0 0}
+#alc_modules .alc_flag.alc_flag-sk{background-position:-16px -132px}
+#alc_modules .alc_flag.alc_flag-pm{background-position:-192px -110px}
+#alc_modules .alc_flag.alc_flag-om{background-position:-64px -110px}
+#alc_modules .alc_flag.alc_flag-an{background-position:-112px 0}
+#alc_modules .alc_flag.alc_flag-ws{background-position:-192px -154px}
+#alc_modules .alc_flag.alc_flag-sh{background-position:-240px -121px}
+#alc_modules .alc_flag.alc_flag-mp{background-position:-240px -88px}
+#alc_modules .alc_flag.alc_flag-gt{background-position:-80px -55px}
+#alc_modules .alc_flag.alc_flag-cf{background-position:-64px -22px}
+#alc_modules .alc_flag.alc_flag-zanzibar{background-position:0 -165px}
+#alc_modules .alc_flag.alc_flag-mw{background-position:-80px -99px}
+#alc_modules .alc_flag.alc_flag-catalonia{background-position:-32px -22px}
+#alc_modules .alc_flag.alc_flag-ug{background-position:-240px -143px}
+#alc_modules .alc_flag.alc_flag-je{background-position:-176px -66px}
+#alc_modules .alc_flag.alc_flag-km{background-position:-32px -77px}
+#alc_modules .alc_flag.alc_flag-in{background-position:-64px -66px}
+#alc_modules .alc_flag.alc_flag-bf{background-position:-48px -11px}
+#alc_modules .alc_flag.alc_flag-mc{background-position:-80px -88px}
+#alc_modules .alc_flag.alc_flag-sy{background-position:-192px -132px}
+#alc_modules .alc_flag.alc_flag-sn{background-position:-64px -132px}
+#alc_modules .alc_flag.alc_flag-kr{background-position:-80px -77px}
+#alc_modules .alc_flag.alc_flag-eu{background-position:-256px -33px}
+#alc_modules .alc_flag.alc_flag-bn{background-position:-144px -11px}
+#alc_modules .alc_flag.alc_flag-st{background-position:-144px -132px}
+#alc_modules .alc_flag.alc_flag-england{background-position:-192px -33px}
+#alc_modules .alc_flag.alc_flag-lc{background-position:-192px -77px}
+#alc_modules .alc_flag.alc_flag-dm{background-position:-80px -33px}
+#alc_modules .alc_flag.alc_flag-be{background-position:-32px -11px}
+#alc_modules .alc_flag.alc_flag-ni{background-position:-224px -99px}
+#alc_modules .alc_flag.alc_flag-ua{background-position:-224px -143px}
+#alc_modules .alc_flag.alc_flag-mz{background-position:-128px -99px}
+#alc_modules .alc_flag.alc_flag-pf{background-position:-112px -110px}
+#alc_modules .alc_flag.alc_flag-tn{background-position:-112px -143px}
+#alc_modules .alc_flag.alc_flag-ee{background-position:-144px -33px}
+#alc_modules .alc_flag.alc_flag-xk{background-position:-208px -154px}
+#alc_modules .alc_flag.alc_flag-sx{background-position:-176px -132px}
+#alc_modules .alc_flag.alc_flag-sd{background-position:-192px -121px}
+#alc_modules .alc_flag.alc_flag-gd{background-position:-128px -44px}
+#alc_modules .alc_flag.alc_flag-ci{background-position:-112px -22px}
+#alc_modules .alc_flag.alc_flag-sz{background-position:-208px -132px}
+#alc_modules .alc_flag.alc_flag-cl{background-position:-144px -22px}
+#alc_modules .alc_flag.alc_flag-fi{background-position:0 -44px}
+#alc_modules .alc_flag.alc_flag-ga{background-position:-96px -44px}
+#alc_modules .alc_flag.alc_flag-jp{background-position:-224px -66px}
+#alc_modules .alc_flag.alc_flag-de{background-position:-32px -33px}
+#alc_modules .alc_flag.alc_flag-np{background-position:0 -110px}
+#alc_modules .alc_flag.alc_flag-re{background-position:-48px -121px}
+#alc_modules .alc_flag.alc_flag-bg{background-position:-64px -11px}
+#alc_modules .alc_flag.alc_flag-sc{background-position:-160px -121px}
+#alc_modules .alc_flag.alc_flag-ng{background-position:-208px -99px}
+#alc_modules .alc_flag.alc_flag-qa{background-position:-32px -121px}
+#alc_modules .alc_flag.alc_flag-mk{background-position:-160px -88px}
+#alc_modules .alc_flag.alc_flag-aw{background-position:-208px 0}
+#alc_modules .alc_flag.alc_flag-kn{background-position:-48px -77px}
+#alc_modules .alc_flag.alc_flag-al{background-position:-80px 0}
+#alc_modules .alc_flag.alc_flag-bw{background-position:-240px -11px}
+#alc_modules .alc_flag.alc_flag-um{background-position:-256px -143px}
+#alc_modules .alc_flag.alc_flag-ky{background-position:-128px -77px}
+#alc_modules .alc_flag.alc_flag-tt{background-position:-160px -143px}
+#alc_modules .alc_flag.alc_flag-so{background-position:-80px -132px}
+#alc_modules .alc_flag.alc_flag-lt{background-position:0 -88px}
+#alc_modules .alc_flag.alc_flag-by{background-position:-256px -11px}
+#alc_modules .alc_flag.alc_flag-bb{background-position:0 -11px}
+#alc_modules .alc_flag.alc_flag-us{background-position:0 -154px}
+#alc_modules .alc_flag.alc_flag-md{background-position:-96px -88px}
+#alc_modules .alc_flag.alc_flag-ag{background-position:-48px 0}
+#alc_modules .alc_flag.alc_flag-hm{background-position:-160px -55px}
+#alc_modules .alc_flag.alc_flag-as{background-position:-160px 0}
+#alc_modules .alc_flag.alc_flag-eg{background-position:-160px -33px}
+#alc_modules .alc_flag.alc_flag-sv{background-position:-160px -132px}
+#alc_modules .alc_flag.alc_flag-sl{background-position:-32px -132px}
+#alc_modules .alc_flag.alc_flag-fk{background-position:-32px -44px}
+#alc_modules .alc_flag.alc_flag-am{background-position:-96px 0}
+#alc_modules .alc_flag.alc_flag-ck{background-position:-128px -22px}
+#alc_modules .alc_flag.alc_flag-tw{background-position:-192px -143px}
+#alc_modules .alc_flag.alc_flag-kh{background-position:0 -77px}
+#alc_modules .alc_flag.alc_flag-to{background-position:-128px -143px}
+#alc_modules .alc_flag.alc_flag-se{background-position:-208px -121px}
+#alc_modules .alc_flag.alc_flag-cd{background-position:-48px -22px}
+#alc_modules .alc_flag.alc_flag-pn{background-position:-208px -110px}
+#alc_modules .alc_flag.alc_flag-gr{background-position:-48px -55px}
+#alc_modules .alc_flag.alc_flag-id{background-position:-256px -55px}
+#alc_modules .alc_flag.alc_flag-vc{background-position:-64px -154px}
+#alc_modules .alc_flag.alc_flag-somaliland{background-position:-96px -132px}
+#alc_modules .alc_flag.alc_flag-bi{background-position:-96px -11px}
+#alc_modules .alc_flag.alc_flag-pk{background-position:-160px -110px}
+#alc_modules .alc_flag.alc_flag-pr{background-position:-224px -110px}
+#alc_modules .alc_flag.alc_flag-bd{background-position:-16px -11px}
+#alc_modules .alc_flag.alc_flag-co{background-position:-192px -22px}
+#alc_modules .alc_flag.alc_flag-fm{background-position:-48px -44px}
+#alc_modules .alc_flag.alc_flag-bm{background-position:-128px -11px}
+#alc_modules .alc_flag.alc_flag-ar{background-position:-144px 0}
+#alc_modules .alc_flag.alc_flag-bv{background-position:-224px -11px}
+#alc_modules .alc_flag.alc_flag-sb{background-position:-144px -121px}
+#alc_modules .alc_flag.alc_flag-mq{background-position:-256px -88px}
+#alc_modules .alc_flag.alc_flag-eh{background-position:-176px -33px}
+#alc_modules .alc_flag.alc_flag-bh{background-position:-80px -11px}
+#alc_modules .alc_flag.alc_flag-it{background-position:-144px -66px}
+#alc_modules .alc_flag.alc_flag-hr{background-position:-192px -55px}
+#alc_modules .alc_flag.alc_flag-sa{background-position:-128px -121px}
+#alc_modules .alc_flag.alc_flag-mv{background-position:-64px -99px}
+#alc_modules .alc_flag.alc_flag-mg{background-position:-128px -88px}
+#alc_modules .alc_flag.alc_flag-dz{background-position:-112px -33px}
+#alc_modules .alc_flag.alc_flag-gg{background-position:-192px -44px}
+#alc_modules .alc_flag.alc_flag-gm{background-position:-256px -44px}
+#alc_modules .alc_flag.alc_flag-af{background-position:-32px 0}
+#alc_modules .alc_flag.alc_flag-li{background-position:-208px -77px}
+#alc_modules .alc_flag.alc_flag-sr{background-position:-112px -132px}
+#alc_modules .alc_flag.alc_flag-vg{background-position:-96px -154px}
+#alc_modules .alc_flag.alc_flag-cr{background-position:-208px -22px}
+#alc_modules .alc_flag.alc_flag-tc{background-position:-224px -132px}
+#alc_modules .alc_flag.alc_flag-ao{background-position:-128px 0}
+#alc_modules .alc_flag.alc_flag-ma{background-position:-64px -88px}
+#alc_modules .alc_flag.alc_flag-mr{background-position:0 -99px}
+#alc_modules .alc_flag.alc_flag-gn{background-position:0 -55px}
+#alc_modules .alc_flag.alc_flag-ne{background-position:-176px -99px}
+#alc_modules .alc_flag.alc_flag-nf{background-position:-192px -99px}
+#alc_modules .alc_flag.alc_flag-wf{background-position:-176px -154px}
+#alc_modules .alc_flag.alc_flag-hk{background-position:-144px -55px}
+#alc_modules .alc_flag.alc_flag-gf{background-position:-160px -44px}
+#alc_modules .alc_flag.alc_flag-ps{background-position:-240px -110px}
+#alc_modules .alc_flag.alc_flag-ic{background-position:-240px -55px}
+#alc_modules .alc_flag.alc_flag-cw{background-position:-256px -22px}
+#alc_modules .alc_flag.alc_flag-ml{background-position:-176px -88px}
+#alc_modules .alc_flag.alc_flag-ax{background-position:-224px 0}
+#alc_modules .alc_flag.alc_flag-gl{background-position:-240px -44px}
+#alc_modules .alc_flag.alc_flag-dj{background-position:-48px -33px}
+#alc_modules .alc_flag.alc_flag-cn{background-position:-176px -22px}
+#alc_modules .alc_flag.alc_flag-ht{background-position:-208px -55px}
+#alc_modules .alc_flag.alc_flag-lr{background-position:-240px -77px}
+#alc_modules .alc_flag.alc_flag-tg{background-position:0 -143px}
+#alc_modules .alc_flag.alc_flag-ba{background-position:-256px 0}
+#alc_modules .alc_flag.alc_flag-ge{background-position:-144px -44px}
+#alc_modules .alc_flag.alc_flag-bz{background-position:0 -22px}
+#alc_modules .alc_flag.alc_flag-au{background-position:-192px 0}
+#alc_modules .alc_flag.alc_flag-iq{background-position:-96px -66px}
+#alc_modules .alc_flag.alc_flag-cm{background-position:-160px -22px}
+#alc_modules .alc_flag.alc_flag-gw{background-position:-112px -55px}
+#alc_modules .alc_flag.alc_flag-az{background-position:-240px 0}
+#alc_modules .alc_flag.alc_flag-na{background-position:-144px -99px}
+#alc_modules .alc_flag.alc_flag-fj{background-position:-16px -44px}
+#alc_modules .alc_flag.alc_flag-zw{background-position:-32px -165px}
+#alc_modules .alc_flag.alc_flag-bs{background-position:-192px -11px}
+#alc_modules .alc_flag.alc_flag-il{background-position:-16px -66px}
+#alc_modules .alc_flag.alc_flag-nz{background-position:-48px -110px}
+#alc_modules .alc_flag.alc_flag-me{background-position:-112px -88px}
+#alc_modules .alc_flag.alc_flag-si{background-position:-256px -121px}
+#alc_modules .alc_flag.alc_flag-nc{background-position:-160px -99px}
+#alc_modules .alc_flag.alc_flag-lb{background-position:-176px -77px}

@@ -165,3 +165,87 @@ $(document).ready(function () {
         });
     });
 });
+
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  try {
+    const productDetail = document.querySelector('.product-detail') || document;
+
+    const inputA = productDetail.querySelector('#dp_szerokosc_a, [id*="dp_szerokosc_a"]') ||
+                   productDetail.querySelector('input[aria-label*="Szerokość A"], input[placeholder*="Szerokość A"]');
+    const inputB = productDetail.querySelector('#dp_szerokosc_b, [id*="dp_szerokosc_b"]') ||
+                   productDetail.querySelector('input[aria-label*="Szerokość B"], input[placeholder*="Szerokość B"]');
+    const inputH = productDetail.querySelector('#dp_wys_l_max_175, #dp_wys_s_max_175, #dp_wys_l_max_160, [id*="dp_wys_"]') ||
+                   productDetail.querySelector('input[aria-label*="Wysokość"], input[placeholder*="Wysokość"]');
+
+    function nearestCommonAncestor(a, b) {
+      if (!a || !b) return null;
+      const setA = new Set();
+      let n = a;
+      while (n) { setA.add(n); n = n.parentElement; }
+      let m = b;
+      while (m) { if (setA.has(m)) return m; m = m.parentElement; }
+      return null;
+    }
+
+    const rootAB = nearestCommonAncestor(
+      inputA?.closest('.dp_field_container') || inputA,
+      inputB?.closest('.dp_field_container') || inputB
+    ) || productDetail.querySelector('.product-variants') || productDetail;
+
+    let dimensionsWrapper = rootAB.querySelector('.dp_dimensions');
+    if (!dimensionsWrapper) {
+      dimensionsWrapper = document.createElement('div');
+      dimensionsWrapper.className = 'dp_dimensions';
+      const anchor = (inputA && inputA.closest('.dp_field_container')) || inputA || rootAB.firstElementChild;
+      if (anchor && anchor.parentElement) {
+        anchor.parentElement.insertBefore(dimensionsWrapper, anchor);
+      } else {
+        rootAB.appendChild(dimensionsWrapper);
+      }
+    }
+
+    function moveWithLabel(inputEl, className) {
+      if (!inputEl) return null;
+      const fieldWrapper = document.createElement('div');
+      fieldWrapper.className = className + ' dp-ensure-label';
+
+      // znajdź label po for/id lub najbliższy w kontenerze
+      let labelEl = null;
+      const id = inputEl.id || '';
+      if (id) labelEl = productDetail.querySelector(`label[for="${id}"], label[for*="${id}"]`);
+      if (!labelEl) {
+        const localLabel = inputEl.closest('.dp_field_container')?.querySelector('label') ||
+                           inputEl.parentElement?.querySelector('label');
+        if (localLabel) labelEl = localLabel;
+      }
+
+      if (labelEl) fieldWrapper.appendChild(labelEl);
+      fieldWrapper.appendChild(inputEl);
+
+      dimensionsWrapper.appendChild(fieldWrapper);
+      return fieldWrapper;
+    }
+
+    moveWithLabel(inputA, 'dp_field_szerokosc_a');
+    moveWithLabel(inputB, 'dp_field_szerokosc_b');
+    moveWithLabel(inputH, 'dp_field_wysokosc');
+
+    dimensionsWrapper.querySelectorAll('label').forEach(lbl => {
+      lbl.style.display = 'block';
+      lbl.style.visibility = 'visible';
+      lbl.style.opacity = '1';
+    });
+
+    dimensionsWrapper.querySelectorAll('input, select').forEach(el => {
+      el.style.maxWidth = '100%';
+      el.style.width = '100%';
+    });
+
+  } catch (e) {
+    console.warn('Dimensions autowrap failed:', e);
+  }
+});
+

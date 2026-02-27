@@ -22,7 +22,7 @@
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/OSL-3.0 Open Software License (OSL 3.0)
  */
-import{d as f,g,t as e}from"./assets/dom-utils-d77254b8.js";import{i as c,t as h,g as v,d as r,h as m,a as p,r as F,b as u,c as d}from"./assets/sentry-27c45384.js";import{I as y}from"./assets/file-uploader-943414d2.js";import{I}from"./assets/text-editor-8303aa34.js";/**
+import{d as f,g,t as e}from"./assets/dom-utils-d77254b8.js";import{i as c,t as h,g as v,d as r,h as m,a as p,r as F,b as u,c as d}from"./assets/sentry-63709216.js";import{I as y}from"./assets/file-uploader-f5f56cc9.js";import{I}from"./assets/text-editor-8303aa34.js";/**
  * Copyright since 2007 PrestaShop SA and Contributors
  * PrestaShop is an International Registered Trademark & Property of PrestaShop SA
  *

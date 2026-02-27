@@ -2,11 +2,10 @@
 <module>
     <name>ps_checkout</name>
     <displayName><![CDATA[PrestaShop Checkout]]></displayName>
-    <version><![CDATA[8.4.4.0]]></version>
-    <description><![CDATA[Udostępnij swoim klientom najpopularniejsze metody płatności dzięki kompleksowemu modułowi i zarządzaj sprzedażą z poziomu scentralizowanego interfejsu.]]></description>
+    <version><![CDATA[8.5.0.7]]></version>
+    <description><![CDATA[Provide the most commonly used payment methods to your customers in this all-in-one module, and manage all your sales in a centralized interface.]]></description>
     <author><![CDATA[PrestaShop]]></author>
     <tab><![CDATA[payments_gateways]]></tab>
-	<confirmUninstall><![CDATA[Czy na pewno chcesz odinstalować ten moduł?]]></confirmUninstall>
     <is_configurable>1</is_configurable>
     <need_instance>1</need_instance>
 </module>

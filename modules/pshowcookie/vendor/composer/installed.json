@@ -1,0 +1,68 @@
+{
+    "packages": [
+        {
+            "name": "prestashow/presta-core",
+            "version": "dev-master",
+            "version_normalized": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@git.layersshow.com:prestashow/lib/presta-core.git",
+                "reference": "cfef8ce2507bc27d9c22920684ddcd067311797a"
+            },
+            "require": {
+                "composer-plugin-api": "^1.0|^2.0",
+                "php": ">=7.1"
+            },
+            "time": "2025-11-17T18:55:01+00:00",
+            "default-branch": true,
+            "type": "composer-plugin",
+            "extra": {
+                "class": "Prestashow\\PrestaCore\\Composer\\ScopingPlugin"
+            },
+            "installation-source": "source",
+            "autoload": [],
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "PrestaShow.pl",
+                    "email": "kontakt@prestashow.pl",
+                    "homepage": "https://prestashow.pl"
+                }
+            ],
+            "install-path": "../prestashow/presta-core"
+        },
+        {
+            "name": "prestashow/presta-update",
+            "version": "dev-main",
+            "version_normalized": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "git@git.layersshow.com:prestashow/lib/presta-update.git",
+                "reference": "72587e93115b38af1aff1e2769a79a328e4c66ce"
+            },
+            "require": {
+                "php": ">=7.1"
+            },
+            "time": "2025-07-07T21:11:59+00:00",
+            "default-branch": true,
+            "type": "library",
+            "installation-source": "source",
+            "autoload": [],
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "PrestaShow.pl",
+                    "email": "kontakt@prestashow.pl",
+                    "homepage": "https://prestashow.pl"
+                }
+            ],
+            "install-path": "../prestashow/presta-update"
+        }
+    ],
+    "dev": false,
+    "dev-package-names": []
+}

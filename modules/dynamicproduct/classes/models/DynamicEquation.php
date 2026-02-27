@@ -707,9 +707,9 @@ class DynamicEquation extends DynamicObject
                                 if ($id_field_int) {
                                     $condition_field = new DynamicField($interval_condition['id_field']);
                                     /** @var DynamicInputField $input_field */
-                                    $input_field = $input_fields[$condition_field->name] ?: null;
+                                    $input_field = $input_fields[$condition_field->name] ?? null;
                                 } else {
-                                    $input_field = $input_fields[$interval_condition['id_field']] ?: null;
+                                    $input_field = $input_fields[$interval_condition['id_field']] ?? null;
                                 }
                                 if ($input_field) {
                                     if ($interval_condition['type'] === 'range') {

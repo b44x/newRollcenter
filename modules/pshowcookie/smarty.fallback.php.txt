@@ -1,0 +1,8 @@
+if (!function_exists('smarty_block_ifConsentGranted')) {
+    function smarty_block_ifConsentGranted($params, $content, $smarty, &$repeat)
+    {
+        return $content;
+    }
+    global $smarty;
+    smartyRegisterFunction($smarty, 'block', 'ifConsentGranted', 'smarty_block_ifConsentGranted');
+}

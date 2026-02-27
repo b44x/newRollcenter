@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Copyright since 2007 PrestaShop SA and Contributors
  * PrestaShop is an International Registered Trademark & Property of PrestaShop SA
@@ -32,7 +33,7 @@ class Ps_accounts extends Module
 
     // Needed in order to retrieve the module version easier (in api call headers) than instanciate
     // the module each time to get the version
-    const VERSION = '8.0.4';
+    const VERSION = '8.0.10';
 
     /**
      * Admin tabs
@@ -96,7 +97,7 @@ class Ps_accounts extends Module
 
         // We cannot use the const VERSION because the const is not computed by addons marketplace
         // when the zip is uploaded
-        $this->version = '8.0.4';
+        $this->version = '8.0.10';
 
         $this->module_key = 'abf2cd758b4d629b2944d3922ef9db73';
 
@@ -105,15 +106,15 @@ class Ps_accounts extends Module
         $this->displayName = $this->l('PrestaShop Account');
         $this->description = $this->l(
             'Link your store to your PrestaShop account to activate and manage your subscriptions in your ' .
-            'back office. Do not uninstall this module if you have a current subscription.'
+                'back office. Do not uninstall this module if you have a current subscription.'
         );
         $this->description_full = $this->l(
             'Link your store to your PrestaShop account to activate and manage your subscriptions in your ' .
-            'back office. Do not uninstall this module if you have a current subscription.'
+                'back office. Do not uninstall this module if you have a current subscription.'
         );
         $this->confirmUninstall = $this->l(
             'This action will prevent immediately your PrestaShop services and Community services from ' .
-            'working as they are using PrestaShop Accounts module for authentication.'
+                'working as they are using PrestaShop Accounts module for authentication.'
         );
 
         $this->ps_versions_compliancy = ['min' => '1.6.1', 'max' => _PS_VERSION_];
@@ -321,23 +322,12 @@ class Ps_accounts extends Module
             return $settingsForm;
         }
 
+        /** @var \PrestaShop\Module\PsAccounts\Service\PsAccountsService $psAccountsService */
+        $psAccountsService = $this->getService(\PrestaShop\Module\PsAccounts\Service\PsAccountsService::class);
+
         //$this->context->smarty->assign('pathVendor', $this->_path . 'views/js/chunk-vendors.' . $this->version . '.js');
-        $this->context->smarty->assign('pathApp', $this->_path . 'views/js/app.' . $this->version . '.js');
-        $this->context->smarty->assign('pathAppAssets', $this->_path . 'views/css/app.' . $this->version . '.css');
         $this->context->smarty->assign('urlAccountsCdn', $this->getParameter('ps_accounts.accounts_cdn_url'));
-
-        $storePresenter = new PrestaShop\Module\PsAccounts\Presenter\Store\StorePresenter($this, $this->context);
-
-        Media::addJsDef([
-            'storePsAccounts' => $storePresenter->present(),
-        ]);
-
-        /** @var \PrestaShop\Module\PsAccounts\Presenter\PsAccountsPresenter $psAccountsPresenter */
-        $psAccountsPresenter = $this->getService(\PrestaShop\Module\PsAccounts\Presenter\PsAccountsPresenter::class);
-
-        Media::addJsDef([
-            'contextPsAccounts' => $psAccountsPresenter->present((string) $this->name),
-        ]);
+        $this->context->smarty->assign('componentInitParams', $psAccountsService->getComponentInitParams());
 
         return $this->display(__FILE__, 'views/templates/admin/app.tpl');
     }
@@ -360,15 +350,19 @@ class Ps_accounts extends Module
     public function getSettingsPageUrl(array $params = [])
     {
         if (version_compare(_PS_VERSION_, '1.7', '>')) {
-            return $this->context->link->getAdminLink('AdminModules', true, [], array_merge($params, [
+            return $this->context->link->getAdminLink(
+                'AdminModules',
+                true,
+                [],
+                array_merge($params, [
                     'configure' => $this->name,
                 ])
             );
         } else {
             return AdminController::$currentIndex . '&' . http_build_query(array_merge($params, [
-                    'configure' => $this->name,
-                    'token' => Tools::getAdminTokenLite('AdminModules'),
-                ]));
+                'configure' => $this->name,
+                'token' => Tools::getAdminTokenLite('AdminModules'),
+            ]));
         }
     }
 
@@ -425,6 +419,10 @@ class Ps_accounts extends Module
      */
     public function onModuleReset()
     {
+        /** @var \PrestaShop\Module\PsAccounts\Repository\ConfigurationRepository $configurationRepository */
+        $configurationRepository = $this->getService(\PrestaShop\Module\PsAccounts\Repository\ConfigurationRepository::class);
+        $configurationRepository->fixMultiShopConfig(true);
+
         /** @var \PrestaShop\Module\PsAccounts\Http\Client\CircuitBreaker\Factory $circuitBreakerFactory */
         $circuitBreakerFactory = $this->getService(\PrestaShop\Module\PsAccounts\Http\Client\CircuitBreaker\Factory::class);
         $circuitBreakerFactory->resetAll();
@@ -432,10 +430,6 @@ class Ps_accounts extends Module
         /** @var \PrestaShop\Module\PsAccounts\Service\OAuth2\OAuth2Service $oAuth2Service */
         $oAuth2Service = $this->getService(\PrestaShop\Module\PsAccounts\Service\OAuth2\OAuth2Service::class);
         $oAuth2Service->clearCache();
-
-        /** @var \PrestaShop\Module\PsAccounts\Repository\ConfigurationRepository $configurationRepository */
-        $configurationRepository = $this->getService(\PrestaShop\Module\PsAccounts\Repository\ConfigurationRepository::class);
-        $configurationRepository->fixMultiShopConfig();
 
         // FIXME: this wont prevent from re-implanting override on reset of module
         $uninstaller = new PrestaShop\Module\PsAccounts\Module\Uninstall($this, Db::getInstance());
@@ -470,7 +464,7 @@ class Ps_accounts extends Module
         $statusManager = $this->getService(\PrestaShop\Module\PsAccounts\Account\StatusManager::class);
 
         try {
-            if ($statusManager->getStatus(false, \PrestaShop\Module\PsAccounts\Account\StatusManager::CACHE_TTL, $source)->isVerified) {
+            if ($statusManager->withSource($source)->getStatus()->isVerified) {
                 return true;
             }
         } catch (\PrestaShop\Module\PsAccounts\Account\Exception\UnknownStatusException $e) {
@@ -488,7 +482,7 @@ function ps_accounts_fix_upgrade()
     $root = __DIR__;
     $requires = array_merge([
         $root . '/src/Module/Install.php',
-//        $root . '/src/Hook/Hook.php',
+        //$root . '/src/Hook/Hook.php',
         $root . '/src/Hook/HookableTrait.php',
         $root . '/src/Settings/SettingsForm.php',
     ], []/*, glob($root . '/src/Hook/*.php')*/);

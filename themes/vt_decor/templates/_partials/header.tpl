@@ -22,6 +22,7 @@
  * @copyright Since  PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
+
 {block name='header_banner'}
   <div class="header-banner">
     {if isset($fullwidth_hook.displayBanner) AND $fullwidth_hook.displayBanner == 0}
@@ -60,10 +61,25 @@
     {if isset($fullwidth_hook.displayTop) AND $fullwidth_hook.displayTop == 0}
           <div class="container">
         {/if}
-      <div class="inner">{hook h='displayTop'}</div>
+      <div class="inner">{hook h='displayTop'}{hook h='displayMegaMenu'}</div>
         {if isset($fullwidth_hook.displayTop) AND $fullwidth_hook.displayTop == 0}
           </div>
         {/if}
   </div>
   {hook h='displayNavFullWidth'}
 {/block}
+{*
+<script
+  src="https://js-de.sentry-cdn.com/cceaf360844878c5a5c1b42f74cb4698.min.js"
+  crossorigin="anonymous"
+></script>
+<script>
+  Sentry.onLoad(function() {
+    Sentry.init({
+      tracesSampleRate: 1.0, 
+      replaysSessionSampleRate: 0.1, 
+      replaysOnErrorSampleRate: 1.0, 
+    });
+  });
+</script>
+*}

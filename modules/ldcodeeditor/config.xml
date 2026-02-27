@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<module>
+    <name>ldcodeeditor</name>
+    <displayName><![CDATA[Code Editor - Create and edit your files]]></displayName>
+    <version><![CDATA[2.0.1]]></version>
+    <description><![CDATA[Add a full features code editor in your back office. Create, edit or delete files.]]></description>
+    <author><![CDATA[LD Modules]]></author>
+    <tab><![CDATA[administration]]></tab>
+    <is_configurable>0</is_configurable>
+    <need_instance>0</need_instance>
+	<limited_countries></limited_countries>
+</module>

@@ -1,0 +1,8 @@
+{
+    "name": "edrone/edronemodule",
+    "autoload": {
+        "psr-4": {
+            "Edrone\\EdroneModule\\": "src/"
+        }
+    }
+}

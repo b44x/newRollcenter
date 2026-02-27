@@ -8,7 +8,7 @@ Zwrot zamówienia #{id_order_return} - Aktualizacja
 
 Zaktualizowaliśmy postęp w sprawie Twojego zwrotu #{id_order_return}, nowy status to: "{state_order_return}".
 
-Śledź status swojego zamówienia i pobierz fakturę z naszego sklepu, na stronie [Historia i szczegóły zamówień]({history_url}) w sekcji konta klienta.
+Śledź swoje zamówienie i pobierz fakturę w naszym sklepie, przejdź do sekcji [Historia i szczegóły zamówień]({history_url}) swojego konta klienta.
 
 [{shop_name}]({shop_url})
 

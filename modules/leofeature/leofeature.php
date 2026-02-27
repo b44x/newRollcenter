@@ -65,6 +65,8 @@ class Leofeature extends Module
         } else {
             $this->is_gen_rtl = false;
         }
+
+
     }
 
     /**

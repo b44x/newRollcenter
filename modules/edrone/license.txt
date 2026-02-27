@@ -1,0 +1,7 @@
+<!--
+ * edrone JavaScript Library.
+ * https://edrone.me/
+ *
+ * GPL licenses.
+ * https://edrone.me/integration-license/
+-->

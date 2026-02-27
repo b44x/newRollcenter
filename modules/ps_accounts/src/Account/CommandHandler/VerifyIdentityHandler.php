@@ -27,10 +27,10 @@ use PrestaShop\Module\PsAccounts\Account\ProofManager;
 use PrestaShop\Module\PsAccounts\Account\Session\ShopSession;
 use PrestaShop\Module\PsAccounts\Account\ShopUrl;
 use PrestaShop\Module\PsAccounts\Account\StatusManager;
+use PrestaShop\Module\PsAccounts\Log\Logger;
 use PrestaShop\Module\PsAccounts\Provider\ShopProvider;
 use PrestaShop\Module\PsAccounts\Service\Accounts\AccountsException;
 use PrestaShop\Module\PsAccounts\Service\Accounts\AccountsService;
-use PrestaShop\Module\PsAccounts\Service\Accounts\Resource\ShopStatus;
 
 class VerifyIdentityHandler
 {
@@ -91,57 +91,34 @@ class VerifyIdentityHandler
      */
     public function handle(VerifyIdentityCommand $command)
     {
-        $status = $this->statusManager->getStatus(false, StatusManager::CACHE_TTL, $command->source);
-
-        $shopId = $command->shopId ?: \Shop::getContextShopID();
+        $shopId = $command->shopId;
+        $status = $this->statusManager->withSource($command->source)->getStatus();
+        $cloudShopUrl = ShopUrl::createFromStatus($status, $shopId);
 
         if (!$command->force && $status->isVerified) {
             return;
         }
 
-        if (!$command->force && $this->urlChanged($status, $shopId)) {
+        try {
+            if (!$command->force && !$cloudShopUrl->frontendUrlEquals($this->shopProvider->getUrl($shopId))) {
+                return;
+            }
+        } catch (\InvalidArgumentException $e) {
+            Logger::getInstance()->error($e->getMessage());
+
             return;
         }
 
-        $this->accountsService->verifyShopIdentity(
-            $this->statusManager->getCloudShopId(),
-            $this->shopSession->getValidToken(),
-            $this->shopProvider->getUrl($shopId),
-            $this->shopProvider->getName($shopId),
-            $this->proofManager->generateProof(),
-            $command->origin,
-            $command->source
-        );
+        $this->accountsService
+            ->withOrigin($command->origin)
+            ->withSource($command->source)
+            ->verifyShopIdentity(
+                $this->statusManager->getCloudShopId(),
+                $this->shopSession->getValidToken(),
+                $this->shopProvider->getUrl($shopId),
+                $this->shopProvider->getName($shopId),
+                $this->proofManager->generateProof()
+            );
         $this->statusManager->invalidateCache();
-    }
-
-    /**
-     * @param ShopStatus $status
-     * @param int $shopId
-     *
-     * @return bool
-     */
-    public function urlChanged(ShopStatus $status, $shopId)
-    {
-        $shopUrl = $this->shopProvider->getUrl($shopId);
-
-        $cloudShopUrl = new ShopUrl(
-            rtrim($status->backOfficeUrl, '/'),
-            rtrim($status->frontendUrl, '/'),
-            $shopId
-        );
-        $localShopUrl = new ShopUrl(
-            //rtrim($shopUrl->getBackOfficeUrl(), '/'),
-            // FIXME: we don't consider backoffice url here
-            rtrim($status->backOfficeUrl, '/'),
-            rtrim($shopUrl->getFrontendUrl(), '/'),
-            $shopId
-        );
-
-        if (!$cloudShopUrl->equals($localShopUrl)) {
-            return true;
-        }
-
-        return false;
     }
 }

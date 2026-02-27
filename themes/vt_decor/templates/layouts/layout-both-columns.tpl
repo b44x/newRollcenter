@@ -36,7 +36,14 @@
   </head>
 
   <body id="{$page.page_name}" class="{$page.body_classes|classnames}{if isset($profile_params['layout_mode'])} {$profile_params['layout_mode']}{/if}{if isset($profile_params['header_sticky']) && $profile_params['header_sticky']} keep-header{/if}{if isset($profile_params['footer_fixed']) && $profile_params['footer_fixed']} keep-footer{/if}">
-
+{block name='GTM_noscript'}
+	{literal}
+	<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-588KJGG"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	{/literal}
+{/block}
     {block name='hook_after_body_opening_tag'}
       {hook h='displayAfterBodyOpeningTag'}
     {/block}

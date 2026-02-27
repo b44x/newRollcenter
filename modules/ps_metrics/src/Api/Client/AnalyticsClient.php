@@ -20,13 +20,12 @@
  */
 namespace PrestaShop\Module\Ps_metrics\Api\Client;
 
-use PrestaShop\Module\Ps_metrics\Handler\GuzzleApiResponseExceptionHandler;
 use PrestaShop\Module\Ps_metrics\Middleware\CheckResponseMiddleware;
 use PrestaShop\Module\Ps_metrics\Middleware\LogMiddleware;
 use PrestaShop\Module\Ps_metrics\Middleware\ResponseMiddleware;
 use PrestaShop\Module\Ps_metrics\Middleware\SentryMiddleware;
-use ps_metrics_module_v4_0_10\PrestaShop\PsAccountsInstaller\Installer\Exception\InstallerException;
-use ps_metrics_module_v4_0_10\PrestaShop\PsAccountsInstaller\Installer\Facade\PsAccounts;
+use PrestaShop\PsAccountsInstaller\Installer\Exception\InstallerException;
+use PrestaShop\PsAccountsInstaller\Installer\Facade\PsAccounts;
 class AnalyticsClient extends \PrestaShop\Module\Ps_metrics\Api\Client\HttpFactory
 {
     /**
@@ -41,11 +40,10 @@ class AnalyticsClient extends \PrestaShop\Module\Ps_metrics\Api\Client\HttpFacto
      * @param LogMiddleware $logMiddleware
      * @param SentryMiddleware $sentryMiddleware
      * @param ResponseMiddleware $responseMiddleWare
-     * @param GuzzleApiResponseExceptionHandler $guzzleApiResponseExceptionHandler
      */
-    public function __construct(PsAccounts $psAccounts, CheckResponseMiddleware $checkResponseMiddleware, LogMiddleware $logMiddleware, SentryMiddleware $sentryMiddleware, ResponseMiddleWare $responseMiddleWare, GuzzleApiResponseExceptionHandler $guzzleApiResponseExceptionHandler)
+    public function __construct(PsAccounts $psAccounts, CheckResponseMiddleware $checkResponseMiddleware, LogMiddleware $logMiddleware, SentryMiddleware $sentryMiddleware, ResponseMiddleWare $responseMiddleWare)
     {
-        parent::__construct($checkResponseMiddleware, $logMiddleware, $sentryMiddleware, $responseMiddleWare, $guzzleApiResponseExceptionHandler);
+        parent::__construct($checkResponseMiddleware, $logMiddleware, $sentryMiddleware, $responseMiddleWare);
         $this->psAccountsService = $psAccounts;
     }
     /**

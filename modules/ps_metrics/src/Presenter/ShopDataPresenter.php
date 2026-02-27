@@ -27,8 +27,8 @@ use PrestaShop\Module\Ps_metrics\Helper\ToolsHelper;
 use PrestaShop\Module\Ps_metrics\Module\GAInstaller;
 use PrestaShop\Module\Ps_metrics\Provider\AnalyticsAccountsListProvider;
 use PrestaShop\Module\Ps_metrics\Repository\ConfigurationRepository;
-use ps_metrics_module_v4_0_10\PrestaShop\PsAccountsInstaller\Installer\Exception\InstallerException;
-use ps_metrics_module_v4_0_10\PrestaShop\PsAccountsInstaller\Installer\Facade\PsAccounts;
+use PrestaShop\PsAccountsInstaller\Installer\Exception\InstallerException;
+use PrestaShop\PsAccountsInstaller\Installer\Facade\PsAccounts;
 class ShopDataPresenter
 {
     /**

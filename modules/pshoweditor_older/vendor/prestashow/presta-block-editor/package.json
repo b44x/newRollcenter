@@ -1,0 +1,21 @@
+{
+    "name": "pshoweditorjs",
+    "version": "1.0.0",
+    "source": "./src-js/index.js",
+    "scripts": {
+        "watch": "npm run copy-css && parcel watch",
+        "build": "npm run copy-css && parcel build",
+        "copy-css": "cp ./src-js/editor/css/*.min.css ./dist/"
+    },
+    "devDependencies": {
+        "parcel": "latest"
+    },
+    "targets": {
+        "default": {
+            "distDir": "./dist/",
+            "optimize": true,
+            "outputFormat": "global"
+        }
+    },
+    "outputFormat": "global"
+}

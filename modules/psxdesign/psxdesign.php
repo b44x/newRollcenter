@@ -60,7 +60,7 @@ class PsxDesign extends Module
     {
         $this->name = 'psxdesign';
         $this->tab = 'others';
-        $this->version = '2.0.1';
+        $this->version = '2.0.3';
         $this->author = 'PrestaShop';
         $this->need_instance = 1;
         $this->module_key = '82148d7b60bbd40f98c65ac7ae3e431a';
@@ -82,7 +82,7 @@ class PsxDesign extends Module
 
         $this->ps_versions_compliancy = [
             'min' => '8',
-            'max' => '9.0.1',
+            'max' => '9.1.0',
         ];
 
         $this->setServiceContainer();

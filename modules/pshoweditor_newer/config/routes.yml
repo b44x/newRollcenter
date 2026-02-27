@@ -1,0 +1,11 @@
+pshoweditor_admin_image_list:
+  path: pshoweditor/image/list
+  methods: [ GET ]
+  defaults:
+    _controller: 'Prestashow\PShowEditor\Controller\Admin\ImageController::listAction'
+
+pshoweditor_admin_image_upload:
+  path: pshoweditor/image/upload
+  methods: [ POST ]
+  defaults:
+    _controller: 'Prestashow\PShowEditor\Controller\Admin\ImageController::uploadAction'

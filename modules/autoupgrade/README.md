@@ -43,7 +43,7 @@
 This module allows to update your store to a more recent version of PrestaShop. It can be used as a CLI tool or with a web assistant.
 The latest versions of the module are compatible with all PrestaShop 1.7 and higher releases.
 
-> [!IMPORTANT]  
+> [!IMPORTANT]
 > This module has a specific [Release Process][release-process]. If you do release a new version, make sure to follow it.
 
 ## Branches
@@ -87,7 +87,7 @@ If you download a ZIP archive that contains the source code or if you want to us
 * Enter into folder **autoupgrade** and run the command `composer install`  ([composer](https://getcomposer.org/)).
 * Enter into folder **autoupgrade/_dev** and run the commands `npm install` and `npm run vite:build` ([npm](https://docs.npmjs.com/)).
 * Create a new ZIP archive from the of **autoupgrade** folder.
-* Now you can install it in your store. For example, you can upload it using the dropzone in Module Manager back office page. 
+* Now you can install it in your store. For example, you can upload it using the dropzone in Module Manager back office page.
 
 ## Running an update on PrestaShop
 
@@ -110,7 +110,13 @@ $ php bin/console
 The requirements can be reviewed to confirm the store is safe to update:
 
 ```
-$ php bin/console update:check <your-admin-dir>
+$ php bin/console update:check-requirements <your-admin-dir>
+```
+
+To see which new versions are available for your installation use:
+
+```
+$ php bin/console update:check-new-version <your-admin-dir>
 ```
 
 A backup of the store is created with:
@@ -122,12 +128,12 @@ $ php bin/console backup:create --config-file-path=[/path/to/config.json] <your-
 The update process can be launched with:
 
 ```
-$ php bin/console update:start --config-file-path=[/path/to/config.json] --chain <your-admin-dir>
+$ php bin/console update:start --config-file-path=[/path/to/config.json] <your-admin-dir>
 ```
 
 You can see all available parameters and options directly from the console by using the `--help` option with any command.
 
-For more information on using commands, please refer to the [PrestaShop developer documentation](https://devdocs.prestashop-project.org/8/basics/keeping-up-to-date/upgrade-module/upgrade-cli/)
+For more information on using commands, please refer to the [PrestaShop developer documentation](https://devdocs.prestashop-project.org/9/basics/keeping-up-to-date/update/update-from-the-cli/)
 
 ### Configuration file
 
@@ -165,13 +171,14 @@ $ php bin/console backup:restore --backup=[backup-name] <your-admin-dir>
 
 You can see all available parameters and options directly from the console by using the `--help` option with any command.
 
-For more information on using commands, please refer to the [PrestaShop developer documentation](https://devdocs.prestashop-project.org/8/basics/keeping-up-to-date/upgrade-module/upgrade-cli/#rollback-cli)
+For more information on using commands, please refer to the [PrestaShop developer documentation](https://devdocs.prestashop-project.org/9/basics/keeping-up-to-date/update/update-from-the-cli/#backuprestore-command)
 
 ## Channels
 
-There are 2 channels available for an update:
+There are 3 channels available for an update:
 
 * `online` - This channel corresponds to the official "online" update for your store, detected by PrestaShop APIs (major, minor or patch versions). This update is the most recent version of PrestaShop compatible with the PHP version of your server.
+* `online_recommended` - The recommended version of PrestaShop to which you can update your store, based on its PHP version.
 * `local` - This channel corresponds to the “local” update, displaying customized updates detected inside your server `[your-admin-dir]/autoupgrade/download` folder (based on .ZIP and .XML files).
 
 ## Configuration Parameters
@@ -182,7 +189,8 @@ impact.
 
 | Command                                     | Configuration file key                        | CLI option                     | Possible Values                                                                         | Description                                                                                                                                   |
 |---------------------------------------------|-----------------------------------------------|--------------------------------|-----------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
-| `update:start`                              | `channel`                                     | `--channel`                    | `online` (default), `local`                                                             | Defines the update channel to use. The `local` channel requires specific files to be placed in the download folder.                           |
+| `update:start`                              | `channel`                                     | `--channel`                    | `online`, `online_recommended` (default), `local`                                       | Defines the update channel to use. The `local` channel requires specific files to be placed in the download folder.                           |
+| `update:start`                              | `chain`                                       | `--chain`                      | `true` (default), `false`, `'true'`, `'false'`, `'1'`, `'0'`, `1`, `0`, `'on'`, `'off'` | True by default. Allows you to chain update commands automatically. The command will continue executing subsequent tasks without requiring manual intervention to restart the process. |
 | `update:start`, `update:check-requirements` | `archive_zip`                                 | `--zip`                        | Valid file name                                                                         | Name of the `ZIP` file to use for an update via the archive channel. This file must be placed in `[your-admin-dir]/autoupgrade/download`.     |
 | `update:start`, `update:check-requirements` | `archive_xml`                                 | `--xml`                        | Valid file name                                                                         | Name of the `XML` file corresponding to the ZIP file for the archive channel. Must also be placed in `[your-admin-dir]/autoupgrade/download`. |
 | `update:start`                              | `PS_AUTOUP_CUSTOM_MOD_DESACT`                 | `--disable-non-native-modules` | `true` (default), `false`, `'true'`, `'false'`, `'1'`, `'0'`, `1`, `0`, `'on'`, `'off'` | If enabled, disables all non-native modules before the update, reducing the risk of compatibility issues.                                     |
@@ -355,7 +363,7 @@ This module is released under the [Academic Free License 3.0][AFL-3.0]
 [report-issue]: https://github.com/PrestaShop/PrestaShop/issues/new/choose
 [prestashop]: https://www.prestashop-project.org/
 [prestashop-privacy]: https://www.prestashop-project.org/data-transparency/
-[contribution-guidelines]: https://devdocs.prestashop-project.org/8/contribute/contribution-guidelines/project-modules/
+[contribution-guidelines]: https://devdocs.prestashop-project.org/9/contribute/contribution-guidelines/project-modules/
 [AFL-3.0]: https://opensource.org/licenses/AFL-3.0
-[doc]: https://devdocs.prestashop-project.org/8/basics/keeping-up-to-date/upgrade-module/
+[doc]: https://devdocs.prestashop-project.org/9/basics/keeping-up-to-date/update/
 [release-process]: https://www.prestashop-project.org/maintainers-guide/processes/release/autoupgrade/

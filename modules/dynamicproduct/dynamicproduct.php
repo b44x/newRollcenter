@@ -699,6 +699,7 @@ class DynamicProduct extends Module
 
         $controller_name = Tools::getValue('controller');
 
+
         if ($controller_name === 'product') {
             $id_product = (int) Tools::getValue('id_product');
 
@@ -785,7 +786,7 @@ class DynamicProduct extends Module
                 $this->media->getThemeCSSDir() . 'dynamic' . $id_source_product . '.css',
             ]);
         }
-
+$scripts[] = 'views/js/dynamicproduct-enhancements.js';
         Media::addJsDef([
             'dp_scripts' => array_map(function ($script) {
                 return $this->getPathUri() . $script;

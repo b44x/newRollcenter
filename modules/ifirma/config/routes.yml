@@ -1,0 +1,11 @@
+ifirma_send_invoice:
+  path: /send/{id}/{type}
+  methods: [GET]
+  defaults:
+    _controller: Ifirma\Controller\Admin\IfirmaController::sendInvoiceAction
+
+ifirma_get_invoice:
+  path: /get/{id}
+  methods: [GET]
+  defaults:
+    _controller: Ifirma\Controller\Admin\IfirmaController::getInvoiceAction

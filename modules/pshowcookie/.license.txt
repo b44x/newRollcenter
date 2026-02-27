@@ -1,0 +1,33 @@
+Expires: 21 Nov 2035
+Server restriction: rollcenter.pl,rollcenter.pl,*.rollcenter.pl,*.local
+
+------ LICENSE FILE DATA -------
+V2UU8839qaM7BuW3u6NdKDDzN6g1FpGO
+4e71y3YrwEdEGvnSzOuVmsOiO4xCcF6Q
+UOzd9otj6tr+IvxXC/oeFf9LDAAiiWjr
+7K6nNG/jJqAq2+QBrFnbs3VS8FJJxIzS
+gFnWcbI3crHv3yHwp8u1xuejhMLeWHm8
+DlLijxrb/fNugeROEZTETDLTJPUxEeXQ
+gL7sZs64lgRUhcua1MZXZv5iDK9hWpYi
+H+6kwhT3HOczqtznnl5sw7U3AApPuaX+
+LsVI6Oio+IA5ZUCx60dms614k/zDw97M
+qB37+REJH6UqOHS8SMwhAW9wMndl5fTU
+R4TY/P3OPpL9Eg+UawuOxSLMo2gBPUsh
+aTXhdyBuzCjuX7+hUl24710U/d/rBbpV
+zw4vmG3IUfTcWC/b6DZioIeLeKTbGx1P
+2VJQ1OPg0REk8mFcwU3t8HEWzNmjK7QV
+Q6Tm4VHTr2BxiudwixzyEx8TlVtyozLL
+21Rmq3gLQmjrFFktmszWP858JOliKmkN
+emE3QOG15Bw73O8xHSoV+IH92Wuj/i+T
+KsmK097y4RxLVTTztVIEx+IQMlvepF9O
+MXBrKYzMMd1tkiXy1z0TPl2Wu/S2K5du
+KWV2dIRFqpsF532+uhnJDR5Vdl/WkPzW
+0RS7qcL6FT9ypjUnl8GaQgqDmEek7wro
+Rlr5oZBajGhXJgWPp1ztN7LRo9B3yMbL
+t3CkuXgrwU6ENtTIXrcuGvSPZdJLOtMO
+xRAICYPiJw/knadNWsTUeFxdPIpFks7U
+xsDXnNpoy3Q2c/RSL/YIujVyQ+h/xYJU
+FMcapu+dP5oOCljfS3+UyovaqQ0OUsH8
+Do0EC/5WfVsb1ovh2se5gXpJPKTyamdM
+KVTEWPEUoxBWunK74155kwrL1wZm
+--------------------------------

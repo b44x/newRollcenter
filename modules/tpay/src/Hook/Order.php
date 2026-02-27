@@ -22,7 +22,7 @@ use Order as PrestaOrder;
 use Currency;
 use Exception;
 use PrestaShopException;
-use tpaySDK\Utilities\Util;
+use Tpay\OpenApi\Utilities\Util;
 
 class Order extends AbstractHook
 {
@@ -78,7 +78,7 @@ class Order extends AbstractHook
             if ($surchargeValue > 0.00) {
                 $this->context->smarty->assign(
                     [
-                        'surcharge_title' => $this->module->l('Online payment fee'),
+                        'surcharge_title' => $this->module->getTranslator()->trans('Online payment fee', [], 'Modules.Tpay.Shop'),
                         'surcharge_cost' => Util::numberFormat($surchargeValue) . ' ' . $currency->getSign(),
                     ]
                 );

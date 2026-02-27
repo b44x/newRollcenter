@@ -20,7 +20,6 @@
  */
 namespace PrestaShop\Module\Ps_metrics\Api\Client;
 
-use PrestaShop\Module\Ps_metrics\Handler\GuzzleApiResponseExceptionHandler;
 use PrestaShop\Module\Ps_metrics\Middleware\CheckResponseMiddleware;
 use PrestaShop\Module\Ps_metrics\Middleware\LogMiddleware;
 use PrestaShop\Module\Ps_metrics\Middleware\ResponseMiddleware;
@@ -34,10 +33,9 @@ class HttpClient extends \PrestaShop\Module\Ps_metrics\Api\Client\HttpFactory
      * @param LogMiddleware $logMiddleware
      * @param SentryMiddleware $sentryMiddleware
      * @param ResponseMiddleware $responseMiddleWare
-     * @param GuzzleApiResponseExceptionHandler $guzzleApiResponseExceptionHandler
      */
-    public function __construct(CheckResponseMiddleware $checkResponseMiddleware, LogMiddleware $logMiddleware, SentryMiddleware $sentryMiddleware, ResponseMiddleWare $responseMiddleWare, GuzzleApiResponseExceptionHandler $guzzleApiResponseExceptionHandler)
+    public function __construct(CheckResponseMiddleware $checkResponseMiddleware, LogMiddleware $logMiddleware, SentryMiddleware $sentryMiddleware, ResponseMiddleWare $responseMiddleWare)
     {
-        parent::__construct($checkResponseMiddleware, $logMiddleware, $sentryMiddleware, $responseMiddleWare, $guzzleApiResponseExceptionHandler);
+        parent::__construct($checkResponseMiddleware, $logMiddleware, $sentryMiddleware, $responseMiddleWare);
     }
 }

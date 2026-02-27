@@ -81,7 +81,7 @@
 				{if (!$too_early AND ($customer.is_logged OR $allow_guests))}
 					<a class="open-review-form" href="javascript:void(0)" data-id-product="{$id_product_tab_content}" data-is-logged="{$customer.is_logged}" data-product-link="{$link_product_tab_content}">
 						<i class="material-icons">&#xE150;</i>
-						{l s='Write a review' mod='leofeature'}
+						{l s='Dodaj opinię' mod='leofeature'}
 					</a>
 				{/if}
 			{else}

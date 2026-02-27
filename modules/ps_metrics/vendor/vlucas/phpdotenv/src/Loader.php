@@ -1,11 +1,11 @@
 <?php
 
-namespace ps_metrics_module_v4_0_10\Dotenv;
+namespace ps_metrics_module_v4_1_2\Dotenv;
 
-use ps_metrics_module_v4_0_10\Dotenv\Environment\FactoryInterface;
-use ps_metrics_module_v4_0_10\Dotenv\Exception\InvalidPathException;
-use ps_metrics_module_v4_0_10\Dotenv\Regex\Regex;
-use ps_metrics_module_v4_0_10\PhpOption\Option;
+use ps_metrics_module_v4_1_2\Dotenv\Environment\FactoryInterface;
+use ps_metrics_module_v4_1_2\Dotenv\Exception\InvalidPathException;
+use ps_metrics_module_v4_1_2\Dotenv\Regex\Regex;
+use ps_metrics_module_v4_1_2\PhpOption\Option;
 /**
  * This is the loader class.
  *

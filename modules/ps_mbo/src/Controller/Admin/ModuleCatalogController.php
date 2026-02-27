@@ -46,21 +46,6 @@ class ModuleCatalogController extends ModuleAbstractController
      */
     public function indexAction(): Response
     {
-        $moduleUri = __PS_BASE_URI__ . 'modules/ps_mbo/';
-
-        $extraParams = [
-            'cdc_error_templating_url' => $moduleUri . 'views/js/cdc-error-templating.js',
-            'cdc_error_templating_css' => $moduleUri . 'views/css/cdc-error-templating.css',
-        ];
-
-        $cdcJsFile = getenv('MBO_CDC_URL');
-        if (false === $cdcJsFile || !is_string($cdcJsFile) || empty($cdcJsFile)) {
-            $extraParams['cdc_script_not_found'] = true;
-            $extraParams['cdc_error_url'] = $moduleUri . 'views/js/cdc-error.js';
-        } else {
-            $extraParams['cdc_url'] = $cdcJsFile;
-        }
-
         /*********************
          * PrestaShop Account *
          * *******************/
@@ -69,7 +54,7 @@ class ModuleCatalogController extends ModuleAbstractController
         try {
             $accountsFacade = $this->get('mbo.ps_accounts.facade');
             $accountsService = $accountsFacade->getPsAccountsService();
-            if ($this->ensurePsAccountIsEnabled()) $this->ensurePsEventbusEnabled();
+            $this->ensurePsAccountIsEnabled();
         } catch (\PrestaShop\PsAccountsInstaller\Installer\Exception\InstallerException $e) {
             $accountsInstaller = $this->get('mbo.ps_accounts.installer');
             // Seems the module is not here, try to install it
@@ -116,7 +101,7 @@ class ModuleCatalogController extends ModuleAbstractController
                     'You do not have permission to add this.',
                     'Admin.Notifications.Error'
                 ),
-            ] + $extraParams
+            ]
         );
     }
 
@@ -135,20 +120,16 @@ class ModuleCatalogController extends ModuleAbstractController
     private function ensurePsAccountIsEnabled(): bool
     {
         $accountsInstaller = $this->get('mbo.ps_accounts.installer');
-        if (!$accountsInstaller) return false;
+        if (!$accountsInstaller) {
+            return false;
+        }
 
-        $accountsEnabled = $accountsInstaller->isModuleEnabled();
-        if ($accountsEnabled) return true;
+        if ($accountsInstaller->isModuleEnabled() && $accountsInstaller->checkModuleVersion()) {
+            return true;
+        }
 
         $moduleManager = $this->get('prestashop.module.manager');
-        return $moduleManager->enable($accountsInstaller->getModuleName());
-    }
 
-    private function ensurePsEventbusEnabled()
-    {
-        $installer = $this->get('mbo.ps_eventbus.installer');
-        if ($installer->install()) {
-            $installer->enable();
-        }
+        return $moduleManager->enable($accountsInstaller->getModuleName());
     }
 }

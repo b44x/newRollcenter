@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'prestashopcorp/psxdesign',
-        'pretty_version' => 'v2.0.1',
-        'version' => '2.0.1.0',
-        'reference' => '25ec18b6e78c71720bd563736f5f2d14cc271b70',
+        'pretty_version' => 'v2.0.3',
+        'version' => '2.0.3.0',
+        'reference' => '678e37ce131da6b8e95628fe6fff9774c574376a',
         'type' => 'prestashop-module',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -316,9 +316,9 @@
             'dev_requirement' => false,
         ),
         'prestashopcorp/psxdesign' => array(
-            'pretty_version' => 'v2.0.1',
-            'version' => '2.0.1.0',
-            'reference' => '25ec18b6e78c71720bd563736f5f2d14cc271b70',
+            'pretty_version' => 'v2.0.3',
+            'version' => '2.0.3.0',
+            'reference' => '678e37ce131da6b8e95628fe6fff9774c574376a',
             'type' => 'prestashop-module',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

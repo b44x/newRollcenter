@@ -1,0 +1,33 @@
+stages:
+  - test_php71
+  - test_php81
+  - test_php82
+  
+before_script:
+  - echo $CI_REGISTRY_PASSWORD | docker login -u $CI_REGISTRY_USER --password-stdin $CI_REGISTRY
+
+.test_php:
+  tags:
+    - docker
+  before_script:
+      - php -v
+  script:
+    - phplint *.php
+    - phplint **/*.php
+    - phplint **/*/*.php
+    - phplint **/*/*/*.php
+
+test_php71:
+  extends: .test_php
+  stage: test_php71
+  image: registry.gitlab.layersshow.com/prestashow/testing/php-71:latest
+
+test_php81:
+  extends: .test_php
+  stage: test_php81
+  image: registry.gitlab.layersshow.com/prestashow/testing/php-81:latest
+
+test_php82:
+  extends: .test_php
+  stage: test_php82
+  image: registry.gitlab.layersshow.com/prestashow/testing/php-82:latest

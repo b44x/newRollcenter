@@ -1,0 +1,203 @@
+/* === ROLLCENTER 2025 - REFATOR KONFIGURATORA PRODUKTU === */
+
+/* --- 1. Główny kontener "kalkulatora" --- */
+/* Nadajemy całości wygląd nowoczesnej "karty" */
+.product-customization {
+    background: #fdfdfd; /* Bardzo jasne tło, zamiast czystej bieli */
+    border: 1px solid var(--color-border, #eeeeee);
+    border-radius: var(--border-radius-main, 8px);
+    padding: 2rem 2.5rem; /* Więcej "oddechu" wewnątrz */
+    margin-top: 1.5rem;
+    box-shadow: var(--shadow-subtle, 0 2px 8px rgba(0,0,0,0.04));
+}
+
+/* --- 2. Grupy pól (np. "Wprowadź wymiary") --- */
+/* Dodajemy subtelne linie oddzielające sekcje */
+.product-customization-group {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--color-border, #eeeeee);
+}
+.product-customization-group:last-of-type {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+/* --- 3. Nagłówki grup (np. "Wprowadź wymiary okna") --- */
+/* Czyścimy stare style nagłówków */
+.product-customization-group h3 {
+    font-family: var(--font-main, 'Nunito Sans', sans-serif);
+    font-size: 1.6rem; /* Czytelny, duży nagłówek sekcji */
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 1.5rem;
+    border-bottom: none !important; /* Usuwamy stare style motywu */
+    padding-bottom: 0 !important;
+}
+
+/* --- 4. Etykiety pól (np. "Szerokość A...") --- */
+.product-customization-item label {
+    font-weight: 600;
+    color: var(--color-text, #333);
+    font-size: 1rem;
+    margin-bottom: 0.5rem; /* Odstęp od pola input */
+}
+
+/* --- 5. Nowoczesne pola Input i Select --- */
+/* Ujednolicamy wygląd wszystkich pól tekstowych i list rozwijanych */
+.product-customization-item input[type="text"],
+.product-customization-item select {
+    background-color: #FFFFFF !important;
+    border: 1px solid #ced4da !important; /* Standardowa, neutralna ramka */
+    border-radius: var(--border-radius-main, 6px) !important;
+    padding: 0.75rem 1rem !important; /* Wygodne pole do kliknięcia */
+    width: 100%;
+    height: auto; /* Resetujemy wysokość */
+    font-family: var(--font-main, 'Nunito Sans', sans-serif);
+    font-size: 1.1rem; /* Większa czcionka w polu */
+    color: var(--color-text, #333);
+    box-shadow: none !important;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Efekt :focus - kluczowy dla nowoczesnego wyglądu */
+.product-customization-item input[type="text"]:focus,
+.product-customization-item select:focus {
+    border-color: var(--color-primary, #94532b) !important;
+    box-shadow: 0 0 0 3px rgba(148, 83, 43, 0.15) !important; /* Używam Twojego koloru */
+    outline: none;
+}
+
+/* --- 6. Poprawka "info" - robimy z tego ikonkę --- */
+/* Zamiast tekstu "info", robimy estetyczną ikonkę 'i' */
+span.product-customization-info {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    background-color: #f0f0f0;
+    color: #777;
+    font-family: var(--font-main, 'Nunito Sans');
+    font-weight: 700;
+    font-size: 12px;
+    border: 1px solid #ddd;
+    border-radius: 50%; /* Kółko */
+    cursor: help;
+    margin-left: 5px;
+    vertical-align: middle;
+    transition: all 0.2s ease;
+    text-indent: -9999px; /* Ukrywamy tekst "info" */
+    position: relative;
+}
+span.product-customization-info::after {
+    content: 'i'; /* Zastępujemy 'info' literką 'i' */
+    font-style: italic;
+    font-weight: bold;
+    font-family: 'Times New Roman', serif; /* 'i' z szeryfem wygląda dobrze */
+    text-indent: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: #777;
+    transition: color 0.2s ease;
+}
+span.product-customization-info:hover {
+    background-color: var(--color-primary, #94532b);
+    border-color: var(--color-primary, #94532b);
+}
+span.product-customization-info:hover::after {
+    color: #FFFFFF;
+}
+
+
+/* --- 7. NAPRAWA Przycisków +/- (Spinner) --- */
+/* To jest kluczowa zmiana - robimy układ [ - ] [ 100 ] [ + ] */
+
+/* Używamy Flexboxa do zmiany kolejności */
+.product-customization-item .bootstrap-touchspin {
+    display: flex;
+    flex-direction: row;
+}
+
+/* Ustawiamy input w środku */
+.product-customization-item .bootstrap-touchspin .form-control {
+    order: 2;
+    text-align: center;
+    border-left: none !important;
+    border-right: none !important;
+    border-radius: 0 !important;
+    z-index: 1;
+    font-size: 1.1rem !important;
+    font-weight: 600;
+}
+
+/* Przycisk "w dół" (-) */
+.product-customization-item .bootstrap-touchspin .bootstrap-touchspin-down {
+    order: 1; /* Pierwszy z lewej */
+}
+/* Przycisk "w górę" (+) */
+.product-customization-item .bootstrap-touchspin .bootstrap-touchspin-up {
+    order: 3; /* Ostatni z prawej */
+}
+
+/* Wspólne style dla OBU przycisków +/- */
+.product-customization-item .bootstrap-touchspin .bootstrap-touchspin-down,
+.product-customization-item .bootstrap-touchspin .bootstrap-touchspin-up {
+    font-size: 0 !important; /* CHOWAMY tekst "keyboard_arrow_..." */
+    background-image: none !important;
+    background-color: #FFFFFF !important;
+    border: 1px solid #ced4da !important;
+    box-shadow: none !important;
+    padding: 0.75rem 1.2rem !important; /* Dopasowujemy do inputa */
+    position: relative;
+    z-index: 2;
+    transition: all 0.2s ease;
+}
+
+/* Zaokrąglenia rogów */
+.product-customization-item .bootstrap-touchspin .bootstrap-touchspin-down {
+     border-radius: var(--border-radius-main, 6px) 0 0 var(--border-radius-main, 6px) !important;
+}
+.product-customization-item .bootstrap-touchspin .bootstrap-touchspin-up {
+     border-radius: 0 var(--border-radius-main, 6px) var(--border-radius-main, 6px) 0 !important;
+}
+
+/* Dodajemy własne ikonki "+" i "−" */
+.product-customization-item .bootstrap-touchspin .bootstrap-touchspin-down::after {
+    content: '−'; /* To jest znak minus, nie dywiz */
+    font-size: 20px;
+    font-weight: bold;
+    color: #555;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 1;
+}
+.product-customization-item .bootstrap-touchspin .bootstrap-touchspin-up::after {
+    content: '+';
+    font-size: 20px;
+    font-weight: bold;
+    color: #555;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 1;
+}
+
+/* Efekt Hover dla przycisków +/- */
+.product-customization-item .bootstrap-touchspin .bootstrap-touchspin-down:hover,
+.product-customization-item .bootstrap-touchspin .bootstrap-touchspin-up:hover {
+    background-color: #f8f8f8 !important;
+    border-color: var(--color-primary, #94532b) !important;
+    z-index: 3;
+}
+.product-customization-item .bootstrap-touchspin .bootstrap-touchspin-down:hover::after,
+.product-customization-item .bootstrap-touchspin .bootstrap-touchspin-up:hover::after {
+    color: var(--color-primary, #94532b);
+}

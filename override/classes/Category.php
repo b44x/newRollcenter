@@ -15,38 +15,38 @@
 class Category extends CategoryCore {
 	/*
     * module: leoelements
-    * date: 2025-03-27 14:42:17
+    * date: 2025-11-17 21:25:14
     * version: 1.0.4
     */
     public $leoe_layout;
 	/*
     * module: leoelements
-    * date: 2025-03-27 14:42:17
+    * date: 2025-11-17 21:25:14
     * version: 1.0.4
     */
     public $leoe_layout_mobile;
 	/*
     * module: leoelements
-    * date: 2025-03-27 14:42:17
+    * date: 2025-11-17 21:25:14
     * version: 1.0.4
     */
     public $leoe_layout_tablet;
 	/*
     * module: leoelements
-    * date: 2025-03-27 14:42:17
+    * date: 2025-11-17 21:25:14
     * version: 1.0.4
     */
     public $leoe_extra_1;
 	/*
     * module: leoelements
-    * date: 2025-03-27 14:42:17
+    * date: 2025-11-17 21:25:14
     * version: 1.0.4
     */
     public $leoe_extra_2;
 	 
 	/*
     * module: leoelements
-    * date: 2025-03-27 14:42:17
+    * date: 2025-11-17 21:25:14
     * version: 1.0.4
     */
     public function __construct($idCategory = null, $idLang = null, $idShop = null){

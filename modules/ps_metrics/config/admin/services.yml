@@ -33,7 +33,6 @@ services:
       - "@ps_metrics.middleware.log"
       - "@ps_metrics.middleware.sentry"
       - "@ps_metrics.middleware.response"
-      - "@ps_metrics.handler.guzzleapi"
 
   ps_metrics.api.client.http:
     class: 'PrestaShop\Module\Ps_metrics\Api\Client\HttpClient'
@@ -43,7 +42,6 @@ services:
       - "@ps_metrics.middleware.log"
       - "@ps_metrics.middleware.sentry"
       - "@ps_metrics.middleware.response"
-      - "@ps_metrics.handler.guzzleapi"
 
   ps_metrics.api.client.analytics:
     class: 'PrestaShop\Module\Ps_metrics\Api\Client\AnalyticsClient'
@@ -54,7 +52,6 @@ services:
       - "@ps_metrics.middleware.log"
       - "@ps_metrics.middleware.sentry"
       - "@ps_metrics.middleware.response"
-      - "@ps_metrics.handler.guzzleapi"
 
   ps_metrics.api.manager:
     class: 'PrestaShop\Module\Ps_metrics\Api\ApiManager'

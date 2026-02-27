@@ -1,0 +1,24 @@
+ 
+
+{shop_url}
+
+Witaj {firstname} {lastname},
+
+Numer zamówienia {order_name} - Oczekujemy na wpłatę za Twoje zamówienie
+
+Dziękujemy za złożenie zamówienia! 🙌
+Aktualnie zamówienie ma status: Oczekuje na wpłatę.
+Aby przekazać je do realizacji, potrzebujemy zaksięgować Twoją płatność. Dane do przelewu znajdziesz w podsumowaniu zamówienia.
+Po otrzymaniu wpłaty, ruszamy z produkcją!
+Masz pytania? Śmiało pisz!
+
+Pozdrawiamy
+rolety24.net
+
+
+Przejdź do swojego konta klienta, aby dowiedzieć się więcej na ten temat.
+
+Jeśli posiadasz konto gościa, możesz śledzić swoje zamówienie na stronie [Śledzenie Zamówienia]({guest_tracking_url}) w naszym sklepie.
+
+[{shop_name}]({shop_url})
+

@@ -75,7 +75,7 @@ class MetricsController extends FrameworkBundleAdminController
             $eventbusModule = \Module::getInstanceByName('ps_eventbus');
             $eventbusScope = ['info', 'modules', 'themes', 'products', 'categories', 'orders', 'carts', 'carriers'];
             if (\version_compare($eventbusModule->version, '1.9.0', '>=')) {
-                $eventbusPresenterService = $this->module->getService('PrestaShop\\Module\\PsEventbus\\Service\\PresenterService');
+                $eventbusPresenterService = $eventbusModule->getService('PrestaShop\\Module\\PsEventbus\\Service\\PresenterService');
                 $contextPsEventbus = $eventbusPresenterService->expose($this->module, $eventbusScope);
             }
         }

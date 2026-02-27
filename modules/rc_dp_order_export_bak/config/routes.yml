@@ -1,0 +1,7 @@
+rc_dp_order_export_download:
+  path: /rc-dp-export/order/{orderId}/csv
+  methods: [GET]
+  defaults:
+    _controller: 'RcDpOrderExport\Controller\Admin\OrderExportController::download'
+  requirements:
+    orderId: '\d+'

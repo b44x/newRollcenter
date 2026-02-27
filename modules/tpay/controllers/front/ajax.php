@@ -85,7 +85,7 @@ class TpayAjaxModuleFrontController extends ModuleFrontController
 
         $presenterCart['subtotals']['payment'] = [
             'type' => 'payment',
-            'label' => $this->module->l('Online payment fee'),
+            'label' => $this->trans('Online payment fee', [], 'Shop.Theme.Checkout'),
             'amount' => 1,
             'value' => \Tools::displayPrice($surchargeService->getSurchargeValue($orderTotal)),
         ];
@@ -93,7 +93,7 @@ class TpayAjaxModuleFrontController extends ModuleFrontController
         $presenterCart['totals'] = [
             'total' => [
                 'type' => 'total',
-                'label' => $this->translator->trans('Total', [], 'Shop.Theme.Checkout'),
+                'label' => $this->trans('Total', [], 'Shop.Theme.Checkout'),
                 'amount' => $taxConfiguration->includeTaxes() ? $totalIncludingTax : $totalExcludingTax,
                 'value' => \Tools::displayPrice(
 
@@ -102,13 +102,13 @@ class TpayAjaxModuleFrontController extends ModuleFrontController
             ],
             'total_including_tax' => [
                 'type' => 'total',
-                'label' => $this->translator->trans('Total (tax incl.)', [], 'Shop.Theme.Checkout'),
+                'label' => $this->trans('Total (tax incl.)', [], 'Shop.Theme.Checkout'),
                 'amount' => $totalIncludingTax,
                 'value' => \Tools::displayPrice((float) $totalIncludingTax),
             ],
             'total_excluding_tax' => [
                 'type' => 'total',
-                'label' => $this->translator->trans('Total (tax excl.)', [], 'Shop.Theme.Checkout'),
+                'label' => $this->trans('Total (tax excl.)', [], 'Shop.Theme.Checkout'),
                 'amount' => $totalExcludingTax,
                 'value' => \Tools::displayPrice((float) $totalExcludingTax),
             ],
@@ -129,7 +129,7 @@ class TpayAjaxModuleFrontController extends ModuleFrontController
     {
         ob_end_clean();
         header('Content-Type: application/json');
-        $this->ajaxDie(
+        $this->ajaxRender(
             json_encode(
                 [
                     'cart_summary_subtotals_container' => $this->render('checkout/_partials/cart-summary-subtotals'),

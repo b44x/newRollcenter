@@ -1,9 +1,9 @@
 <?php
 
-namespace ps_metrics_module_v4_0_10\Dotenv\Regex;
+namespace ps_metrics_module_v4_1_2\Dotenv\Regex;
 
-use ps_metrics_module_v4_0_10\PhpOption\None;
-use ps_metrics_module_v4_0_10\PhpOption\Some;
+use ps_metrics_module_v4_1_2\PhpOption\None;
+use ps_metrics_module_v4_1_2\PhpOption\Some;
 class Error extends Result
 {
     /**

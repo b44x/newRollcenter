@@ -1,0 +1,9 @@
+{
+  "name": "rollcenter/rc-dp-order-export",
+  "type": "prestashop-module",
+  "autoload": {
+    "psr-4": {
+      "RcDpOrderExport\\": "src/"
+    }
+  }
+}

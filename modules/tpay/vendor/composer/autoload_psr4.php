@@ -10,6 +10,8 @@ return array(
     'Tpay\\OpenApi\\' => array($vendorDir . '/tpay-com/tpay-openapi-php/src'),
     'Tpay\\Example\\' => array($vendorDir . '/tpay-com/tpay-openapi-php/examples'),
     'Tpay\\' => array($baseDir . '/src'),
+    'Psr\\SimpleCache\\' => array($vendorDir . '/psr/simple-cache/src'),
     'Psr\\Log\\' => array($vendorDir . '/psr/log/Psr/Log'),
+    'Psr\\Cache\\' => array($vendorDir . '/psr/cache/src'),
     'ParagonIE\\ConstantTime\\' => array($vendorDir . '/paragonie/constant_time_encoding/src'),
 );

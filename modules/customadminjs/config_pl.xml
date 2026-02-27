@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<module>
+    <name>customadminjs</name>
+    <displayName><![CDATA[Custom Admin JS]]></displayName>
+    <version><![CDATA[1.0.0]]></version>
+    <description><![CDATA[Loads custom JS from another module into the admin panel]]></description>
+    <author><![CDATA[b4x]]></author>
+    <tab><![CDATA[administration]]></tab>
+    <is_configurable>0</is_configurable>
+    <need_instance>1</need_instance>
+</module>

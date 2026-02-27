@@ -1,10 +1,10 @@
 <?php
 
-namespace ps_metrics_module_v4_0_10;
+namespace ps_metrics_module_v4_1_2;
 
-use ps_metrics_module_v4_0_10\PHPUnit\Framework\TestCase;
-use ps_metrics_module_v4_0_10\Prestashop\ModuleLibMboInstaller\Installer;
-use ps_metrics_module_v4_0_10\Prestashop\ModuleLibMboInstaller\Presenter;
+use ps_metrics_module_v4_1_2\PHPUnit\Framework\TestCase;
+use ps_metrics_module_v4_1_2\Prestashop\ModuleLibMboInstaller\Installer;
+use ps_metrics_module_v4_1_2\Prestashop\ModuleLibMboInstaller\Presenter;
 class InstallationTest extends TestCase
 {
     protected function setUp() : void

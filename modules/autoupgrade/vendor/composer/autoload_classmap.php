@@ -158,7 +158,6 @@ return array(
     'PrestaShop\\Module\\AutoUpgrade\\UpgradeContainer' => $baseDir . '/classes/UpgradeContainer.php',
     'PrestaShop\\Module\\AutoUpgrade\\UpgradeSelfCheck' => $baseDir . '/classes/UpgradeSelfCheck.php',
     'PrestaShop\\Module\\AutoUpgrade\\UpgradeTools\\CacheCleaner' => $baseDir . '/classes/UpgradeTools/CacheCleaner.php',
-    'PrestaShop\\Module\\AutoUpgrade\\UpgradeTools\\CoreConsoleExecutable' => $baseDir . '/classes/UpgradeTools/CoreConsoleExecutable.php',
     'PrestaShop\\Module\\AutoUpgrade\\UpgradeTools\\CoreUpgrader\\CoreUpgrader' => $baseDir . '/classes/UpgradeTools/CoreUpgrader/CoreUpgrader.php',
     'PrestaShop\\Module\\AutoUpgrade\\UpgradeTools\\CoreUpgrader\\CoreUpgrader17' => $baseDir . '/classes/UpgradeTools/CoreUpgrader/CoreUpgrader17.php',
     'PrestaShop\\Module\\AutoUpgrade\\UpgradeTools\\CoreUpgrader\\CoreUpgrader80' => $baseDir . '/classes/UpgradeTools/CoreUpgrader/CoreUpgrader80.php',

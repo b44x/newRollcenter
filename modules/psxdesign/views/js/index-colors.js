@@ -22,7 +22,7 @@
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/OSL-3.0 Open Software License (OSL 3.0)
  */
-var l=Object.defineProperty;var u=(i,t,e)=>t in i?l(i,t,{enumerable:!0,configurable:!0,writable:!0,value:e}):i[t]=e;var o=(i,t,e)=>(u(i,typeof t!="symbol"?t+"":t,e),e);import{d as a}from"./assets/dom-utils-d77254b8.js";import{i as p,t as d,g as h,h as c}from"./assets/sentry-27c45384.js";import{I as m}from"./assets/save-banner-48cb1f80.js";/**
+var l=Object.defineProperty;var u=(i,t,e)=>t in i?l(i,t,{enumerable:!0,configurable:!0,writable:!0,value:e}):i[t]=e;var o=(i,t,e)=>(u(i,typeof t!="symbol"?t+"":t,e),e);import{d as a}from"./assets/dom-utils-d77254b8.js";import{i as p,t as d,g as h,h as c}from"./assets/sentry-63709216.js";import{I as m}from"./assets/save-banner-48cb1f80.js";/**
  * Copyright since 2007 PrestaShop SA and Contributors
  * PrestaShop is an International Registered Trademark & Property of PrestaShop SA
  *

@@ -1,8 +1,8 @@
 <?php
 
-namespace ps_metrics_module_v4_0_10\Dotenv\Environment\Adapter;
+namespace ps_metrics_module_v4_1_2\Dotenv\Environment\Adapter;
 
-use ps_metrics_module_v4_0_10\PhpOption\Option;
+use ps_metrics_module_v4_1_2\PhpOption\Option;
 class PutenvAdapter implements AdapterInterface
 {
     /**

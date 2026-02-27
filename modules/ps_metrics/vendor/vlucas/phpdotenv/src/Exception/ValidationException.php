@@ -1,6 +1,6 @@
 <?php
 
-namespace ps_metrics_module_v4_0_10\Dotenv\Exception;
+namespace ps_metrics_module_v4_1_2\Dotenv\Exception;
 
 use RuntimeException;
 /**

@@ -73,6 +73,8 @@ function SomeonePurchased()
 	});
 
 	function toggleSomething() {
+
+/*
 		if ($leoPopupSaleWrapper.hasClass('active')) {
 
 			//diplay time
@@ -91,10 +93,11 @@ function SomeonePurchased()
 			$leoPopupSaleWrapper.find('.leo-phone').text(data['phone']);
 			$leoPopupSaleWrapper.find('.leo-address').text(data['address']);
 		}
+*/
 	}
 
 	if (leointerval !== 0) {
 		//duration call function
-		setInterval(toggleSomething, leointerval);
+/*		setInterval(toggleSomething, leointerval);*/
 	}
 }

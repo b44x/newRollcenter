@@ -17,9 +17,12 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License version 3.0
  *#}
 
+
 {% extends fullscreen ? '@Modules/ps_metrics/views/templates/admin/fullscreen.html.twig' : '@PrestaShop/Admin/layout.html.twig' %}
 
 {% block content %}
+  {{ parent() }}
+
   <div id="error-loading-app" class="hide">
     {% include '@Modules/ps_metrics/views/templates/admin/error.html.twig' %}
   </div>
@@ -27,6 +30,8 @@
 {% endblock %}
 
 {% block stylesheets %}
+  {{ parent() }}
+
   {% if useLocalVueApp == false %}
     <link rel="stylesheet" href="{{ pathAssetsCdn }}" type="text/css" media="all">
   {% elseif  useLocalVueApp == true and useBuildModeOnly == true %}
@@ -42,6 +47,8 @@
 {% endblock %}
 
 {% block javascripts %}
+  {{ parent() }}
+
   <script>
     var oAuthGoogleErrorMessage = '{{ oAuthGoogleErrorMessage|raw }}';
     var fullscreen = {% if fullscreen %} true {% else %} false {% endif %};

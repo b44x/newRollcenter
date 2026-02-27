@@ -44,7 +44,7 @@ trait UseActionAdminControllerSetMedia
      */
     public function hookActionAdminControllerSetMedia(): void
     {
-        if (Tools::getValue('controller') === "AdminPsMboModule") {
+        if (Tools::getValue('controller') === 'AdminPsMboModule') {
             $this->context->controller->addJs(
                 sprintf('%sviews/js/upload_module_with_cdc.js?v=%s', $this->getPathUri(), $this->version)
             );
@@ -111,12 +111,13 @@ trait UseActionAdminControllerSetMedia
     private function loadCdcMedia(): void
     {
         $controllerName = Tools::getValue('controller');
-        if(!is_string($controllerName)) {
+        if (!is_string($controllerName)) {
             return;
         }
         if (
             !Tab::mayDisplayRecommendedModules($controllerName) &&
-            !in_array($controllerName, self::CONTROLLERS_WITH_CDC_SCRIPT)
+            !in_array($controllerName, self::CONTROLLERS_WITH_CDC_SCRIPT) &&
+            $controllerName !== 'AdminPsMboModule'
         ) {
             return;
         }

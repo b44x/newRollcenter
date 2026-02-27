@@ -1,11 +1,12 @@
 <?php
 
-namespace ps_metrics_module_v4_0_10\Prestashop\ModuleLibMboInstaller;
+namespace ps_metrics_module_v4_1_2\Prestashop\ModuleLibMboInstaller;
 
+use PrestaShop\PrestaShop\Core\Addon\Module\ModuleManagerBuilder;
 class Presenter
 {
     /**
-     * @return array<string, string|boolean|null>
+     * @return array<string, string|bool|null>
      */
     public function present()
     {
@@ -17,6 +18,14 @@ class Presenter
         if ($mboModule) {
             $version = $mboModule->version;
         }
-        return ['isPresentOnDisk' => (bool) $mboModule, 'isInstalled' => $mboModule && \Module::isInstalled(Installer::MODULE_NAME), 'isEnabled' => $mboModule && \Module::isEnabled(Installer::MODULE_NAME), 'version' => $version];
+        $moduleManagerBuilder = ModuleManagerBuilder::getInstance();
+        if (\is_null($moduleManagerBuilder)) {
+            throw new \Exception('ModuleManagerBuilder::getInstance() failed');
+        }
+        $moduleManager = $moduleManagerBuilder->build();
+        if (\is_null($moduleManager)) {
+            throw new \Exception('ModuleManagerBuilder::build() failed');
+        }
+        return ['isPresentOnDisk' => (bool) $mboModule, 'isInstalled' => $mboModule && $moduleManager->isInstalled(Installer::MODULE_NAME), 'isEnabled' => $mboModule && $moduleManager->isEnabled(Installer::MODULE_NAME), 'version' => $version];
     }
 }

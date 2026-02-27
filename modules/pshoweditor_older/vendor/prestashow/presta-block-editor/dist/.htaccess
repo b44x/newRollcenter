@@ -1,0 +1,6 @@
+Order deny,allow
+Deny from all
+
+<Files ~ "(?i)^.*\.(js|css|map)$">
+    Allow from all
+</Files>

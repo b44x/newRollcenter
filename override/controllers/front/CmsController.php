@@ -16,7 +16,7 @@ class CmsController extends CmsControllerCore
 {
     /*
     * module: leoslideshow
-    * date: 2025-03-27 14:42:22
+    * date: 2025-11-17 21:25:18
     * version: 1.0.6
     */
     public function display()

@@ -15,7 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-namespace ps_metrics_module_v4_0_10\PhpOption;
+namespace ps_metrics_module_v4_1_2\PhpOption;
 
 use ArrayAccess;
 use IteratorAggregate;
@@ -58,13 +58,13 @@ abstract class Option implements IteratorAggregate
      * @template S
      *
      * @param array<string|int,S>|ArrayAccess<string|int,S>|null $array A potential array or \ArrayAccess value.
-     * @param string                                             $key   The key to check.
+     * @param string|int|null                                    $key   The key to check.
      *
      * @return Option<S>
      */
     public static function fromArraysValue($array, $key)
     {
-        if (!(\is_array($array) || $array instanceof ArrayAccess) || !isset($array[$key])) {
+        if ($key === null || !(\is_array($array) || $array instanceof ArrayAccess) || !isset($array[$key])) {
             return None::create();
         }
         return new Some($array[$key]);

@@ -105,7 +105,7 @@ final class Versions
   'symfony/service-contracts' => 'v2.5.2@4b426aac47d6427cc1a1d0f7e2ac724627f5966c',
   'symfony/stopwatch' => 'v5.4.21@f83692cd869a6f2391691d40a01e8acb89e76fee',
   'theseer/tokenizer' => '1.2.1@34a41e998c2183e22995f158c581e7b5e755ab9e',
-  'prestashopcorp/psxdesign' => 'v2.0.1@25ec18b6e78c71720bd563736f5f2d14cc271b70',
+  'prestashopcorp/psxdesign' => 'v2.0.3@678e37ce131da6b8e95628fe6fff9774c574376a',
 );
 
     private function __construct()

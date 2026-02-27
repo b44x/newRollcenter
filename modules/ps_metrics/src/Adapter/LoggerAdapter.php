@@ -20,12 +20,11 @@
  */
 namespace PrestaShop\Module\Ps_metrics\Adapter;
 
-use ps_metrics_module_v4_0_10\PrestaShopLogger;
-use Psr\Log\LoggerInterface;
+use ps_metrics_module_v4_1_2\PrestaShopLogger;
 /**
  * Class that bridge the PrestaShop implementation of Logger with Psr Logger interface.
  */
-class LoggerAdapter implements LoggerInterface
+class LoggerAdapter
 {
     /**
      * Detailed debug information
@@ -70,63 +69,91 @@ class LoggerAdapter implements LoggerInterface
      */
     const EMERGENCY = 600;
     /**
-     * {@inheritdoc}
+     * @param mixed $message
+     * @param array $context
+     *
+     * @return void
      */
     public function emergency($message, array $context = [])
     {
         $this->log(static::EMERGENCY, $message, $context);
     }
     /**
-     * {@inheritdoc}
+     * @param mixed $message
+     * @param array $context
+     *
+     * @return void
      */
     public function alert($message, array $context = [])
     {
         $this->log(static::ALERT, $message, $context);
     }
     /**
-     * {@inheritdoc}
+     * @param mixed $message
+     * @param array $context
+     *
+     * @return void
      */
     public function critical($message, array $context = [])
     {
         $this->log(static::CRITICAL, $message, $context);
     }
     /**
-     * {@inheritdoc}
+     * @param mixed $message
+     * @param array $context
+     *
+     * @return void
      */
     public function error($message, array $context = [])
     {
         $this->log(static::ERROR, $message, $context);
     }
     /**
-     * {@inheritdoc}
+     * @param mixed $message
+     * @param array $context
+     *
+     * @return void
      */
     public function warning($message, array $context = [])
     {
         $this->log(static::WARNING, $message, $context);
     }
     /**
-     * {@inheritdoc}
+     * @param mixed $message
+     * @param array $context
+     *
+     * @return void
      */
     public function notice($message, array $context = [])
     {
         $this->log(static::NOTICE, $message, $context);
     }
     /**
-     * {@inheritdoc}
+     * @param mixed $message
+     * @param array $context
+     *
+     * @return void
      */
     public function info($message, array $context = [])
     {
         $this->log(static::INFO, $message, $context);
     }
     /**
-     * {@inheritdoc}
+     * @param mixed $message
+     * @param array $context
+     *
+     * @return void
      */
     public function debug($message, array $context = [])
     {
         $this->log(static::DEBUG, $message, $context);
     }
     /**
-     * {@inheritdoc}
+     * @param int $level
+     * @param mixed $message
+     * @param array $context
+     *
+     * @return void
      */
     public function log($level, $message, array $context = [])
     {

@@ -1,0 +1,214 @@
+/**
+ * 2024 ALCALINK E-COMMERCE & SEO, S.L.L.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@prestashop.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ *
+ * @author ALCALINK E-COMMERCE & SEO, S.L.L. <info@alcalink.com>
+ * @copyright  2024 ALCALINK E-COMMERCE & SEO, S.L.L.
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ *
+ * Registered Trademark & Property of ALCALINK E-COMMERCE & SEO, S.L.L.
+*/
+#alc_modules .h1, #alc_modules .h2, #alc_modules .h3, #alc_modules .h4, #alc_modules .h5, #alc_modules .h6, #alc_modules h1, #alc_modules h2, #alc_modules h3, #alc_modules h4, #alc_modules h5, #alc_modules h6 {font-family: Ubuntu Condensed,Helvetica,Arial,sans-serif !important;font-weight: 400 !important;line-height: 1.1 !important;}
+#alc_modules .alert.alert-info::before, #alc_modules .alert.alert-success::before, #alc_modules .alert.alert-warning::before, #alc_modules .alert.alert-danger::before {font-size:35px !important;}
+#alc_modules .panel{border-radius:0 !important; box-shadow: 0 1px 1px rgba(0,0,0,.05);}
+#alc_modules .panel-body{padding:0 !important;}
+#alc_modules .panel-body .panel{border:0 !important;}
+#alc_modules .panel .panel-footer{margin:0 !important;border:0 !important;background:transparent !important;}
+#alc_modules .pts-content-current-tab {font-size:15px !important;}
+#alc_modules .panel_modules {display:block;background-color: #fff;border: 1px solid#d3d8db;padding: 20px;margin-bottom:10px;position: relative;overflow:hidden;margin-left:5px;margin-right:5px;height:152px !important; overflow: hidden;}
+#alc_modules h3{font-size:15px !important;}
+#alc_modules h4{font-size:15px !important;}
+#alc_modules p, #alc_modules ol li, #alc_modules ul li{font-size:13px !important;}
+#alc_modules ul.nav li{font-size:14px !important;}
+#alc_modules ul.alc_version {background: #ffffff !important;padding-inline-start:0 !important;}
+#alc_modules ul.alc_version li{font-family: Ubuntu Condensed,Helvetica,Arial,sans-serif !important; font-size:13px !important;list-style: none !important;padding: 10px 15px !important;border:1px solid #ddd !important; text-transform:uppercase;}
+#alc_modules .control-label{text-align:left !important;}
+#alc_modules .menuizdo{margin-bottom:10px !important;border: 1px solid #ddd !important;}
+#alc_modules .menuizdo li a {background: #ffffff !important;border: 1px #f2f2f2 solid;}
+#alc_modules .menuizdo li.titulomenu {background: #fff;color: #333;}
+#alc_modules .menuizdo li.titulomenu a {color: #666;font-weight: bold;}
+#alc_modules .menuizdo li a:hover,#alc_modules .menuizdo li.active a  {background: #00aff0 !important;color: #fff;}
+#alc_modules label.control-label span.label-tooltip {text-decoration: none;font-size: 13px;color: #3586AE;background-color: transparent !important;border: none;border:0;padding: 0;-webkit-border-radius: 3px;border-radius: 3px;font-weight: bold;}
+#alc_modules .nopadding {padding-left: 0px !important;padding-right: 0px !important;}
+#alc_modules .cust_action {text-align: center;float: right;padding: 12px 18px;color: #fff;background: #00aff0;text-transform: uppercase;font-weight: 600;font-size: 14px;margin-top: 15px;}
+#alc_modules .input-group-addon {padding: 6px 8px;font-size: 12px;font-weight: normal;line-height: 1;color: #555;text-align: center;background-color: #F5F8F9;border-top: 1px solid #C7D6DB;}
+#alc_modules .input-group-addon, #alc_modules .input-group-btn {width: 1%;white-space: nowrap;vertical-align: middle;}
+#alc_modules p.radio{margin-left:20px !important;}
+#alc_modules .alc_table{background: #FFFFFF !important;color:#FFF !important;border-collapse:separate !important;width:100% !important;}
+#alc_modules .alc_table .help{float:left !important;width:120px !important;height:105px !important;margin:4% 4%; text-align:center !important;color:#FF8A00 !important;font-weight:600 !important;font-size:13px;}
+#alc_modules .alc_table .help p{margin:0 !important;}
+#alc_modules .alc_table .help a{color:#FF8A00 !important;}
+#alc_modules .alc_table .help a img{margin:0 auto !important;}
+#alc_modules .alc_table .support{float:left !important;width:60px !important;height:105px !important;margin:4% 4%; text-align:center !important;color:#22B500 !important;font-weight:600 !important;font-size:13px;}
+#alc_modules .alc_table .support p{margin:0 !important;}
+#alc_modules .alc_table .support a{color:#22B500 !important;}
+#alc_modules .alc_table .video{float:left !important;width:60px !important;height:105px !important;margin:4% 4%; text-align:center !important;color:#E40000 !important;font-weight:600 !important;font-size:13px;}
+#alc_modules .alc_table .video p{margin:0 !important;}
+#alc_modules .alc_table .video a{color:#E40000 !important;}
+#alc_modules .alc_table .your-opinion{float:left !important;width:60px !important;height:105px !important;margin:4% 4%; text-align:center !important;color:#FECF26 !important;font-weight:600 !important;font-size:13px;}
+#alc_modules .alc_table .your-opinion p{margin:0 !important;}
+#alc_modules .alc_table .your-opinion a{color:#FECF26 !important;}
+#alc_modules .alc_table .interest-you{font-size:13px !important; color:#555 !important;font-weight: 600 !important;line-height:10em !important;float:left !important}
+#alc_modules .alc_table .pack-module{float:left !important;}
+#alc_modules .alc_table .desc-module{font-size:8px !important;width:80px !important;color:#555 !important;margin:0 0 0 25px !important;text-align:center !important;}
+#alc_modules .alc_table .desc-module a{color:#00aff0 !important;}
+#alc_modules .bootstrap .form-group .input-group{margin:0 !important;}
+#alc_modules .bootstrap .help-block{margin-top:5px !important;margin-left:5px !important;}
+#alc_modules .mce-btn-group .mce-btn {float: left;}
+#alc_modules .alcaborder {border:1px solid #ccc !important;-webkit-border-radius: 3px; -moz-border-radius: 3px;  border-radius: 3px;padding: 5px;}
+#alc_modules .alcaborder .tt-hint {background:none !important;}
+#alc_modules label.required_value {padding-left:0 !important;}
+#alc_modules label.required_value:before {color:red;content: "*";font-size: 14px;line-height: 12px;position: relative;}
+#alc_modules .tagify-container > input {margin-top:0 !important;}
+#alc_modules #module_form_submit_btn {font-size:13px !important; font-weight: 700;padding:6px 40px !important;}
+#alc_modules .alert-block {color: #555555;background-color:#ffffff;border-color:#ddd;}
+#alc_modules .alert-block span {font-weight: 600;}
+#alc_modules .documentation {color: #fff !important;text-decoration:none;font-weight: 700 !important; background-color: #00aff0 !important; border-color: #2eacce !important; background-image: none !important; border: 1px solid transparent !important; border-radius: 3px !important; cursor: pointer !important; display: inline-block !important; font-size: 13px !important; line-height: 1.42857 !important; margin-bottom: 0 !important; padding: 6px 40px !important; text-align: center !important; user-select: none !important; vertical-align: middle !important; white-space: nowrap !important;text-transform:uppercase !important;min-width:200px;}
+#alc_modules .documentation:hover {background-color: #008abd !important;box-shadow: none;}
+#alc_modules .file_download {color: #fff !important;text-decoration:none;font-weight: 700 !important; background-color: #00aff0 !important; border-color: #2eacce !important; background-image: none !important; border: 1px solid transparent !important; border-radius: 3px !important; cursor: pointer !important; display: inline-block !important; font-size: 11px !important; line-height: 1.42857 !important; margin-bottom: 0 !important; padding: 6px 40px !important; text-align: center !important; user-select: none !important; vertical-align: middle !important; white-space: nowrap !important;text-transform:uppercase !important;min-width:150px;}
+#alc_modules .file_download:hover {background-color: #008abd !important;box-shadow: none;}
+#alc_modules .btn {padding: .375rem .838rem;line-height: 1.5;    vertical-align: middle;}
+#alc_modules .btn.btn-default{box-shadow:none;}
+#alc_modules input[type="number"]{border-radius: 3px;float: left;margin-bottom: 0;position: relative;width: 100%;z-index: 2;}
+#alc_modules select[multiple], .bootstrap select[size] {height:auto;}
+#alc_modules .tagify-container > input {border:0;box-shadow: none;height: auto;width: 140px;}
+#alc_modules .table-bordered > tbody > tr > td {border:0;}
+#alc_modules .table {border-collapse:separate;}
+#alc_modules .table tbody > tr > td {border-bottom: 1px solid #eaedef;background-color: #fff;color: #666;}
+#alc_modules .dummyfile {padding-top:0;}
+#alc_modules .dummyfile input[type='text'] {height:33px;}
+#alc_modules .switch a {background-color: #2eacce;border: 1px solid #279cbb;box-shadow:none;}
+#alc_modules .switch input:last-of-type:checked ~ a {background-color: #e08f95;border: 1px solid #ca6f6f;box-shadow:none;}
+#alc_modules .bootstrap .btn.btn-primary {box-shadow:none;border-color:transparent;text-transform: none;}
+#alc_modules .owl-carousel .item {width:98px;margin:0 auto;}
+#alc_modules .owl-carousel .item div.item-title {background-color:#00aff0;text-align:center;padding:0px 4px;line-height:0.9em;height:28px !important;border-radius: 3px;}
+#alc_modules .owl-carousel .item div.item-title:hover {background-color: #008abd !important;}
+#alc_modules .owl-carousel .item div.item-title a {color:#fff;text-transform:uppercase;font-size:8px;font-weight:bold;display:flex;align-items:center;justify-content:center;height:29px !important;padding: 0 !important;}
+#alc_modules .owl-carousel .item div.item-title a:hover {text-decoration:none;}
+#alc_modules .owl-carousel .item a {padding: 0 !important;}
+#alc_modules .owl-theme .owl-dots .owl-dot span{margin:0 7px;}
+#alc_modules .all_modules {color: #fff !important;text-decoration:none;font-weight: 700 !important; background-color: #00aff0 !important; border-color: #2eacce !important; background-image: none !important; border: 1px solid transparent !important; border-radius: 3px !important; cursor: pointer !important;font-size: 10px !important; line-height: 1.42857 !important; margin-bottom: 0 !important; padding: 6px 40px !important; text-align: center !important; user-select: none !important; vertical-align: middle !important; white-space: nowrap !important;text-transform:uppercase !important;display: flex;align-items: center;justify-content: center;max-width: 252px;margin:0 auto;}
+#alc_modules .all_modules:hover {background-color: #008abd !important;box-shadow: none;}
+#alc_modules div.logo_alcalink {display:flex;align-items: center;justify-content: center;margin-bottom:8px;}
+#alc_modules div.logo_alcalink img {width:100%;}
+#alc_modules .box_elements {display:flex;align-items: center;justify-content: center;margin:10px 0;}
+#alc_modules .box_elements .element {text-align:center;}
+#alc_modules .box_elements .element img {margin-bottom:8px;}
+#alc_modules .box_elements .element div.item-title {text-align:center;padding:0px 4px;line-height:0.9em;height:28px !important;border-radius: 3px;clear:both;}
+#alc_modules .box_elements .element div.yellow {background-color: #F6D031 !important;}
+#alc_modules .box_elements .element div.yellow:hover {background-color: #BB9D1D !important;}
+#alc_modules .box_elements .element div.red {background-color: #F04646 !important;}
+#alc_modules .box_elements .element div.red:hover {background-color: #9B3535 !important;}
+#alc_modules .box_elements .element div.green {background-color: #6bd573 !important;}
+#alc_modules .box_elements .element div.green:hover {background-color: #3e8843 !important;}
+#alc_modules .box_elements .element div.blue {background-color: #00aff0 !important;}
+#alc_modules .box_elements .element div.blue:hover {background-color: #008abd !important;}
+#alc_modules .box_elements .element div.item-title a {color:#fff;text-transform:uppercase;font-size:10px;font-weight:bold;display:flex;align-items:center;justify-content:center;height:29px}
+#alc_modules .box_elements .element div.item-title a:hover {text-decoration:none;}
+#alc_modules .field_error input, #alc_modules .field_error select {border:1px solid #d27c82 !important;}
+#alc_modules .field_error input[type="radio"] {border:0 !important;outline:1px solid #d27c82 !important;}
+#alc_modules .field_error input[type="checkbox"] {border:0 !important;outline:1px solid #d27c82 !important;}
+#alc_modules .field_error .tagify-container {border:1px solid #d27c82 !important;}
+#alc_modules .field_error .tagify-container input {border:0 !important;}
+#alc_modules .field_error .switch input {border:0 !important;}
+#alc_modules .field_error .switch {border:1px solid #d27c82 !important;}
+#alc_modules .field_error .mce-tinymce {border:1px solid #d27c82 !important;}
+#alc_modules .field_error .alcaborder {border:1px solid #d27c82 !important;}
+#alc_modules .field_error .help-block {color:#d27c82 !important;}
+#alc_modules .field_categories .field_error input {border:0 !important; outline:none !important;}
+#alc_modules .field_search .field_error input {border:1px solid #d27c82 !important; outline:none !important;}
+#alc_modules label.control-label.field_label_error span.label-tooltip {color:#d27c82 !important;}
+#alc_modules .separator_bar {padding:0px 10px;}
+@media (max-width: 1470px) {
+    #alc_modules .box_elements .element img {width:75%;}
+    #alc_modules .box_elements .element div.item-title a {font-size:8px}
+}
+@media (max-width: 767px) {
+    #alc_modules .panel_modules {height:auto !important;padding:10px !important;}
+    #alc_modules div.logo_alcalink img {width:200px;}
+}
+#alc_modules .material-icons {
+    vertical-align: middle;
+}
+#alc_modules button .material-icons {
+    vertical-align: middle;
+}
+#alc_modules button .material-icons {
+    font-size: 19px;
+}
+iframe {min-height: 80px;}
+div#fancybox {
+    z-index: 9999999999;
+    display:none;
+    height: 50px;
+    width: 50px;
+    position: fixed;
+    top: calc(50vh - 50px);
+    left: calc(50vw - 50px);
+    background: url(../../../../img/loader.gif);
+    background-size: contain;
+    background-color: #2e363ebf;
+    background-size: calc(100% - 20px);
+    background-position-x: 10px;
+    background-position-y: 10px;
+    background-repeat
+    : no-repeat;
+    border-radius: 5px;
+}
+div#ui-datepicker-div {
+    z-index: 3 !important;
+}
+#alc_modules .bootstrap .table thead>tr>th {
+    font-weight: 700;
+    border-bottom: 2px solid #00aff0 !important;
+}
+
+.form-group h3 .btn {
+    margin-top: -9px;
+    font-size: 15px;
+    margin-right: 23px;
+}
+#biteateAjaxSearchProductList {
+    position: absolute;
+    z-index: 10;
+    background: #FFF;
+    width: 100%;
+}
+div#biteateAjaxSearchProductList td, div#biteateAjaxSearchProductList th , .biteateAjaxSearchProductList td, .biteateAjaxSearchProductList th {
+    padding: 5px;
+}
+div#biteateAjaxSearchProductList table, .biteateAjaxSearchProductList table {
+    width:100%;
+    border: 1px solid #e2e1e1;
+    -webkit-box-shadow: 7px 7px 16px -9px rgba(0,0,0,0.75);
+    -moz-box-shadow: 7px 7px 16px -9px rgba(0,0,0,0.75);
+    box-shadow: 7px 7px 16px -9px rgba(0,0,0,0.75);
+}
+#alc_modules .separator_bar {padding:0px 10px;}
+#alc_modules .alc_link {
+    text-align: center;
+    background: #ffffff !important;
+    padding-inline-start: 0 !important;
+    margin-bottom: 12px;
+    padding: 10px 15px !important;
+    border: 1px solid #ddd !important;
+}
+#alc_modules .alc_link img { max-width: 100%; }

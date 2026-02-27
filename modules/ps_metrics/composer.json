@@ -10,18 +10,17 @@
         "optimize-autoloader": true,
         "prepend-autoloader": false,
         "platform": {
-            "php": "7.1"
+            "php": "7.2.5"
         },
         "platform-check": false
     },
     "require": {
-        "php": ">=7.1",
+        "php": ">=7.2.5",
         "vlucas\/phpdotenv": "^3.6",
         "segmentio\/analytics-php": "^1.5",
         "prestashop\/prestashop-accounts-installer": "1.0.1",
-        "prestashop\/module-lib-guzzle-adapter": "^0.6",
         "prestashop\/module-lib-service-container": "^2.0",
-        "prestashop\/module-lib-mbo-installer": "^0.1.0"
+        "prestashop\/module-lib-mbo-installer": "^3.0.0"
     },
     "require-dev": {
         "prestashop\/php-dev-tools": "^4.2",
@@ -33,7 +32,7 @@
         ],
         "psr-4": {
             "PrestaShop\\Module\\Ps_metrics\\": "src\/",
-            "ps_metrics_module_v4_0_10\\exclude-from-classmap": []
+            "ps_metrics_module_v4_1_2\\exclude-from-classmap": []
         }
     },
     "type": "prestashop-module"

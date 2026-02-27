@@ -1,0 +1,29 @@
+/* .translation-field .pshowtranslate_dynamic_translator {
+    top: 90px;
+    position: absolute;
+} */
+
+textarea.arx-source,
+textarea.arx-source:focus {
+    text-align: left;
+    box-sizing: border-box;
+    width: 100%;
+    box-shadow: none;
+    color: #fffc;
+    min-height: 60px;
+    resize: vertical;
+    background-color: #262f3f !important;
+    border: none;
+    border-radius: 0;
+    outline: 0;
+    margin: 0;
+    padding: 10px 18px 20px;
+    font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier, monospace;
+    font-size: 12px !important;
+    line-height: 1.5;
+    display: block;
+}
+
+body.adminproducts .product-page .summary-description-container {
+    overflow: initial;
+}

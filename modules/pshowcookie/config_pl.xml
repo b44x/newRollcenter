@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<module>
+    <name>pshowcookie</name>
+    <displayName><![CDATA[Zarządzanie zgodami na pliki cookie]]></displayName>
+    <version><![CDATA[1.1.8]]></version>
+    <description><![CDATA[Zarządzanie zgodami na korzystanie z plik&oacute;w cookie.]]></description>
+    <author><![CDATA[PrestaShow.com]]></author>
+    <tab><![CDATA[other]]></tab>
+    <is_configurable>1</is_configurable>
+    <need_instance>0</need_instance>
+</module>

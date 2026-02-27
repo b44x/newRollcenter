@@ -1,0 +1,288 @@
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+.pse-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-column-gap: 24px;
+    grid-row-gap: 24px
+}
+
+.pse-grid img,
+.pse-div img,
+.pse-section img,
+.pse-figure img,
+.pse-figure iframe {
+    max-width: 100% !important;
+}
+
+.pse-grid img,
+.pse-div img,
+.pse-section img,
+.pse-figure img {
+    height: auto !important;
+}
+
+.pse-grid+.pse-grid {
+    margin-top: 24px
+}
+
+.pse-grid-gutterless {
+    grid-column-gap: 0
+}
+
+.pse-grid-gapless {
+    grid-row-gap: 0
+}
+
+.pse-grid-gapless+.pse-grid {
+    margin-top: 0
+}
+
+.pse-grid-auto {
+    grid-template-columns: repeat(auto-fit, minmax(0, 1fr))
+}
+
+.pse-grid .column-1 {
+    grid-column-end: span 1
+}
+
+.pse-grid .column-2 {
+    grid-column-end: span 2
+}
+
+.pse-grid .column-3 {
+    grid-column-end: span 3
+}
+
+.pse-grid .column-4 {
+    grid-column-end: span 4
+}
+
+.pse-grid .column-5 {
+    grid-column-end: span 5
+}
+
+.pse-grid .column-6 {
+    grid-column-end: span 6
+}
+
+.pse-grid .column-7 {
+    grid-column-end: span 7
+}
+
+.pse-grid .column-8 {
+    grid-column-end: span 8
+}
+
+.pse-grid .column-9 {
+    grid-column-end: span 9
+}
+
+.pse-grid .column-10 {
+    grid-column-end: span 10
+}
+
+.pse-grid .column-11 {
+    grid-column-end: span 11
+}
+
+.pse-grid .column-12 {
+    grid-column-end: span 12
+}
+
+@media only screen and (max-width: 640px) {
+
+    .pse-grid,
+    .pse-grid-auto {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .pse-grid .column {
+        grid-column-end: span 1
+    }
+
+    .pse-grid .column:empty {
+        display: none
+    }
+}
+
+table.pse-table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    empty-cells: show;
+}
+
+table.pse-table td,
+th {
+    text-align: left;
+    vertical-align: top;
+    font-size: 95%;
+    line-height: 1.5;
+    padding: 0.75em;
+    border: 1px solid rgba(217, 219, 221, 0.5);
+}
+
+blockquote cite,
+figcaption cite {
+    font-style: inherit;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+blockquote p+p {
+    margin-top: 0.5em;
+}
+
+blockquote p {
+    font-size: 115%;
+    line-height: 1.5;
+}
+
+.pse-align-left {
+    text-align: left
+}
+
+.pse-align-center {
+    text-align: center
+}
+
+.pse-align-center img {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 80%
+}
+
+.pse-align-center figcaption {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.pse-align-right {
+    text-align: right
+}
+
+.pse-align-right img {
+    margin-left: auto
+}
+
+.pse-align-right figcaption {
+    text-align: right;
+    margin-left: auto
+}
+
+.pse-align-justify {
+    text-align: justify
+}
+
+.pse-valign-top {
+    align-items: start
+}
+
+.pse-valign-middle {
+    align-items: center
+}
+
+.pse-valign-bottom {
+    align-items: end
+}
+
+.pse-a-dynamic {
+    text-decoration: none;
+    color: inherit;
+}
+
+.pse-a-dynamic:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+[data-target-url] {
+    cursor: pointer;
+}
+
+/* figure {
+    background-image: url('https://placehold.in/500x500.png');
+    width: 100%;
+    height: auto;
+} */
+
+.pse-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 2000;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, .5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pse-modal-content {
+    max-height: 80vh;
+    max-width: 80vh;
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    margin: 0 auto;
+    background-color: #fff;
+    border: 15px solid #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+.pse-modal-content .pse-modal-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #000;
+    background-color: #fff;
+    opacity: 0.5;
+    padding: 5px 10px;
+    border: 0;
+    font-size: 18px;
+}
+
+.pse-modal-content .pse-modal-body {
+    flex: 1;
+    text-align: left;
+    overflow: auto;
+}
+
+.pse-modal-content .pse-modal-close::after {
+    content: "X";
+}
+
+.pse-modal-content .pse-modal-close:hover,
+.pse-modal-content .pse-modal-close:focus {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.pse-modal-content img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.pse-modal-footer {
+    padding: 15px 0;
+    text-align: center;
+}
+
+.pse-modal.pse-modal-open {
+    animation: modal-open 0.3s;
+}
+
+@keyframes modal-open {
+    0% {
+        opacity: 0 !important;
+    }
+    100% {
+        opacity: 1 !important;
+    }
+}
+

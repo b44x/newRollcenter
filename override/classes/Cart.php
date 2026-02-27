@@ -30,7 +30,7 @@ class Cart extends CartCore
 {
     /*
     * module: dynamicproduct
-    * date: 2025-03-24 14:49:19
+    * date: 2026-01-18 16:56:38
     * version: 3.22.19
     */
     public function duplicate()

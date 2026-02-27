@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<module>
+    <name>prestamassedit</name>
+    <displayName><![CDATA[Product Catalog &ndash; Bulk Edit | Mass Edit | Quick Edit]]></displayName>
+    <version><![CDATA[7.0.3]]></version>
+    <description><![CDATA[Make swift changes, bulk edits, customizable product listings, instant filters,
+            and more! Product Catalog Manager, a PrestaShop module, provides unparalleled efficiency
+            and effectiveness in product management tools.]]></description>
+    <author><![CDATA[presta_world]]></author>
+    <tab><![CDATA[others]]></tab>
+	<confirmUninstall><![CDATA[Are you sure you want to uninstall?]]></confirmUninstall>
+    <is_configurable>1</is_configurable>
+    <need_instance>1</need_instance>
+</module>

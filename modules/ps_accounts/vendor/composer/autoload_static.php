@@ -17,15 +17,15 @@ class ComposerStaticInit8cf0e9751b64642799d08075e90841b5
     );
 
     public static $prefixLengthsPsr4 = array (
-        'S' => 
+        'S' =>
         array (
             'Symfony\\Polyfill\\Ctype\\' => 23,
         ),
-        'R' => 
+        'R' =>
         array (
             'Ramsey\\Uuid\\' => 12,
         ),
-        'P' => 
+        'P' =>
         array (
             'Psr\\Log\\' => 8,
             'PrestaShop\\Module\\PsAccounts\\Vendor\\Ramsey\\Uuid\\' => 48,
@@ -37,83 +37,83 @@ class ComposerStaticInit8cf0e9751b64642799d08075e90841b5
             'PrestaShop\\Module\\PsAccounts\\' => 29,
             'PrestaShopCorp\\LightweightContainer\\' => 36,
         ),
-        'M' => 
+        'M' =>
         array (
             'Monolog\\' => 8,
         ),
-        'L' => 
+        'L' =>
         array (
             'Lcobucci\\JWT\\' => 13,
         ),
-        'F' => 
+        'F' =>
         array (
             'Firebase\\JWT\\' => 13,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'Symfony\\Polyfill\\Ctype\\' => 
+        'Symfony\\Polyfill\\Ctype\\' =>
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-ctype',
         ),
-        'Ramsey\\Uuid\\' => 
+        'Ramsey\\Uuid\\' =>
         array (
             0 => __DIR__ . '/..' . '/ramsey/uuid/src',
         ),
-        'Psr\\Log\\' => 
+        'Psr\\Log\\' =>
         array (
             0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
         ),
-        'PrestaShop\\Module\\PsAccounts\\Vendor\\Ramsey\\Uuid\\' => 
+        'PrestaShop\\Module\\PsAccounts\\Vendor\\Ramsey\\Uuid\\' =>
         array (
             0 => __DIR__ . '/..' . '/ramsey/uuid/src',
         ),
-        'PrestaShop\\Module\\PsAccounts\\Vendor\\Psr\\Log\\' => 
+        'PrestaShop\\Module\\PsAccounts\\Vendor\\Psr\\Log\\' =>
         array (
             0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
         ),
-        'PrestaShop\\Module\\PsAccounts\\Vendor\\PrestaShopCorp\\LightweightContainer\\' => 
+        'PrestaShop\\Module\\PsAccounts\\Vendor\\PrestaShopCorp\\LightweightContainer\\' =>
         array (
             0 => __DIR__ . '/..' . '/prestashopcorp/lightweight-container/src',
         ),
-        'PrestaShop\\Module\\PsAccounts\\Vendor\\Monolog\\' => 
+        'PrestaShop\\Module\\PsAccounts\\Vendor\\Monolog\\' =>
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
         ),
-        'PrestaShop\\Module\\PsAccounts\\Vendor\\Lcobucci\\JWT\\' => 
+        'PrestaShop\\Module\\PsAccounts\\Vendor\\Lcobucci\\JWT\\' =>
         array (
             0 => __DIR__ . '/..' . '/lcobucci/jwt/src',
         ),
-        'PrestaShop\\Module\\PsAccounts\\Vendor\\Firebase\\JWT\\' => 
+        'PrestaShop\\Module\\PsAccounts\\Vendor\\Firebase\\JWT\\' =>
         array (
             0 => __DIR__ . '/..' . '/firebase/php-jwt/src',
         ),
-        'PrestaShop\\Module\\PsAccounts\\' => 
+        'PrestaShop\\Module\\PsAccounts\\' =>
         array (
             0 => __DIR__ . '/../..' . '/src',
         ),
-        'PrestaShopCorp\\LightweightContainer\\' => 
+        'PrestaShopCorp\\LightweightContainer\\' =>
         array (
             0 => __DIR__ . '/..' . '/prestashopcorp/lightweight-container/src',
         ),
-        'Monolog\\' => 
+        'Monolog\\' =>
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
         ),
-        'Lcobucci\\JWT\\' => 
+        'Lcobucci\\JWT\\' =>
         array (
             0 => __DIR__ . '/..' . '/lcobucci/jwt/src',
         ),
-        'Firebase\\JWT\\' => 
+        'Firebase\\JWT\\' =>
         array (
             0 => __DIR__ . '/..' . '/firebase/php-jwt/src',
         ),
     );
 
     public static $prefixesPsr0 = array (
-        'R' => 
+        'R' =>
         array (
-            'Raven_' => 
+            'Raven_' =>
             array (
                 0 => __DIR__ . '/..' . '/sentry/sentry/lib',
             ),
@@ -145,6 +145,8 @@ class ComposerStaticInit8cf0e9751b64642799d08075e90841b5
         'PrestaShop\\Module\\PsAccounts\\Account\\CommandHandler\\MigrateOrCreateIdentityV8Handler' => __DIR__ . '/../..' . '/src/Account/CommandHandler/MigrateOrCreateIdentityV8Handler.php',
         'PrestaShop\\Module\\PsAccounts\\Account\\CommandHandler\\MultiShopHandler' => __DIR__ . '/../..' . '/src/Account/CommandHandler/MultiShopHandler.php',
         'PrestaShop\\Module\\PsAccounts\\Account\\CommandHandler\\RestoreIdentityHandler' => __DIR__ . '/../..' . '/src/Account/CommandHandler/RestoreIdentityHandler.php',
+        'PrestaShop\\Module\\PsAccounts\\Account\\CommandHandler\\UpdateBackOfficeUrlHandler' => __DIR__ . '/../..' . '/src/Account/CommandHandler/UpdateBackOfficeUrlHandler.php',
+        'PrestaShop\\Module\\PsAccounts\\Account\\CommandHandler\\UpdateBackOfficeUrlsHandler' => __DIR__ . '/../..' . '/src/Account/CommandHandler/UpdateBackOfficeUrlsHandler.php',
         'PrestaShop\\Module\\PsAccounts\\Account\\CommandHandler\\VerifyIdentitiesHandler' => __DIR__ . '/../..' . '/src/Account/CommandHandler/VerifyIdentitiesHandler.php',
         'PrestaShop\\Module\\PsAccounts\\Account\\CommandHandler\\VerifyIdentityHandler' => __DIR__ . '/../..' . '/src/Account/CommandHandler/VerifyIdentityHandler.php',
         'PrestaShop\\Module\\PsAccounts\\Account\\Command\\CleanupIdentityCommand' => __DIR__ . '/../..' . '/src/Account/Command/CleanupIdentityCommand.php',
@@ -154,6 +156,8 @@ class ComposerStaticInit8cf0e9751b64642799d08075e90841b5
         'PrestaShop\\Module\\PsAccounts\\Account\\Command\\MigrateOrCreateIdentitiesV8Command' => __DIR__ . '/../..' . '/src/Account/Command/MigrateOrCreateIdentitiesV8Command.php',
         'PrestaShop\\Module\\PsAccounts\\Account\\Command\\MigrateOrCreateIdentityV8Command' => __DIR__ . '/../..' . '/src/Account/Command/MigrateOrCreateIdentityV8Command.php',
         'PrestaShop\\Module\\PsAccounts\\Account\\Command\\RestoreIdentityCommand' => __DIR__ . '/../..' . '/src/Account/Command/RestoreIdentityCommand.php',
+        'PrestaShop\\Module\\PsAccounts\\Account\\Command\\UpdateBackOfficeUrlCommand' => __DIR__ . '/../..' . '/src/Account/Command/UpdateBackOfficeUrlCommand.php',
+        'PrestaShop\\Module\\PsAccounts\\Account\\Command\\UpdateBackOfficeUrlsCommand' => __DIR__ . '/../..' . '/src/Account/Command/UpdateBackOfficeUrlsCommand.php',
         'PrestaShop\\Module\\PsAccounts\\Account\\Command\\VerifyIdentitiesCommand' => __DIR__ . '/../..' . '/src/Account/Command/VerifyIdentitiesCommand.php',
         'PrestaShop\\Module\\PsAccounts\\Account\\Command\\VerifyIdentityCommand' => __DIR__ . '/../..' . '/src/Account/Command/VerifyIdentityCommand.php',
         'PrestaShop\\Module\\PsAccounts\\Account\\Dto\\Shop' => __DIR__ . '/../..' . '/src/Account/Dto/Shop.php',
@@ -299,6 +303,8 @@ class ComposerStaticInit8cf0e9751b64642799d08075e90841b5
         'PrestaShop\\Module\\PsAccounts\\Service\\Sentry\\ModuleFilteredRavenClient' => __DIR__ . '/../..' . '/src/Service/Sentry/ModuleFilteredRavenClient.php',
         'PrestaShop\\Module\\PsAccounts\\Service\\UpgradeService' => __DIR__ . '/../..' . '/src/Service/UpgradeService.php',
         'PrestaShop\\Module\\PsAccounts\\Settings\\SettingsForm' => __DIR__ . '/../..' . '/src/Settings/SettingsForm.php',
+        'PrestaShop\\Module\\PsAccounts\\Traits\\WithOriginAndSourceTrait' => __DIR__ . '/../..' . '/src/Traits/WithOriginAndSourceTrait.php',
+        'PrestaShop\\Module\\PsAccounts\\Traits\\WithPropertyTrait' => __DIR__ . '/../..' . '/src/Traits/WithPropertyTrait.php',
         'PrestaShop\\Module\\PsAccounts\\Translations\\SettingsTranslations' => __DIR__ . '/../..' . '/src/Translations/SettingsTranslations.php',
         'PrestaShop\\Module\\PsAccounts\\Type\\Dto' => __DIR__ . '/../..' . '/src/Type/Dto.php',
         'PrestaShop\\Module\\PsAccounts\\Type\\Enum' => __DIR__ . '/../..' . '/src/Type/Enum.php',

@@ -1,0 +1,30 @@
+stages:
+  - test_php71
+  - test_php80
+  - test_php82
+
+.test_php:
+  tags:
+    - docker
+  script:
+    - apt-get update && apt-get -y install curl nodejs npm unzip zip
+    - npm i -g phplint
+    - phplint *.php
+    - phplint **/*.php
+    - phplint **/*/*.php
+    - phplint **/*/*/*.php
+
+test_php71:
+  extends: .test_php
+  stage: test_php71
+  image: php:7.1-cli
+
+test_php80:
+  extends: .test_php
+  stage: test_php80
+  image: php:8.0-cli
+
+test_php82:
+  extends: .test_php
+  stage: test_php82
+  image: php:8.2-cli

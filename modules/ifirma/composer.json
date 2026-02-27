@@ -1,0 +1,19 @@
+{
+    "name": "ifirma/ifirma",
+    "description": "Integracja z ifirma.pl dla PrestaShop",
+    "type": "prestashop-module",
+    "version": "1.8",
+    "autoload": {
+        "psr-4": {
+            "Ifirma\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=7.1"
+    },
+    "extra": {
+        "prestashop": {
+            "bundle": "Ifirma\\IfirmaBundle"
+        }
+    }
+}

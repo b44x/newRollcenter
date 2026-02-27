@@ -33,11 +33,7 @@ class ApiAction
 
     private $clientName;
 
-    /**
-     * @param Token $Token
-     * @param bool  $productionMode
-     */
-    public function __construct($Token, $productionMode)
+    public function __construct(Token $Token, bool $productionMode)
     {
         $this->productionMode = $productionMode;
         $this->Token = $Token;
@@ -150,6 +146,16 @@ class ApiAction
         return $this->clientName;
     }
 
+    public function enableVerbose()
+    {
+        $this->Curl->enableVerbose();
+    }
+
+    public function disableVerbose()
+    {
+        $this->Curl->disableVerbose();
+    }
+
     protected function sendRequest($apiMethod, $requestMethod, $fields = [], $headers = [])
     {
         $requestUrl = sprintf(
@@ -167,6 +173,8 @@ class ApiAction
         if ($this->clientName) {
             $headers[] = 'X-Client-Source: '.$this->clientName;
         }
+
+        $headers[] = 'User-Agent: tpay.com PHP SDK Client/'.gethostname().'/'.$this->clientName;
 
         Logger::log(
             'Outgoing request',

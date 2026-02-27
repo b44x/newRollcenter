@@ -1,6 +1,6 @@
 <?php
 
-namespace ps_metrics_module_v4_0_10;
+namespace ps_metrics_module_v4_1_2;
 
 class Segment_Consumer_File extends Segment_Consumer
 {

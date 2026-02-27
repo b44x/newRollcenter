@@ -98,7 +98,6 @@ class DynamicCustomizationHelper
         $customization_helper = new DynamicCustomizationHelper($this->module, $this->context);
 
         $attributes_errors = [];
-
         foreach ($id_customizations as $id_product_attribute => $id_customization) {
             if (!$id_customization && $save_customization) {
                 $id_customization = $customization_helper->saveCustomization(

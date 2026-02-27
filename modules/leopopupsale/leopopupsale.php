@@ -705,8 +705,8 @@ class Leopopupsale extends Module
                 $data_product_popup[$i]['id_product'] = $product['id_product'];
                 $time = Configuration::get('LEOPOPUPSALE_SHOWNAME') ? $this->l('Purchased By').' '.$customer['name'] : $this->l('Have a customer purchase product');
                 $data_product_popup[$i]['time'] =  $time.' '.rand(1,59).' '.$this->l('minutes ago');
-                $data_product_popup[$i]['phone'] = $customer['phone'];
-                $data_product_popup[$i]['address'] = $customer['address'];
+                $data_product_popup[$i]['phone'] = ''; //$customer['phone'];
+                $data_product_popup[$i]['address'] = ''; // $customer['address'];
                 $i++;
             }
         }

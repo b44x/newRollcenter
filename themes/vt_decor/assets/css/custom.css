@@ -29,3 +29,641 @@
 img.logo.img-fluid {
     max-height: 200px;
 }
+
+/* Rollcenter – FINAL CLEAN MINIMAL + kwadraty + dwie kolumny w wymiarach (część 1/2) */
+
+/* Paleta bazowa */
+.content.svelte-c1qji4,
+.product-detail {
+  --rc-primary: #0f6efd;
+  --rc-primary-dark: #0a58ca;
+  --rc-text: #1f2937;
+  --rc-muted: #667085;
+  --rc-bg: #ffffff;
+  --rc-panel: #f9fafb;
+  --rc-border: #eef1f4;
+
+  --rc-input-bg: #ffffff;
+  --rc-input-border: rgba(16,24,40,0.12);
+}
+
+/* Legendy/etykiety – lekkie chipy */
+.content.svelte-c1qji4 .attribute_label,
+.product-detail fieldset > legend {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #0a2c6b;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #eef4ff;
+  border: none;
+  line-height: 1.4;
+  margin: 8px 0 10px;
+}
+.dp_rodzaj_rolet .product-detail fieldset > legend {
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #0a2c6b;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #eef4ff;
+  border: none;
+  line-height: 1.4;
+  margin: 8px 0 10px;
+}
+.content.svelte-c1qji4 .attribute_label .dp-required { color: #dc3545; font-weight: 700; }
+
+/* Karty sekcji */
+.content.svelte-c1qji4 .dp_field_container,
+.product-detail fieldset {
+  border: none;
+/*
+  border-radius: 14px;
+  padding: 14px;
+  margin: 14px 0;*/
+  background: var(--rc-panel);
+  box-shadow: 0 1px 4px rgba(16,24,40,0.05);
+  box-sizing: border-box;
+}
+
+/* Przyciski pomocy – białe buttony */
+.product-detail .dp-help-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 8px 0 14px;
+}
+.product-detail a.dp-btn,
+.product-detail a[href*="jak-zmierzyc"],
+.product-detail a[href*="jak-zamontować"],
+.product-detail a[href*="https://youtu.be/b1OTIGvLov4"],
+.product-detail a[href*="https://youtu.be/qZzssB64hX8"],
+.product-detail a[href*="https://youtu.be/k67nsiSo8Ag"] {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  min-height: 40px;
+  border-radius: 12px;
+  border: 1px solid rgba(16,24,40,0.08);
+  background: #ffffff;
+  color: #1f2937 !important;
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none !important;
+  box-shadow: 0 2px 8px rgba(16,24,40,0.08);
+  transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+  cursor: pointer;
+}
+.product-detail a.dp-btn:hover,
+.product-detail a[href*="jak-zmierzyc"]:hover,
+.product-detail a[href*="jak-zamontować"]:hover,
+.product-detail a[href*="https://youtu.be/b1OTIGvLov4"]:hover,
+.product-detail a[href*="https://youtu.be/qZzssB64hX8"]:hover,
+.product-detail a[href*="https://youtu.be/k67nsiSo8Ag"]:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(16,24,40,0.12);
+  border-color: rgba(16,24,40,0.14);
+}
+.product-detail a.dp-btn:focus,
+.product-detail a[href*="jak-zmierzyc"]:focus,
+.product-detail a[href*="jak-zamontować"]:focus {
+  outline: none;
+  box-shadow:
+    0 0 0 2px rgba(15,110,253,0.20),
+    0 0 0 6px rgba(15,110,253,0.12);
+}
+@media (max-width: 640px) {
+  .product-detail a.dp-btn,
+  .product-detail a[href*="jak-zmierzyc"],
+  .product-detail a[href*="jak-zamontować"] {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Ogólny RWD grid (dla image-list i konfiguratora) */
+.content.svelte-c1qji4 .dp_field_container.dp_type_image-list .dp_input_container > ul.svelte-18vgc8e,
+.product-detail .product-variants,
+.product-detail .config-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 12px;
+}
+.product-detail .product-variants > *,
+.product-detail .config-grid > *,
+.content.svelte-c1qji4 .dp_field_container.dp_type_image-list .dp_input_container > ul.svelte-18vgc8e > li {
+  grid-column: span 4;
+  min-width: 0;
+}
+@media (max-width: 1200px){
+  .product-detail .product-variants > *,
+  .product-detail .config-grid > *,
+  .content.svelte-c1qji4 .dp_field_container.dp_type_image-list .dp_input_container > ul.svelte-18vgc8e > li { grid-column: span 6; }
+}
+
+@media (max-width: 768px){
+  .product-detail .product-variants > *,
+  .product-detail .config-grid > *,
+  .content.svelte-c1qji4 .dp_field_container.dp_type_image-list .dp_input_container > ul.svelte-18vgc8e > li { grid-column: span 6; }
+}  
+/* Kafelki ogólne (image-list) */
+.content.svelte-c1qji4 .dp_field_container.dp_type_image-list .dp_input_container > ul.svelte-18vgc8e > li.dp-thumbnail {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px;
+  border: none;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(16,24,40,.04);
+  transition: box-shadow .12s ease, transform .12s ease, background-color .12s ease;
+}
+.content.svelte-c1qji4 .dp_field_container.dp_type_image-list .dp_input_container > ul.svelte-18vgc8e > li.dp-thumbnail:hover {
+  box-shadow: 0 2px 8px rgba(16,24,40,.08);
+  transform: translateY(-1px);
+  background: #fcfcff;
+}
+.content.svelte-c1qji4 .dp_field_container.dp_type_image-list .dp_input_container > ul.svelte-18vgc8e > li.dp-thumbnail.dp_selected {
+  box-shadow: 0 2px 10px rgba(15,110,253,.12);
+  background: #eef6ff;
+}
+
+/* Miniatury ogólne */
+.content.svelte-c1qji4 .dp_field_container .dp_thumb {
+  width: 100%;
+/*  height: 88px !important;*/
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  background: #f6f7fb;
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,.04);
+}
+.content.svelte-c1qji4 .dp_field_container .dp_thumb img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+  display: block;
+}
+
+/* Teksty kafelków */
+.content.svelte-c1qji4 .dp_field_container .dp_btn.option_label {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  color: var(--rc-text);
+  font-size: 13px;
+  font-weight: 600;
+  white-space: normal !important;
+}
+.content.svelte-c1qji4 .dp_field_container .dp_btn.option_label p {
+  font-size: 12px;
+  color: var(--rc-muted);
+  margin: 0;
+  line-height: 1.35;
+  display: block !important;
+}
+
+/* Info/Zoom przy miniaturze (opcjonalnie ukryj) */
+.content.svelte-c1qji4 .dp_field_container .dp_thumb .dp-info-btn,
+.content.svelte-c1qji4 .dp_field_container .dp_btn.dp-zoom {
+  position: absolute;
+  right: 8px; bottom: 8px;
+  width: 26px; height: 26px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.85);
+  box-shadow: 0 1px 2px rgba(16,24,40,.08);
+  border: none;
+  color: #475467;
+}
+.content.svelte-c1qji4 .dp_field_container .dp_tooltip_btn.dp_hidden { display: none !important; }
+
+/* Inputy/selecty – „pill”, miękki focus */
+#dp_szerokosc_a,
+#dp_szerokosc_b,
+#dp_wys_l_max_175,
+#dp_wys_s_max_175,
+#dp_wys_l_max_160,
+#dp_rodzaj_tkaniny_din,
+.content.svelte-c1qji4 .dp_input_container select.form-control {
+  width: 100%;
+  height: 44px;
+  line-height: 44px;
+  padding: 0 10px;
+  border: none !important;
+  border-radius: 10px !important;
+  background: var(--rc-input-bg) !important;
+  box-shadow: 0 0 0 1px var(--rc-input-border);
+  color: #1f2937 !important;
+  outline: none;
+  transition: box-shadow .14s ease, background-color .14s ease;
+  -webkit-appearance: none;
+  appearance: none;
+  box-sizing: border-box;
+}
+#dp_szerokosc_a::placeholder,
+#dp_szerokosc_b::placeholder,
+#dp_wys_l_max_175::placeholder,
+#dp_wys_s_max_175::placeholder,
+#dp_wys_l_max_160::placeholder { color: #98a2b3; }
+#dp_szerokosc_a:focus,
+#dp_szerokosc_b:focus,
+#dp_wys_l_max_175:focus,
+#dp_wys_s_max_175:focus,
+#dp_wys_l_max_160:focus,
+#dp_rodzaj_tkaniny_din:focus,
+.content.svelte-c1qji4 .dp_input_container select.form-control:focus {
+  box-shadow:
+    0 0 0 1px rgba(15,110,253,.25),
+    0 0 0 6px rgba(15,110,253,.10);
+  background: #fff !important;
+}
+
+/* Select – strzałka */
+#dp_rodzaj_tkaniny_din,
+.content.svelte-c1qji4 .dp_input_container select.form-control {
+  cursor: pointer;
+  background-image:
+    linear-gradient(45deg, transparent 50%, #98a2b3 50%),
+    linear-gradient(135deg, #98a2b3 50%, transparent 50%),
+    linear-gradient(to right, transparent 0%, transparent 100%);
+  background-position:
+    calc(100% - 14px) calc(50% - 4px),
+    calc(100% - 9px) calc(50% - 4px),
+    calc(100% - 2rem) 50%;
+  background-size: 5px 5px, 5px 5px, 1px 2rem;
+  background-repeat: no-repeat;
+  padding-right: 2.4rem;
+}
+
+/* Etykiety pól */
+.content.svelte-c1qji4 .dp_field_container label,
+.product-detail .product-variants label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #344054;
+  margin-bottom: 4px;
+}
+
+/* Linki pomocy (gdy nie jako dp-btn) */
+.product-detail a[href*="jak-zmierzyc"],
+.product-detail a[href*="jak-zamontować"],
+.product-detail a[href*="https://youtu.be/b1OTIGvLov4"],
+.product-detail a[href*="https://youtu.be/qZzssB64hX8"],
+.product-detail a[href*="https://youtu.be/k67nsiSo8Ag"] {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--rc-primary);
+  text-decoration: none;
+}
+
+/* Reset marginesów w kafelkach */
+.content.svelte-c1qji4 .dp_field_container.dp_type_image-list .dp_input_container > ul.svelte-18vgc8e > li.dp-thumbnail > * {
+  margin: 0 !important;
+}
+
+/* Rollcenter – FINAL CLEAN MINIMAL (część 2/2) – kwadraty i wymiary */
+
+/* --- KWADRATY – Rodzaj rolety --- */
+.content.svelte-c1qji4 .dp_group.dp_group_rodzaj_rolety .dp_input_container > ul {
+  display: grid; grid-template-columns: repeat(12, 1fr); gap: 12px; list-style: none; padding: 0; margin: 0;
+}
+.content.svelte-c1qji4 .dp_group.dp_group_rodzaj_rolety .dp_input_container > ul > li.dp-thumbnail {
+  grid-column: span 4; position: relative; width: 100%; aspect-ratio: 1 / 1; 
+/*min-height: 0;*/
+  border: 2px solid #e5e7eb; border-radius: 14px; background: #fff; box-shadow: 0 1px 2px rgba(16,24,40,.04);
+  transition: border-color .12s, box-shadow .12s, transform .12s, background-color .12s;
+/*  overflow: hidden;*/
+ display: flex; flex-direction: column; justify-content: space-between; padding: 12px; box-sizing: border-box;
+}
+@supports not (aspect-ratio: 1 / 1) {
+  .content.svelte-c1qji4 .dp_group.dp_group_rodzaj_rolety .dp_input_container > ul > li.dp-thumbnail { padding: 0; }
+  .content.svelte-c1qji4 .dp_group.dp_group_rodzaj_rolety .dp_input_container > ul > li.dp-thumbnail::before { content: ""; display: block; padding-top: 100%; }
+  .content.svelte-c1qji4 .dp_group.dp_group_rodzaj_rolety .dp_input_container > ul > li.dp-thumbnail > .dp_tile-inner {
+    position: absolute; inset: 0; padding: 12px; display: flex; flex-direction: column; justify-content: space-between;
+    border: 2px solid #e5e7eb; border-radius: 14px; background: #fff; box-shadow: 0 1px 2px rgba(16,24,40,.04); box-sizing: border-box;
+  }
+}
+.content.svelte-c1qji4 .dp_group.dp_group_rodzaj_rolety .dp_thumb {
+  width: 100%; aspect-ratio: 1 / 1; border-radius: 10px; overflow: hidden; background: #f6f7fb; box-shadow: inset 0 0 0 1px rgba(0,0,0,.05);
+}
+@supports not (aspect-ratio: 1 / 1) {
+  .content.svelte-c1qji4 .dp_group.dp_group_rodzaj_rolety .dp_thumb { position: relative; }
+  .content.svelte-c1qji4 .dp_group.dp_group_rodzaj_rolety .dp_thumb::before { content: ""; display: block; padding-top: 100%; }
+  .content.svelte-c1qji4 .dp_group.dp_group_rodzaj_rolety .dp_thumb > img { position: absolute; inset: 0; }
+}
+.content.svelte-c1qji4 .dp_group.dp_group_rodzaj_rolety .dp_btn.option_label { margin-top: 8px; display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 0; border: none; background: transparent; color: #1f2937; font-size: 14px; font-weight: 600; text-align: center; }
+.content.svelte-c1qji4 .dp_group.dp_group_rodzaj_rolety .dp_btn.option_label p { font-size: 12px; color: #667085; margin: 0; line-height: 1.35; }
+.content.svelte-c1qji4 .dp_group.dp_group_rodzaj_rolety .dp_input_container > ul > li.dp-thumbnail:hover { border-color: var(--rc-primary); box-shadow: 0 2px 8px rgba(15,110,253,.12); transform: translateY(-1px); }
+.content.svelte-c1qji4 .dp_group.dp_group_rodzaj_rolety .dp_input_container > ul > li.dp-thumbnail.dp_selected { border-color: var(--rc-primary); background: #f0f6ff; box-shadow: 0 2px 10px rgba(15,110,253,.14); }
+@media (max-width: 1200px){ .content.svelte-c1qji4 .dp_group.dp_group_rodzaj_rolety .dp_input_container > ul > li.dp-thumbnail { grid-column: span 6; } }
+@media (max-width: 768px){ .content.svelte-c1qji4 .dp_group.dp_group_rodzaj_rolety .dp_input_container > ul > li.dp-thumbnail { grid-column: span 6; } }
+
+/* --- KWADRATY – Strona sterowania --- */
+.content.svelte-c1qji4 .dp_group.dp_strona_sterowania .dp_input_container > ul {
+  display: grid; grid-template-columns: repeat(12, 1fr); gap: 12px; list-style: none; padding: 0; margin: 0;
+}
+.content.svelte-c1qji4 .dp_group.dp_strona_sterowania .dp_input_container > ul > li.dp-thumbnail {
+  grid-column: span 6; position: relative; width: 100%; aspect-ratio: 1 / 1; min-height: 0;
+  border: 2px solid #e5e7eb; border-radius: 14px; background: #fff; box-shadow: 0 1px 2px rgba(16,24,40,.04);
+  transition: border-color .12s, box-shadow .12s, transform .12s, background-color .12s;
+  overflow: hidden; display: flex; flex-direction: column; justify-content: center; padding: 12px; box-sizing: border-box;
+}
+@supports not (aspect-ratio: 1 / 1) {
+  .content.svelte-c1qji4 .dp_group.dp_strona_sterowania .dp_input_container > ul > li.dp-thumbnail { padding: 0; }
+  .content.svelte-c1qji4 .dp_group.dp_strona_sterowania .dp_input_container > ul > li.dp-thumbnail::before { content: ""; display: block; padding-top: 100%; }
+  .content.svelte-c1qji4 .dp_group.dp_strona_sterowania .dp_input_container > ul > li.dp-thumbnail > .dp_tile-inner {
+    position: absolute; inset: 0; padding: 12px; display: flex; flex-direction: column; justify-content: center;
+    border: 2px solid #e5e7eb; border-radius: 14px; background: #fff; box-shadow: 0 1px 2px rgba(16,24,40,.04); box-sizing: border-box;
+  }
+}
+.content.svelte-c1qji4 .dp_group.dp_strona_sterowania .dp_thumb {
+  width: 100%; aspect-ratio: 1 / 1; border-radius: 10px; overflow: hidden; background: #f6f7fb; box-shadow: inset 0 0 0 1px rgba(0,0,0,.05);
+}
+@supports not (aspect-ratio: 1 / 1) {
+  .content.svelte-c1qji4 .dp_group.dp_strona_sterowania .dp_thumb { position: relative; }
+  .content.svelte-c1qji4 .dp_group.dp_strona_sterowania .dp_thumb::before { content: ""; display: block; padding-top: 100%; }
+  .content.svelte-c1qji4 .dp_group.dp_strona_sterowania .dp_thumb > img { position: absolute; inset: 0; }
+}
+.content.svelte-c1qji4 .dp_group.dp_strona_sterowania .dp_btn.option_label { margin-top: 8px; display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 0; border: none; background: transparent; color: #1f2937; font-size: 14px; font-weight: 600; text-align: center; }
+.content.svelte-c1qji4 .dp_group.dp_strona_sterowania .dp_btn.option_label p { font-size: 12px; color: #667085; margin: 0; line-height: 1.35; }
+.content.svelte-c1qji4 .dp_group.dp_strona_sterowania .dp_input_container > ul > li.dp-thumbnail:hover { border-color: var(--rc-primary); box-shadow: 0 2px 8px rgba(15,110,253,.12); transform: translateY(-1px); }
+.content.svelte-c1qji4 .dp_group.dp_strona_sterowania .dp_input_container > ul > li.dp-thumbnail.dp_selected { border-color: var(--rc-primary); background: #f0f6ff; box-shadow: 0 2px 10px rgba(15,110,253,.14); }
+@media (max-width: 768px){ .content.svelte-c1qji4 .dp_group.dp_strona_sterowania .dp_input_container > ul > li.dp-thumbnail { grid-column: span 6; } }
+
+/* --- KWADRATY – Kolekcje tkanin (np. BLACK GOLD) – ogólne image-list --- */
+.content.svelte-c1qji4 .dp_field_container.dp_type_image-list[data-name*="kolekcja"] .dp_input_container > ul,
+.content.svelte-c1qji4 .dp_field_container.dp_type_image-list .dp_input_container > ul.svelte-18vgc8e {
+  display: grid; grid-template-columns: repeat(12, 1fr); gap: 12px; list-style: none; padding: 0; margin: 0;
+}
+.content.svelte-c1qji4 .dp_field_container.dp_type_image-list[data-name*="kolekcja"] .dp_input_container > ul > li.dp-thumbnail,
+.content.svelte-c1qji4 .dp_field_container.dp_type_image-list .dp_input_container > ul.svelte-18vgc8e > li.dp-thumbnail {
+  grid-column: span 3; position: relative; width: 100%; /*aspect-ratio: 1 / 1; */
+/*min-height: 0;*/
+
+  border: 2px solid #e5e7eb; border-radius: 12px; background: #fff; box-shadow: 0 1px 2px rgba(16,24,40,.04);
+  transition: border-color .12s, box-shadow .12s, transform .12s, background-color .12s;
+/*  overflow: hidden;*/ 
+
+display: flex; flex-direction: column; justify-content: space-between; padding: 10px; box-sizing: border-box;
+}
+@supports not (aspect-ratio: 1 / 1) {
+  .content.svelte-c1qji4 .dp_field_container.dp_type_image-list[data-name*="kolekcja"] .dp_input_container > ul > li.dp-thumbnail,
+  .content.svelte-c1qji4 .dp_field_container.dp_type_image-list .dp_input_container > ul.svelte-18vgc8e > li.dp-thumbnail { padding: 0; }
+  .content.svelte-c1qji4 .dp_field_container.dp_type_image-list[data-name*="kolekcja"] .dp_input_container > ul > li.dp-thumbnail::before,
+  .content.svelte-c1qji4 .dp_field_container.dp_type_image-list .dp_input_container > ul.svelte-18vgc8e > li.dp-thumbnail::before { content: ""; display: block; padding-top: 100%; }
+  .content.svelte-c1qji4 .dp_field_container.dp_type_image-list[data-name*="kolekcja"] .dp_input_container > ul > li.dp-thumbnail > .dp_tile-inner,
+  .content.svelte-c1qji4 .dp_field_container.dp_type_image-list .dp_input_container > ul.svelte-18vgc8e > li.dp-thumbnail > .dp_tile-inner {
+    position: absolute; inset: 0; padding: 10px; display: flex; flex-direction: column; justify-content: space-between;
+    border: 2px solid #e5e7eb; border-radius: 12px; background: #fff; box-shadow: 0 1px 2px rgba(16,24,40,.04); box-sizing: border-box;
+  }
+}
+.content.svelte-c1qji4 .dp_field_container.dp_type_image-list[data-name*="kolekcja"] .dp_thumb,
+.content.svelte-c1qji4 .dp_field_container.dp_type_image-list .dp_thumb {
+  width: 100%; aspect-ratio: 1 / 1; border-radius: 10px; overflow: hidden; background: #f6f7fb; box-shadow: inset 0 0 0 1px rgba(0,0,0,.05);
+}
+@supports not (aspect-ratio: 1 / 1) {
+  .content.svelte-c1qji4 .dp_field_container.dp_type_image-list[data-name*="kolekcja"] .dp_thumb,
+  .content.svelte-c1qji4 .dp_field_container.dp_type_image-list .dp_thumb { position: relative; }
+  .content.svelte-c1qji4 .dp_field_container.dp_type_image-list[data-name*="kolekcja"] .dp_thumb::before,
+  .content.svelte-c1qji4 .dp_field_container.dp_type_image-list .dp_thumb::before { content: ""; display: block; padding-top: 100%; }
+  .content.svelte-c1qji4 .dp_field_container.dp_type_image-list[data-name*="kolekcja"] .dp_thumb > img,
+  .content.svelte-c1qji4 .dp_field_container.dp_type_image-list .dp_thumb > img { position: absolute; inset: 0; }
+}
+.content.svelte-c1qji4 .dp_field_container.dp_type_image-list[data-name*="kolekcja"] .dp_input_container > ul > li.dp-thumbnail:hover,
+.content.svelte-c1qji4 .dp_field_container.dp_type_image-list .dp_input_container > ul.svelte-18vgc8e > li.dp-thumbnail:hover {
+  border-color: var(--rc-primary);
+  box-shadow: 0 2px 8px rgba(15,110,253,.12);
+  transform: translateY(-1px);
+}
+
+.content.svelte-c1qji4 .dp_field_container.dp_type_image-list[data-name*="kolekcja"] .dp_input_container > ul > li.dp-thumbnail.dp_selected,
+.content.svelte-c1qji4 .dp_field_container.dp_type_image-list .dp_input_container > ul.svelte-18vgc8e > li.dp-thumbnail.dp_selected {
+  border-color: var(--rc-primary);
+  background: #f0f6ff;
+  box-shadow: 0 2px 10px rgba(15,110,253,.14);
+}
+
+@media (max-width: 1200px){
+  .content.svelte-c1qji4 .dp_field_container.dp_type_image-list[data-name*="kolekcja"] .dp_input_container > ul > li.dp-thumbnail,
+  .content.svelte-c1qji4 .dp_field_container.dp_type_image-list .dp_input_container > ul.svelte-18vgc8e > li.dp-thumbnail {
+    grid-column: span 4; /* 3 w rzędzie */
+  }
+}
+@media (max-width: 768px){
+  .content.svelte-c1qji4 .dp_field_container.dp_type_image-list[data-name*="kolekcja"] .dp_input_container > ul > li.dp-thumbnail,
+  .content.svelte-c1qji4 .dp_field_container.dp_type_image-list .dp_input_container > ul.svelte-18vgc8e > li.dp-thumbnail {
+    grid-column: span 6; /* 3 w rz ^ydzie */
+  }
+}
+
+/* --- Wymiary okna: dwie kolumny A/B + pełna Wysokość --- */
+
+/* Nigdy nie ukrywaj labeli */
+.content.svelte-c1qji4 label,
+.product-detail .product-variants label,
+.dp-ensure-label label {
+/*  display: block !important; */
+  visibility: visible !important;
+  opacity: 1 !important;
+  height: auto !important;
+  margin-bottom: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #344054;
+}
+
+/* Kontener grid dla wymiarów */
+.product-detail .dp_dimensions {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 12px;
+  align-items: start;
+}
+
+/* Dwie kolumny dla A/B, Wysokość pełna */
+.product-detail .dp_dimensions .dp_field_szerokosc_a,
+.product-detail .dp_dimensions .dp_field_szerokosc_b {
+  grid-column: span 6;
+  min-width: 0;
+}
+.product-detail .dp_dimensions .dp_field_wysokosc {
+  grid-column: span 12;
+  min-width: 0;
+}
+
+/* Styl pól w wymiarach */
+.product-detail .dp_dimensions input[type="text"],
+.product-detail .dp_dimensions input[type="number"],
+.product-detail .dp_dimensions select {
+  width: 100%;
+  height: 44px;
+  line-height: 44px;
+  padding: 0 10px;
+  border: none !important;
+  border-radius: 10px !important;
+  background: #ffffff !important;
+  box-shadow: 0 0 0 1px rgba(16,24,40,0.12);
+  color: #1f2937 !important;
+  outline: none;
+  transition: box-shadow .14s ease, background-color .14s ease;
+  -webkit-appearance: none;
+  appearance: none;
+  box-sizing: border-box;
+}
+.product-detail .dp_dimensions input[type="text"]:focus,
+.product-detail .dp_dimensions input[type="number"]:focus,
+.product-detail .dp_dimensions select:focus {
+  box-shadow:
+    0 0 0 1px rgba(15,110,253,.25),
+    0 0 0 6px rgba(15,110,253,.10);
+  background: #fff !important;
+}
+
+/* Mobile: układ 1 kolumna, etykiety nadal widoczne */
+@media (max-width: 768px) {
+  .product-detail .dp_dimensions {
+    grid-template-columns: repeat(12, 1fr);
+    gap: 10px;
+  }
+  .product-detail .dp_dimensions .dp_field_szerokosc_a,
+  .product-detail .dp_dimensions .dp_field_szerokosc_b,
+  .product-detail .dp_dimensions .dp_field_wysokosc {
+    grid-column: span 6;
+  }
+  .content.svelte-c1qji4 label,
+  .product-detail .product-variants label {
+    font-size: 13px !important;
+    margin-bottom: 6px !important;
+  }
+}
+
+/* Drobne: info-ikona przy wymiarach */
+.product-detail .dp_dimensions ._info_ {
+  opacity: 0.6;
+  font-size: 12px;
+}
+
+/* Reset ukryć labeli przez klasy pomocnicze */
+label[hidden], .hide-label label, .sr-only label {
+  display: block !important;
+  position: static !important;
+  clip: auto !important;
+  width: auto !important;
+  height: auto !important;
+  overflow: visible !important;
+}
+
+/* Reset inline szerokości inputów */
+[id*="dp_szerokosc_a"], [id*="dp_szerokosc_b"], [id*="dp_wys_"] {
+  max-width: 100% !important;
+}
+
+
+
+.dp_group_wymiary, .dp_group_rodzaj_rolety {
+  display: flex;
+  justify-content: center;
+}
+
+.dp_group_wymiary > .content, .dp_group_rodzaj_rolety > .content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  max-width: 700px;
+  width: 100%;
+  justify-items: center;
+  text-align: center;
+}
+/* Pierwszy element (czyli #dp_test z przyciskami)  ^`^t pe ^bna szeroko ^{ ^g */
+.dp_group_wymiary > .content > .dp_field_container:first-child, .dp_group_rodzaj_rolety > .content > .dp_field_container:first-child {
+  grid-column: 1 / -1;
+/*  display: flex;*/
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Wszystkie pozosta ^be elementy automatycznie uk ^badane w dw  ch kolumnach */
+.dp_group_wymiary > .content > .dp_field_container:not(:first-child), .dp_group_rodzaj_rolety > .content > .dp_field_container:not(:first-child) {
+  grid-column: auto;
+}
+
+@media (max-width: 768px) {
+  .dp_group_wymiary > .content, .dp_group_rodzaj_rolety > .content {
+    grid-template-columns: 1fr;
+  }
+.dp_field_container.dp_type_html{justify-content:center;display:block;}
+fieldset.dp_group.dp_group_tkanina.svelte-c1qji4 > div > div:nth-child(1) {display:block;}
+  a.btn.pomiar {display:block; }
+  .product-description { overflow-y:scroll; }
+  .dp_group_wymiary > .content > .dp_field_container:first-child, .dp_group_rodzaj_rolety > .content > .dp_field_container:first-child{
+    flex-direction: column;
+  }
+
+  .dp_group_wymiary > .content > .dp_field_container:first-child a, .dp_group_rodzaj_rolety > .content > .dp_field_container:first-child a {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+
+
+
+.pomiar {
+        margin-top:5px;
+        margin-left: 20px;
+    background-color: orange;  /* Kolor pocz ^etkowy przycisku */
+    color: white;              /* Kolor tekstu */
+    border: 2px solid darkorange;  /* Ramka 2px w kolorze pomara ^dczowym */
+    padding: 10px 20px;        /* Wewn ^ytrzny odst ^yp */
+    font-size: 16px;           /* Rozmiar czcionki */
+    cursor: pointer;          /* Zmiana kursora na wska  nik */
+    position: relative;        /* Ustawienie wzgl ^ydne dla pseudo-elementu */
+    border-radius: 10px;        /* Zaokr ^eglone rogi */
+    overflow: hidden;          /* Ukrycie wychodz ^ecego t ^ba */
+    transition: background-color 0.3s ease, color 0.3s ease; /* P ^bynna zmiana koloru t ^ba i tekstu */
+    z-index: 1;                /* Tekst nad pseudo-elementem */
+}
+
+.pomiar::before {
+    content: ''; 
+    position: absolute;
+    top: 100%;  /* Startujemy poza przyciskiem (poni  ej) */
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: darkorange; /* Kolor zmiany przy najechaniu */
+    transition: top 0.3s ease; /* Fade w d   ^b */
+    z-index: -1;  /* Pseudo-element na dole, ale nie zas ^bania tekstu */
+}
+
+.pomiar:hover::before {
+    top: 0; /* Przy najechaniu zmiana na top: 0 */
+}
+
+
+.pomiar:hover {
+    background-color: transparent; /* T ^bo zmienia si ^y na przezroczyste */
+    color: white; /* Tekst pozostaje bia ^by po najechaniu */
+    border-color: orange; /* Ramka pozostaje pomara ^dczowa */
+}
+
+.pomiar i {
+    margin-right: 10px; /* Przesuni ^ycie ikony od tekstu */
+    font-size: 18px;   /* Rozmiar ikony */
+}
+

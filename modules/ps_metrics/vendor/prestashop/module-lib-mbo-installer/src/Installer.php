@@ -1,10 +1,7 @@
 <?php
 
-namespace ps_metrics_module_v4_0_10\Prestashop\ModuleLibMboInstaller;
+namespace ps_metrics_module_v4_1_2\Prestashop\ModuleLibMboInstaller;
 
-use GuzzleHttp\Psr7\Request;
-use ps_metrics_module_v4_0_10\Prestashop\ModuleLibGuzzleAdapter\ClientFactory;
-use ps_metrics_module_v4_0_10\Prestashop\ModuleLibGuzzleAdapter\Interfaces\HttpClientInterface;
 use PrestaShop\PrestaShop\Core\Addon\Module\ModuleManagerBuilder;
 class Installer
 {
@@ -12,19 +9,21 @@ class Installer
     const MODULE_ID = 39574;
     const MODULE_NAME = 'ps_mbo';
     /**
-     * @var HttpClientInterface
+     * @var HttpClient
      */
     protected $marketplaceClient;
     /**
-     * @var ModuleManagerBuilder
+     * @var \PrestaShop\PrestaShop\Core\Module\ModuleManager|\PrestaShop\PrestaShop\Core\Addon\Module\ModuleManager
      */
-    protected $moduleManagerBuilder;
+    protected $moduleManager;
     /**
      * @var string
      */
     protected $prestashopVersion;
     /**
      * @param string $prestashopVersion
+     *
+     * @throws \Exception
      */
     public function __construct($prestashopVersion)
     {
@@ -32,33 +31,55 @@ class Installer
         if (\is_null($moduleManagerBuilder)) {
             throw new \Exception('ModuleManagerBuilder::getInstance() failed');
         }
-        $this->marketplaceClient = (new ClientFactory())->getClient(['base_uri' => self::ADDONS_URL]);
-        $this->moduleManagerBuilder = $moduleManagerBuilder;
+        $this->moduleManager = $moduleManagerBuilder->build();
+        if (\is_null($this->moduleManager)) {
+            throw new \Exception('ModuleManagerBuilder::build() failed');
+        }
+        $this->marketplaceClient = new HttpClient(self::ADDONS_URL);
         $this->prestashopVersion = $prestashopVersion;
     }
     /**
      * Installs ps_mbo module
      *
      * @return bool
+     *
+     * @throws \Exception
      */
     public function installModule()
     {
         // On PrestaShop 1.7, the signature is install($source), with $source a module name or a path to an archive.
         // On PrestaShop 8, the signature is install(string $name, $source = null).
         if (\version_compare($this->prestashopVersion, '8.0.0', '>=')) {
-            return $this->moduleManagerBuilder->build()->install(self::MODULE_NAME, $this->downloadModule());
+            return $this->moduleManager->install(self::MODULE_NAME, $this->downloadModule());
         }
-        return $this->moduleManagerBuilder->build()->install(self::MODULE_NAME);
+        return $this->moduleManager->install(self::MODULE_NAME);
+    }
+    /**
+     * Enable ps_mbo module
+     *
+     * @return bool
+     *
+     * @throws \Exception
+     */
+    public function enableModule()
+    {
+        return $this->moduleManager->enable(self::MODULE_NAME);
     }
     /**
      * Downloads ps_mbo module source from addons, store it and returns the file name
      *
      * @return string
+     *
+     * @throws \Exception
      */
     private function downloadModule()
     {
         $params = ['id_module' => self::MODULE_ID, 'channel' => 'stable', 'method' => 'module', 'version' => $this->prestashopVersion];
-        $moduleData = $this->marketplaceClient->sendRequest(new Request('POST', '/?' . \http_build_query($params)))->getBody()->getContents();
+        $fetchModuleData = $this->marketplaceClient->post('/?', $params);
+        $moduleData = $fetchModuleData->getBody();
+        if (!$fetchModuleData->isSuccessful()) {
+            throw new \Exception('An error occured while fetching data');
+        }
         $temporaryZipFilename = \tempnam(\sys_get_temp_dir(), 'mod');
         if ($temporaryZipFilename === \false) {
             throw new \Exception('Cannot create temporary file in ' . \sys_get_temp_dir());

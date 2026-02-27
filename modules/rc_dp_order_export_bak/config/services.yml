@@ -1,0 +1,6 @@
+services:
+  RcDpOrderExport\Controller\Admin\OrderExportController:
+    public: true
+    autowire: true
+    autoconfigure: true
+    tags: ['controller.service_arguments']

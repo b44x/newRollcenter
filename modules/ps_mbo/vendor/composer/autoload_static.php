@@ -140,8 +140,8 @@ class ComposerStaticInita11d99060407121a828ab85bb8b687cb
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-message/src',
-            1 => __DIR__ . '/..' . '/psr/http-factory/src',
+            0 => __DIR__ . '/..' . '/psr/http-factory/src',
+            1 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -177,8 +177,8 @@ class ComposerStaticInita11d99060407121a828ab85bb8b687cb
         ),
         'Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/php-http/message-factory/src',
-            1 => __DIR__ . '/..' . '/php-http/message/src',
+            0 => __DIR__ . '/..' . '/php-http/message/src',
+            1 => __DIR__ . '/..' . '/php-http/message-factory/src',
         ),
         'Http\\Factory\\Guzzle\\' => 
         array (
@@ -565,8 +565,11 @@ class ComposerStaticInita11d99060407121a828ab85bb8b687cb
         'PrestaShop\\Module\\Mbo\\Distribution\\Config\\Factory' => __DIR__ . '/../..' . '/src/Distribution/Config/Factory.php',
         'PrestaShop\\Module\\Mbo\\Distribution\\ConnectedClient' => __DIR__ . '/../..' . '/src/Distribution/ConnectedClient.php',
         'PrestaShop\\Module\\Mbo\\Exception\\AddonsDownloadModuleException' => __DIR__ . '/../..' . '/src/Exception/AddonsDownloadModuleException.php',
+        'PrestaShop\\Module\\Mbo\\Exception\\ClientRequestException' => __DIR__ . '/../..' . '/src/Exception/ClientRequestException.php',
         'PrestaShop\\Module\\Mbo\\Exception\\DownloadModuleException' => __DIR__ . '/../..' . '/src/Exception/DownloadModuleException.php',
         'PrestaShop\\Module\\Mbo\\Exception\\ExpectedServiceNotFoundException' => __DIR__ . '/../..' . '/src/Exception/ExpectedServiceNotFoundException.php',
+        'PrestaShop\\Module\\Mbo\\Exception\\FileOperationException' => __DIR__ . '/../..' . '/src/Exception/FileOperationException.php',
+        'PrestaShop\\Module\\Mbo\\Exception\\RequestStackException' => __DIR__ . '/../..' . '/src/Exception/RequestStackException.php',
         'PrestaShop\\Module\\Mbo\\Handler\\ErrorHandler\\ErrorHandler' => __DIR__ . '/../..' . '/src/Handler/ErrorHandler/ErrorHandler.php',
         'PrestaShop\\Module\\Mbo\\Handler\\ErrorHandler\\ErrorHandlerInterface' => __DIR__ . '/../..' . '/src/Handler/ErrorHandler/ErrorHandlerInterface.php',
         'PrestaShop\\Module\\Mbo\\Helpers\\AddonsApiHelper' => __DIR__ . '/../..' . '/src/Helpers/AddonsApiHelper.php',
@@ -602,6 +605,7 @@ class ComposerStaticInita11d99060407121a828ab85bb8b687cb
         'PrestaShop\\Module\\Mbo\\Module\\Module' => __DIR__ . '/../..' . '/src/Module/Module.php',
         'PrestaShop\\Module\\Mbo\\Module\\ModuleBuilder' => __DIR__ . '/../..' . '/src/Module/ModuleBuilder.php',
         'PrestaShop\\Module\\Mbo\\Module\\ModuleBuilderInterface' => __DIR__ . '/../..' . '/src/Module/ModuleBuilderInterface.php',
+        'PrestaShop\\Module\\Mbo\\Module\\ModuleOverrideChecker' => __DIR__ . '/../..' . '/src/Module/ModuleOverrideChecker.php',
         'PrestaShop\\Module\\Mbo\\Module\\Repository' => __DIR__ . '/../..' . '/src/Module/Repository.php',
         'PrestaShop\\Module\\Mbo\\Module\\RepositoryInterface' => __DIR__ . '/../..' . '/src/Module/RepositoryInterface.php',
         'PrestaShop\\Module\\Mbo\\Module\\SourceHandler\\AddonsUrlSourceHandler' => __DIR__ . '/../..' . '/src/Module/SourceHandler/AddonsUrlSourceHandler.php',
@@ -649,7 +653,6 @@ class ComposerStaticInita11d99060407121a828ab85bb8b687cb
         'PrestaShop\\Module\\Mbo\\Traits\\Hooks\\UseActionAdminControllerSetMedia' => __DIR__ . '/../..' . '/src/Traits/Hooks/UseActionAdminControllerSetMedia.php',
         'PrestaShop\\Module\\Mbo\\Traits\\Hooks\\UseActionBeforeInstallModule' => __DIR__ . '/../..' . '/src/Traits/Hooks/UseActionBeforeInstallModule.php',
         'PrestaShop\\Module\\Mbo\\Traits\\Hooks\\UseActionBeforeUpgradeModule' => __DIR__ . '/../..' . '/src/Traits/Hooks/UseActionBeforeUpgradeModule.php',
-        'PrestaShop\\Module\\Mbo\\Traits\\Hooks\\UseActionDispatcherBefore' => __DIR__ . '/../..' . '/src/Traits/Hooks/UseActionDispatcherBefore.php',
         'PrestaShop\\Module\\Mbo\\Traits\\Hooks\\UseActionGeneralPageSave' => __DIR__ . '/../..' . '/src/Traits/Hooks/UseActionGeneralPageSave.php',
         'PrestaShop\\Module\\Mbo\\Traits\\Hooks\\UseActionGetAdminToolbarButtons' => __DIR__ . '/../..' . '/src/Traits/Hooks/UseActionGetAdminToolbarButtons.php',
         'PrestaShop\\Module\\Mbo\\Traits\\Hooks\\UseActionGetAlternativeSearchPanels' => __DIR__ . '/../..' . '/src/Traits/Hooks/UseActionGetAlternativeSearchPanels.php',

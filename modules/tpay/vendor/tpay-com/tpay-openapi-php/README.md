@@ -39,29 +39,14 @@ The [`src/Loader.php`](src/Loader.php) file handles all required class loading, 
 
 All methods described in [Tpay OpenAPI documentation](https://openapi.tpay.com) can be easily executed by running one of the library methods like:
 ```php
-$tpayApi = new TpayApi($clientId, $clientSecret, true, 'read');
+$cache = new Cache(/** here you can inject your PSR6 or PSR16 cache storage object */);
+$tpayApi = new TpayApi($cache,'12345-132123', '456');
 $transactions = $tpayApi->Transactions->getTransactions();
 ```
+##### Credentials
 
 All currently available API methods have an example usage in [`Examples`](examples) directory.
-
-### Example credentials
-
-#### for all API calls:
-```
-  Client id: 1010-e5736adfd4bc5d8c
-  Client secret: 493e01af815383a687b747675010f65d1eefaeb42f63cfe197e7b30f14a556b7
-```
-
-#### for notifications validation:
-```
-  Confirmation code: demo
-```
-
-#### for credit card encrypting:
-```
-  Public Key: LS0tLS1CRUdJTiBQVUJMSUMgS0VZLS0tLS0NCk1JR2ZNQTBHQ1NxR1NJYjNEUUVCQVFVQUE0R05BRENCaVFLQmdRQ2NLRTVZNU1Wemd5a1Z5ODNMS1NTTFlEMEVrU2xadTRVZm1STS8NCmM5L0NtMENuVDM2ekU0L2dMRzBSYzQwODRHNmIzU3l5NVpvZ1kwQXFOVU5vUEptUUZGVyswdXJacU8yNFRCQkxCcU10TTVYSllDaVQNCmVpNkx3RUIyNnpPOFZocW9SK0tiRS92K1l1YlFhNGQ0cWtHU0IzeHBhSUJncllrT2o0aFJDOXk0WXdJREFRQUINCi0tLS0tRU5EIFBVQkxJQyBLRVktLS0tLQ==
-```
+You can obtain sandbox credentials by registering on https://register.sandbox.tpay.com/ website.
 
 ### Examples of usage
 

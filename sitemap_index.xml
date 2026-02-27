@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap>
+    <loc>https://rollcenter.pl/sitemap_products.xml</loc>
+    <lastmod>2026-01-20</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://rollcenter.pl/sitemap_categories.xml</loc>
+    <lastmod>2026-01-20</lastmod>
+  </sitemap>
+</sitemapindex>

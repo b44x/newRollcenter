@@ -168,8 +168,10 @@ class OAuth2Controller extends FrameworkBundleAdminController
             // FIXME: get intended redirect uri
             'redirect' => '',
             // FIXME: integration with the appropriate login layout & blocks
-            'linkCss' => $this->module->getPathUri() . '/views/css/login.css',
-            'linkJs' => $this->module->getPathUri() . '/views/js/login.js',
+            'linkCss' => $this->module->getPathUri() . '/views/css/login.css' .
+                '?v=' . urlencode($this->module->version),
+            'linkJs' => $this->module->getPathUri() . '/views/js/login.js' .
+                '?v=' . urlencode($this->module->version),
         ]);
     }
 
@@ -198,7 +200,10 @@ class OAuth2Controller extends FrameworkBundleAdminController
         );
 
         if ($this->getOAuthAction() === 'identifyPointOfContact') {
-            $this->commandBus->handle(new IdentifyContactCommand($accessToken, $user, $this->getSource()));
+            $this->commandBus->handle(
+                (new IdentifyContactCommand($accessToken, $user))
+                    ->withSource($this->getSource())
+            );
 
             return true;
         }

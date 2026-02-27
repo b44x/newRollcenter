@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<module>
+    <name>rc_dp_order_export</name>
+    <displayName><![CDATA[DP Order Export (CSV)]]></displayName>
+    <version><![CDATA[1.0.0]]></version>
+    <description><![CDATA[Eksport konfiguracji Dynamic Product do CSV + mapowanie SKU (ref) dla thumbnails.]]></description>
+    <author><![CDATA[Rollcenter]]></author>
+    <tab><![CDATA[administration]]></tab>
+    <is_configurable>0</is_configurable>
+    <need_instance>1</need_instance>
+</module>

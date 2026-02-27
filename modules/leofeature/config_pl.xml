@@ -3,7 +3,7 @@
     <name>leofeature</name>
     <displayName><![CDATA[Leo Feature]]></displayName>
     <version><![CDATA[2.2.2]]></version>
-    <description><![CDATA[Leo feature for prestashop 1.7: ajax cart, dropdown cart, fly cart, review, compare, wishlist at product list]]></description>
+    <description><![CDATA[Leo feature dla prestashop 1.7: koszyk ajax, rozwijany koszyk, koszyk latający, recenzje, por&oacute;wnanie, lista życzeń na liście produkt&oacute;w]]></description>
     <author><![CDATA[Leotheme]]></author>
     <tab><![CDATA[front_office_features]]></tab>
     <is_configurable>1</is_configurable>

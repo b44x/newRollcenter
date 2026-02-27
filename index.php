@@ -23,6 +23,13 @@
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/OSL-3.0 Open Software License (OSL 3.0)
  */
+
+
+//if (isset($_GET['aaa'])) { 
+//require(dirname(__FILE__).'/custom/sentry_wrapper.php');
+//}
+
+require dirname(__FILE__).'/redirects.php';
 require dirname(__FILE__).'/config/config.inc.php';
 
 Dispatcher::getInstance()->dispatch();

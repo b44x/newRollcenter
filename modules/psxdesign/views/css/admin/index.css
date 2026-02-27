@@ -50,8 +50,7 @@
 }
 
 .gateway--blur-background {
-  -webkit-backdrop-filter: blur(5px);
-          backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
 }
 
 .content-div {
@@ -511,10 +510,10 @@
   pointer-events: none;
   color: #b3c7cd;
 }
-.color-input:not(:disabled).is-invalid .color-input__hex {
+.color-input:not(:disabled).is-invalid .color-input__hex:hover, .color-input:not(:disabled).is-invalid .color-input__hex:active, .color-input:not(:disabled).is-invalid .color-input__hex:focus, .color-input:not(:disabled).is-invalid .color-input__hex:focus-visible {
   border-color: #f54c3e;
 }
-.color-input:not(:disabled).is-invalid .color-input__hex:hover, .color-input:not(:disabled).is-invalid .color-input__hex:active, .color-input:not(:disabled).is-invalid .color-input__hex:focus, .color-input:not(:disabled).is-invalid .color-input__hex:focus-visible {
+.color-input:not(:disabled).is-invalid .color-input__hex {
   border-color: #f54c3e;
 }
 .color-input:not(:disabled).is-invalid .color-input__error > .error__message {

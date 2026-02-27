@@ -1,0 +1,32 @@
+Expires: 05 Oct 2035
+Server restriction: rollcenter.pl,*.rollcenter.pl,*.local
+
+------ LICENSE FILE DATA -------
+S6V1856TlOe5K/XqM839FJgrULIpObuk
+Seb7W2p/FavvMegzC08vQdtaYfh1k8t+
+DM+AijwDtCy12ZouwI0cv+nzdNBtS3RM
+nrVlkjfR5fsP3Im9Qjj1EzoUITBmMxXE
+I3ZDDdR9kBnbGO7SP84X81+87yGsy+zA
+025VAsI6pWNypPWQJyEZl8I861TNN+gy
+YcSQ9fRtXM1CmzR8ZBq7zLjMVVEiUiWY
++mRanwcf8Z3GJPS1P1KMdiuoDaQnlU76
+jworqZNMK5Fbus7EwPELSzyEESeg2rBx
+malRsjfKoYuwqDS78IYqEt9yd0c/QbvA
+BbcDbhs7Pk+1SgVm3ydooH73LT8CaoSN
+WVHZ+zfUv7dVysHQk7MZb6r6QJJ+2X6H
+66z9tYomUkWjl9G7NJ6vA85J1zTJqKOg
+x+SaGG/As7OpchAmYzNXx4VYmwPax7Mn
+JQLjt4TuraM46I+4E1Sn6QswXt2bwLtN
+7HYyADnFjNRMfznTK6GmQfKDsRv/04Vz
+lom9xq3ene63wwaHgqzY1KJvCTttAoKf
+xiXB22cN5gZohTNONwhr1ttmOuHFo8Ws
+C2wMDALLazTDKCg2rZH6uBtedWJq+88E
+7v/cKakPuXiQSD4XSAbKr/Y3UrnaOR8R
+8XZb45X5Myo6Yt60uqKr/gUGf/Oep/s3
+hSGOIn0odsNK6CjSxYGYp28JHymHwGdE
+a52s6xYuRpFfIQDRCglhSzl9kULIyA6W
+CZP44bsgP5neA4EyBgAcQLJ7Ii+QskhW
+ycOaFdHnEVR7JURbXeg7xIXwl9Yr2mwq
+KqdS1CxwK6frjlA8GbNurToVOFQ4QY20
+ew5n/mbPkVpw00qvZzGFjZu=
+--------------------------------

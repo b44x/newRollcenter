@@ -1,0 +1,16 @@
+
+.arx-form-custom-color-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 10px;
+    margin: 10px;
+}
+
+.arx-form-custom-color-preview {
+    width: 30px;
+    height: 20px;
+    border: 1px solid #ccc;
+    display: inline-block;
+    vertical-align: middle;
+}

@@ -29,7 +29,7 @@ use PrestaShop\Module\Ps_metrics\Presenter\FaqPresenter;
 use PrestaShop\Module\Ps_metrics\Presenter\ShopDataPresenter;
 use PrestaShop\Module\Ps_metrics\Provider\AnalyticsAccountsListProvider;
 use PrestaShop\Module\Ps_metrics\Validation\SelectAccountAnalytics;
-use ps_metrics_module_v4_0_10\Prestashop\ModuleLibMboInstaller\Installer as MBOInstaller;
+use ps_metrics_module_v4_1_2\Prestashop\ModuleLibMboInstaller\Installer as MBOInstaller;
 use PrestaShopBundle\Controller\Admin\FrameworkBundleAdminController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;

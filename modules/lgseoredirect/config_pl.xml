@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<module>
+    <name>lgseoredirect</name>
+    <displayName><![CDATA[Przekierowania 301, 302, 303 adres&oacute;w URL - SEO]]></displayName>
+    <version><![CDATA[1.4.9]]></version>
+    <description><![CDATA[Stw&oacute;rz nieograniczoną liczbę przekierowań 301, 302 i 303.]]></description>
+    <author><![CDATA[L&iacute;nea Gr&aacute;fica]]></author>
+    <tab><![CDATA[seo]]></tab>
+    <is_configurable>1</is_configurable>
+    <need_instance>0</need_instance>
+</module>

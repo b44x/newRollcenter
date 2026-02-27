@@ -30,9 +30,9 @@ use PrestaShop\Module\Ps_metrics\Module\Uninstall;
 use PrestaShop\Module\Ps_metrics\Tracker\Segment;
 use PrestaShop\ModuleLibServiceContainer\DependencyInjection\ServiceContainer;
 use PrestaShop\PrestaShop\Adapter\SymfonyContainer;
-use ps_metrics_module_v4_0_10\PrestaShop\PsAccountsInstaller\Installer\Facade\PsAccounts;
+use PrestaShop\PsAccountsInstaller\Installer\Facade\PsAccounts;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use ps_metrics_module_v4_0_10\Twig\Environment as TwigEnvironment;
+use ps_metrics_module_v4_1_2\Twig\Environment as TwigEnvironment;
 if (!\defined('_PS_VERSION_')) {
     exit;
 }
@@ -60,7 +60,7 @@ class Ps_metrics extends \Module
     {
         $this->name = 'ps_metrics';
         $this->tab = 'advertising_marketing';
-        $this->version = '4.0.10';
+        $this->version = '4.1.2';
         $this->author = 'PrestaShop';
         $this->need_instance = 0;
         $this->module_key = '697657ffe038d20741105e95a10b12d1';
@@ -288,6 +288,10 @@ class Ps_metrics extends \Module
      */
     public function getService($serviceName)
     {
+        // fix for Version 9.0
+        if (\version_compare(\_PS_VERSION_, '9.0', '>=')) {
+            return $this->get($serviceName);
+        }
         $splitServiceNamespace = \explode('.', $serviceName);
         $firstLevelNamespace = $splitServiceNamespace[0];
         // if serviceName is not a service coming from ps_metrics

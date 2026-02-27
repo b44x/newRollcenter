@@ -5,6 +5,107 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.12.3]
+
+### Fixed
+
+- Validation for IPv6
+
+## [1.12.2]
+
+### Fixed
+
+- Resolved issue introduced in 1.12.1
+
+## [1.12.1]
+
+### Changed
+
+- Enforced length limit (trimming) on UserAgent field sent to payment gateway
+
+## [1.12.0]
+
+### Changed
+
+- Using new translations
+
+## [1.11.2]
+
+### Changed
+
+- Increased callback urls length
+
+## [1.11.1]
+
+### Fixed
+
+- Invalid customer name passed to payments backend
+
+## [1.11.0]
+
+### Added
+
+- New translations to refunds errors
+- New fields in payer
+
+### Changed
+
+- Success page for cards payment
+
+### Fixed
+
+- Blik lvl0 payment after declined payment by card on site
+- Wrong condition in Admin.php
+- Loading animation
+- Typo in settings title
+
+## [1.10.6]
+
+### Fixed
+
+- Support for Prestashop 9.0
+
+## [1.10.5]
+
+### Added
+
+- Option to automatically cancel payment pending orders after selected number of days
+
+## [1.10.4]
+
+### Fixed
+
+- Presta version recognition
+- Payment error page fallback to recover payment
+
+## [1.10.3]
+
+### Fixed
+
+- issue with placing order when Friendly URL disabled
+
+## [1.10.2]
+
+### Added
+
+- Improved BLIK lvl0 visuals
+
+### Fixed
+
+- BLIK code validation issues
+
+## [1.10.1]
+
+### Fixed
+
+- Handling checkout when accept TOS checkbox is disabled
+
+## [1.10.0]
+
+### Added
+
+- Improve transaction save
+
 ## [1.9.10]
 
 ### Fixed

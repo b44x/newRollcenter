@@ -254,6 +254,9 @@ class MailCore extends ObjectModel
             $from = $configuration['PS_SHOP_EMAIL'];
         }
 
+	$from = 'nieodpowiadaj@rollcenter.pl';
+
+
         if (!Validate::isEmail($from)) {
             $from = null;
         }
@@ -390,6 +393,14 @@ class MailCore extends ObjectModel
                  */
                 $connection = new Swift_SendmailTransport();
             }
+
+$connection->setStreamOptions([
+    'ssl' => [
+        'verify_peer' => false,
+        'verify_peer_name' => false,
+        'allow_self_signed' => true,
+    ],
+]);
 
             $swift = new Swift_Mailer($connection);
             /* Get templates content */
@@ -627,6 +638,7 @@ class MailCore extends ObjectModel
             }
             /* Send mail */
             $message->setFrom([$from => $fromName]);
+//            $message->setReplyTo('bok@rollcenter.pl');
 
             // Hook to alter Swift Message before sending mail
             Hook::exec('actionMailAlterMessageBeforeSend', [
@@ -775,7 +787,13 @@ class MailCore extends ObjectModel
                  */
                 $connection = new Swift_SendmailTransport();
             }
-
+$connection->setStreamOptions([
+    'ssl' => [
+        'verify_peer' => false,
+        'verify_peer_name' => false,
+        'allow_self_signed' => true,
+    ],
+]);
             $swift = new Swift_Mailer($connection);
             $message = new Swift_Message();
 
@@ -792,12 +810,14 @@ class MailCore extends ObjectModel
                 );
                 $message->attachSigner($signer);
             }
+        $from = 'nieodpowiadaj@rollcenter.pl';
 
             $message
                 ->setFrom($from)
                 ->setTo($to)
                 ->setSubject($subject)
                 ->setBody($content);
+;
 
             if ($swift->send($message)) {
                 $result = true;

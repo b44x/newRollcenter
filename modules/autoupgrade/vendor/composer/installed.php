@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'prestashop/autoupgrade',
-        'pretty_version' => 'v7.4.3',
-        'version' => '7.4.3.0',
-        'reference' => '6f829eb18909898b2919331943a940ece90d5757',
+        'pretty_version' => 'v7.5.1',
+        'version' => '7.5.1.0',
+        'reference' => 'c12626b5cb5af45d151b1955f688a1ffb4841191',
         'type' => 'prestashop-module',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -29,9 +29,9 @@
             'dev_requirement' => false,
         ),
         'prestashop/autoupgrade' => array(
-            'pretty_version' => 'v7.4.3',
-            'version' => '7.4.3.0',
-            'reference' => '6f829eb18909898b2919331943a940ece90d5757',
+            'pretty_version' => 'v7.5.1',
+            'version' => '7.5.1.0',
+            'reference' => 'c12626b5cb5af45d151b1955f688a1ffb4841191',
             'type' => 'prestashop-module',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

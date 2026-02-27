@@ -58,6 +58,13 @@ services:
       - "@tpay.service.surcharge"
       - "@tpay.context"
 
+  tpay.services.auto_cancel:
+    class: Tpay\Service\AutoCancelService
+    public: true
+    arguments:
+      - "@tpay.repository.transaction"
+      - "@tpay"
+
   tpay.service.card_service:
     class: Tpay\Service\CardService
     public: true

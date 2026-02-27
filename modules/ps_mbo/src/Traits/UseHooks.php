@@ -48,7 +48,6 @@ trait UseHooks
     use \PrestaShop\Module\Mbo\Traits\Hooks\UseActionListModules;
     use \PrestaShop\Module\Mbo\Traits\Hooks\UseActionModuleRegisterHookAfter;
     use \PrestaShop\Module\Mbo\Traits\Hooks\UseDisplayEmptyModuleCategoryExtraMessage;
-    use \PrestaShop\Module\Mbo\Traits\Hooks\UseActionDispatcherBefore;
     use \PrestaShop\Module\Mbo\Traits\Hooks\UseActionObjectShopUrlUpdateAfter;
     use \PrestaShop\Module\Mbo\Traits\Hooks\UseActionGeneralPageSave;
     use \PrestaShop\Module\Mbo\Traits\Hooks\UseActionBeforeUpgradeModule;
@@ -126,6 +125,7 @@ trait UseHooks
      * If a hook is missing, it will be added. If a hook is not declared in the module, it will be removed.
      *
      * @return void
+     *
      * @throws PrestaShopDatabaseException
      */
     public function updateHooks(): void
@@ -170,7 +170,7 @@ trait UseHooks
         if (!empty($newHooks)) {
             $this->registerHook($newHooks);
             foreach ($newHooks as $newHook) {
-                $methodName = "use" . ucfirst($newHook) . "ExtraOperations";
+                $methodName = 'use' . ucfirst($newHook) . 'ExtraOperations';
                 if (method_exists($this, $methodName)) {
                     $this->$methodName();
                 }

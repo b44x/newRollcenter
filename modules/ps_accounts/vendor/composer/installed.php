@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'prestashopcorp/ps_accounts',
-        'pretty_version' => 'v8.0.4',
-        'version' => '8.0.4.0',
-        'reference' => '77d530ed29ed4764f18e65da76fcc893d50f04cf',
+        'pretty_version' => 'v8.0.10',
+        'version' => '8.0.10.0',
+        'reference' => '7a962c0fc2e9773a06a65664b36c2e12f93e0ca6',
         'type' => 'prestashop-module',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -56,9 +56,9 @@
             'dev_requirement' => false,
         ),
         'prestashopcorp/ps_accounts' => array(
-            'pretty_version' => 'v8.0.4',
-            'version' => '8.0.4.0',
-            'reference' => '77d530ed29ed4764f18e65da76fcc893d50f04cf',
+            'pretty_version' => 'v8.0.10',
+            'version' => '8.0.10.0',
+            'reference' => '7a962c0fc2e9773a06a65664b36c2e12f93e0ca6',
             'type' => 'prestashop-module',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

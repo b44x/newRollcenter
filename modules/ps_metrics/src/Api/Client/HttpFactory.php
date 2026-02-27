@@ -20,15 +20,12 @@
  */
 namespace PrestaShop\Module\Ps_metrics\Api\Client;
 
-use Exception;
-use GuzzleHttp\Psr7\Request;
-use PrestaShop\Module\Ps_metrics\Handler\GuzzleApiResponseExceptionHandler;
 use PrestaShop\Module\Ps_metrics\Middleware\CheckResponseMiddleware;
 use PrestaShop\Module\Ps_metrics\Middleware\LogMiddleware;
 use PrestaShop\Module\Ps_metrics\Middleware\Middleware;
 use PrestaShop\Module\Ps_metrics\Middleware\ResponseMiddleware;
 use PrestaShop\Module\Ps_metrics\Middleware\SentryMiddleware;
-use ps_metrics_module_v4_0_10\Prestashop\ModuleLibGuzzleAdapter\ClientFactory;
+use Symfony\Component\HttpClient\HttpClient;
 class HttpFactory
 {
     /**
@@ -64,58 +61,36 @@ class HttpFactory
      */
     private $responseMiddleWare;
     /**
-     * @var GuzzleApiResponseExceptionHandler
-     */
-    private $guzzleApiResponseExceptionHandler;
-    /**
      * ClientFactory constructor.
      *
      * @param CheckResponseMiddleware $checkResponseMiddleware
      * @param LogMiddleware $logMiddleware
      * @param SentryMiddleware $sentryMiddleware
      * @param ResponseMiddleware $responseMiddleWare
-     * @param GuzzleApiResponseExceptionHandler $guzzleApiResponseExceptionHandler
      */
-    public function __construct(CheckResponseMiddleware $checkResponseMiddleware, LogMiddleware $logMiddleware, SentryMiddleware $sentryMiddleware, ResponseMiddleWare $responseMiddleWare, GuzzleApiResponseExceptionHandler $guzzleApiResponseExceptionHandler)
+    public function __construct(CheckResponseMiddleware $checkResponseMiddleware, LogMiddleware $logMiddleware, SentryMiddleware $sentryMiddleware, ResponseMiddleWare $responseMiddleWare)
     {
         $this->checkResponseMiddleware = $checkResponseMiddleware;
         $this->logMiddleware = $logMiddleware;
         $this->sentryMiddleware = $sentryMiddleware;
         $this->responseMiddleWare = $responseMiddleWare;
-        $this->guzzleApiResponseExceptionHandler = $guzzleApiResponseExceptionHandler;
     }
     /**
      * @return array
      */
     public function get()
     {
-        $httpClientOptions = ['base_url' => $this->getUrl(), 'defaults' => ['timeout' => 10, 'exceptions' => \false, 'headers' => $this->getHeader()]];
-        $client = (new ClientFactory())->getClient($httpClientOptions);
-        try {
-            $response = $client->sendRequest(new Request('GET', $this->getRoute()));
-        } catch (Exception $e) {
-            $response = $this->guzzleApiResponseExceptionHandler->get($e->getMessage());
-        }
+        $response = HttpClient::create()->request('GET', $this->getUrl() . $this->getRoute());
         return $this->getMiddlewareManager()->execute($response);
     }
     /**
      * @param array $postBody
-     * @param array $httpCustomOptions
      *
      * @return array
      */
-    public function post($postBody = [], $httpCustomOptions = [])
+    public function post($postBody = [])
     {
-        $httpClientOptions = ['base_url' => $this->getUrl(), 'defaults' => ['timeout' => 10, 'exceptions' => \false, 'headers' => $this->getHeader()]];
-        if (isset($httpCustomOptions['json']) && !empty($httpCustomOptions['json'])) {
-            $httpClientOptions['json'] = $httpCustomOptions['json'];
-        }
-        $client = (new ClientFactory())->getClient($httpClientOptions);
-        try {
-            $response = $client->sendRequest(new Request('POST', $this->getRoute(), [], (string) \json_encode($postBody)));
-        } catch (Exception $e) {
-            $response = $this->guzzleApiResponseExceptionHandler->get($e->getMessage());
-        }
+        $response = HttpClient::create()->request('POST', $this->getUrl() . $this->getRoute(), ['headers' => ['Content-Type' => 'application/json; charset=utf-8'], 'body' => \json_encode($postBody)]);
         return $this->getMiddlewareManager()->execute($response);
     }
     /**

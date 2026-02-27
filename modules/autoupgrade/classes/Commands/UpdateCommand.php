@@ -24,6 +24,8 @@ namespace PrestaShop\Module\AutoUpgrade\Commands;
 use Exception;
 use InvalidArgumentException;
 use PrestaShop\Module\AutoUpgrade\DocumentationLinks;
+use PrestaShop\Module\AutoUpgrade\Exceptions\DistributionApiException;
+use PrestaShop\Module\AutoUpgrade\Exceptions\UpgradeException;
 use PrestaShop\Module\AutoUpgrade\Parameters\UpgradeConfiguration;
 use PrestaShop\Module\AutoUpgrade\Parameters\UpgradeFileNames;
 use PrestaShop\Module\AutoUpgrade\Task\ExitCode;
@@ -54,7 +56,7 @@ class UpdateCommand extends AbstractCommand
             ->addArgument('admin-dir', InputArgument::REQUIRED, 'The admin directory name.')
             ->addOption('chain', null, InputOption::VALUE_NONE, 'True by default. Allows you to chain update commands automatically. The command will continue executing subsequent tasks without requiring manual intervention to restart the process.')
             ->addOption('no-chain', null, InputOption::VALUE_NONE, 'Prevents chaining of update commands. The command will execute a task and then stop, logging the next command that needs to be run. You will need to manually restart the process to continue with the next step.')
-            ->addOption('channel', null, InputOption::VALUE_REQUIRED, "Selects what update to run ('" . UpgradeConfiguration::CHANNEL_LOCAL . "' / '" . UpgradeConfiguration::CHANNEL_ONLINE . "')")
+            ->addOption('channel', null, InputOption::VALUE_REQUIRED, "Selects what update to run ('" . UpgradeConfiguration::CHANNEL_LOCAL . "' / '" . UpgradeConfiguration::CHANNEL_ONLINE_RECOMMENDED . "' / '" . UpgradeConfiguration::CHANNEL_ONLINE . "')")
             ->addOption('zip', null, InputOption::VALUE_REQUIRED, 'Sets the archive zip file for a local update')
             ->addOption('xml', null, InputOption::VALUE_REQUIRED, 'Sets the archive xml file for a local update')
             ->addOption('disable-non-native-modules', null, InputOption::VALUE_REQUIRED, 'Disable all modules installed after the store creation (1 for yes, 0 for no)')
@@ -100,6 +102,8 @@ class UpdateCommand extends AbstractCommand
                     $updateState->initDefault($this->upgradeContainer->getProperty(UpgradeContainer::PS_VERSION), $this->upgradeContainer->getUpgrader(), $this->upgradeContainer->getUpdateConfiguration());
                 }
             }
+
+            $this->calculateUpdateTypeAfterConfigLoad();
 
             $this->logger->debug('Configuration loaded successfully.');
             $this->logger->debug('Starting the update process.');
@@ -173,6 +177,50 @@ class UpdateCommand extends AbstractCommand
             if ($optionValue !== null) {
                 $this->consoleInputConfiguration[$configKey] = $optionValue;
             }
+        }
+    }
+
+    /**
+     * @throws DistributionApiException
+     * @throws UpgradeException
+     * @throws Exception
+     */
+    private function calculateUpdateTypeAfterConfigLoad(): void
+    {
+        $updateConfiguration = $this->upgradeContainer->getUpdateConfiguration();
+        $channel = $this->consoleInputConfiguration[UpgradeConfiguration::CHANNEL] ?? $updateConfiguration->getChannelOrDefault();
+        $currentVersion = $this->upgradeContainer->getProperty(UpgradeContainer::PS_VERSION);
+        $destinationVersion = null;
+
+        switch ($channel) {
+            case UpgradeConfiguration::CHANNEL_LOCAL:
+                $zipFile = $this->consoleInputConfiguration[UpgradeConfiguration::ARCHIVE_ZIP] ?? $updateConfiguration->getLocalChannelZip();
+                if ($zipFile) {
+                    $fullFilePath = $this->upgradeContainer->getProperty(UpgradeContainer::DOWNLOAD_PATH) . DIRECTORY_SEPARATOR . $zipFile;
+                    try {
+                        $destinationVersion = $this->upgradeContainer->getPrestashopVersionService()->extractPrestashopVersionFromZip($fullFilePath);
+                        $updateConfiguration->set(UpgradeConfiguration::ARCHIVE_VERSION_NUM, $destinationVersion);
+                    } catch (Exception $e) {
+                        $this->logger->warning('Unable to extract PrestaShop version from ZIP file: ' . $e->getMessage());
+                    }
+                }
+                break;
+            case UpgradeConfiguration::CHANNEL_ONLINE:
+                $destinationVersion = $this->upgradeContainer->getUpgrader()->getOnlineMaxDestinationRelease()
+                    ? $this->upgradeContainer->getUpgrader()->getOnlineMaxDestinationRelease()->getVersion()
+                    : null;
+                break;
+            case UpgradeConfiguration::CHANNEL_ONLINE_RECOMMENDED:
+                $destinationVersion = $this->upgradeContainer->getUpgrader()->getOnlineRecommendedDestinationRelease()
+                    ? $this->upgradeContainer->getUpgrader()->getOnlineRecommendedDestinationRelease()->getVersion()
+                    : null;
+                break;
+        }
+
+        if (isset($destinationVersion)) {
+            $updateType = VersionUtils::getUpdateType($currentVersion, $destinationVersion);
+            $updateConfiguration->set(UpgradeConfiguration::UPDATE_TYPE, $updateType);
+            $this->upgradeContainer->getConfigurationStorage()->save($updateConfiguration);
         }
     }
 

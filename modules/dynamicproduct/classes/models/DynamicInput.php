@@ -716,6 +716,30 @@ class DynamicInput extends DynamicObject
         return $csv;
     }
 
+    public function getSummaryArrayWithId()
+    {
+        $input_fields = $this->getInputFields($this->context->language->id);
+
+        $summary = [];
+        foreach ($input_fields as $input_field) {
+            if (!$input_field->isSkipped() && !$input_field->isSkippedName()) {
+
+//if ($input_field->id == 17236) { var_dump($input_field->value); exit; }
+//var_dump($input_field);
+//exit;
+                $summary[] = [
+                    'id' => $input_field->id,
+                    'label' => $input_field->label,
+                    'value' => $input_field->getDynamicValue($input_fields),
+		    'originalValue' => $input_field->value,
+		    'name' => $input_field->name,
+                ];
+            }
+        }
+
+        return $summary;
+    }
+
     public function getSummaryArray()
     {
         $input_fields = $this->getInputFields($this->context->language->id);

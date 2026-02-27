@@ -21,6 +21,7 @@
 
 namespace PrestaShop\Module\PsAccounts\Account\CommandHandler;
 
+use InvalidArgumentException;
 use PrestaShop\Module\PsAccounts\Account\Command\CreateIdentityCommand;
 use PrestaShop\Module\PsAccounts\Account\Command\MigrateOrCreateIdentityV8Command;
 use PrestaShop\Module\PsAccounts\Account\Exception\RefreshTokenException;
@@ -113,14 +114,13 @@ class MigrateOrCreateIdentityV8Handler
      *
      * @return void
      *
-     * @throws OAuth2Exception
      * @throws AccountsException
      * @throws RefreshTokenException
      * @throws UnknownStatusException
      */
     public function handle(MigrateOrCreateIdentityV8Command $command)
     {
-        $shopId = $command->shopId ?: \Shop::getContextShopID();
+        $shopId = $command->shopId;
         $shopUuid = $this->configurationRepository->getShopUuid();
 
         // FIXME: command can hold that property depending on context
@@ -140,15 +140,16 @@ class MigrateOrCreateIdentityV8Handler
             // Register cloudShopId locally
             $this->statusManager->setCloudShopId($shopUuid);
 
-            $identityCreated = $this->accountsService->migrateShopIdentity(
-                $shopUuid,
-                $this->getTokenV6OrV7($fromVersion, $shopUuid),
-                $this->shopProvider->getUrl($shopId),
-                $this->shopProvider->getName($shopId),
-                $fromVersion,
-                $this->proofManager->generateProof(),
-                $command->source
-            );
+            $identityCreated = $this->accountsService
+                ->withSource($command->source)
+                ->migrateShopIdentity(
+                    $shopUuid,
+                    $this->getTokenV6OrV7($shopUuid),
+                    $this->shopProvider->getUrl($shopId),
+                    $this->shopProvider->getName($shopId),
+                    $fromVersion,
+                    $this->proofManager->generateProof()
+                );
             if (!empty($identityCreated->clientId) &&
                 !empty($identityCreated->clientSecret)) {
                 $this->oAuth2Service->getOAuth2Client()->update(
@@ -161,7 +162,9 @@ class MigrateOrCreateIdentityV8Handler
             $this->statusManager->invalidateCache();
             $this->registerLatestVersion();
         } catch (AccountsException $e) {
-            if ($e->getErrorCode() === AccountsException::ERROR_STORE_LEGACY_NOT_FOUND) {
+            if ($e->getErrorCode() === AccountsException::ERROR_STORE_LEGACY_NOT_FOUND &&
+                $command->origin !== AccountsService::ORIGIN_ADVANCED_SETTINGS
+            ) {
                 $this->registerLatestVersion();
                 $this->cleanupIdentity();
                 $this->createOrVerifyIdentity($command);
@@ -194,6 +197,7 @@ class MigrateOrCreateIdentityV8Handler
      * @return string
      *
      * @throws AccountsException
+     * @throws InvalidArgumentException
      */
     private function getFirebaseTokenV6($shopUuid)
     {
@@ -204,23 +208,19 @@ class MigrateOrCreateIdentityV8Handler
     }
 
     /**
-     * @param string $fromVersion
      * @param string $shopUuid
      *
      * @return string
      *
      * @throws AccountsException
-     * @throws OAuth2Exception
      */
-    private function getTokenV6OrV7($fromVersion, $shopUuid)
+    private function getTokenV6OrV7($shopUuid)
     {
-        if (version_compare($fromVersion, '7', '>=')) {
-            $token = $this->getAccessTokenV7($shopUuid);
-        } else {
-            $token = $this->getFirebaseTokenV6($shopUuid);
+        try {
+            return $this->getAccessTokenV7($shopUuid);
+        } catch (OAuth2Exception $e) {
+            return $this->getFirebaseTokenV6($shopUuid);
         }
-
-        return $token;
     }
 
     /**
@@ -230,7 +230,7 @@ class MigrateOrCreateIdentityV8Handler
     {
         // Will trigger reset banner
         //$this->upgradeService->setVersion('');
-        $this->statusManager->clearIdentity();
+        $this->statusManager->clearStatus();
         $this->oAuth2Service->getOAuth2Client()->delete();
         $this->clearTokens();
     }
@@ -241,15 +241,18 @@ class MigrateOrCreateIdentityV8Handler
      * @param MigrateOrCreateIdentityV8Command $command
      *
      * @return void
+     *
+     * @throws RefreshTokenException
+     * @throws UnknownStatusException
+     * @throws AccountsException
      */
     private function createOrVerifyIdentity(MigrateOrCreateIdentityV8Command $command)
     {
-        $this->commandBus->handle(new CreateIdentityCommand(
-            $command->shopId,
-            false,
-            $command->origin,
-            $command->source
-        ));
+        $this->commandBus->handle(
+            (new CreateIdentityCommand($command->shopId, false))
+                ->withOrigin($command->origin)
+                ->withSource($command->source)
+        );
     }
 
     /**

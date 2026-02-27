@@ -9,19 +9,11 @@ use Tpay\OpenApi\Api\Refunds\RefundsApi;
 use Tpay\OpenApi\Api\Reports\ReportsApi;
 use Tpay\OpenApi\Api\Transactions\TransactionsApi;
 use Tpay\OpenApi\Model\Objects\Authorization\Token;
+use Tpay\OpenApi\Utilities\Cache;
 use Tpay\OpenApi\Utilities\TpayException;
 
 class TpayApi
 {
-    /** @deprecated will be removed in 2.0.0 */
-    const TPAY_API = [
-        'Accounts' => AccountsApi::class,
-        'Authorization' => AuthorizationApi::class,
-        'Transactions' => TransactionsApi::class,
-        'Refunds' => RefundsApi::class,
-        'Reports' => ReportsApi::class,
-    ];
-
     /** @var null|AccountsApi */
     private $accounts;
 
@@ -58,20 +50,21 @@ class TpayApi
     /** @var null|string */
     private $clientName;
 
-    /**
-     * @param string      $clientId
-     * @param string      $clientSecret
-     * @param bool        $productionMode
-     * @param string      $scope
-     * @param null|string $apiUrlOverride
-     * @param null|string $clientName
-     */
-    public function __construct($clientId, $clientSecret, $productionMode = false, $scope = 'read', $apiUrlOverride = null, $clientName = null)
-    {
+    /** @var Cache */
+    private $cache;
+
+    public function __construct(
+        Cache $cache,
+        string $clientId,
+        string $clientSecret,
+        bool $productionMode = false,
+        ?string $apiUrlOverride = null,
+        ?string $clientName = null
+    ) {
         $this->clientId = $clientId;
         $this->clientSecret = $clientSecret;
         $this->productionMode = $productionMode;
-        $this->scope = $scope;
+        $this->scope = 'read';
         $this->apiUrl = true === $this->productionMode
             ? ApiAction::TPAY_API_URL_PRODUCTION
             : ApiAction::TPAY_API_URL_SANDBOX;
@@ -82,36 +75,7 @@ class TpayApi
             }
             $this->apiUrl = $apiUrlOverride;
         }
-    }
-
-    /**
-     * @param string $propertyName
-     *
-     * @return AccountsApi|AuthorizationApi|RefundsApi|TransactionsApi
-     */
-    public function __get($propertyName)
-    {
-        @trigger_error(
-            sprintf(
-                'Using property "%s" is deprecated and will be removed in 2.0.0. Call the method "%s()".',
-                $propertyName,
-                lcfirst($propertyName)
-            ),
-            E_USER_DEPRECATED
-        );
-
-        switch ($propertyName) {
-            case 'Accounts':
-                return $this->accounts();
-            case 'Authorization':
-                return $this->authorization();
-            case 'Refunds':
-                return $this->refunds();
-            case 'Transactions':
-                return $this->transactions();
-        }
-
-        throw new RuntimeException(sprintf('Property %s::%s does not exist!', __CLASS__, $propertyName));
+        $this->cache = $cache;
     }
 
     /** @param Token $token */
@@ -207,6 +171,15 @@ class TpayApi
 
     private function authorize()
     {
+        $fields = [
+            'client_id' => $this->clientId,
+            'client_secret' => $this->clientSecret,
+            'scope' => $this->scope,
+        ];
+        $cacheKey = sha1(json_encode($fields).$this->apiUrl);
+
+        $this->token = $this->cache->get($cacheKey);
+
         if (
             $this->token instanceof Token
             && time() <= $this->token->issued_at->getValue() + $this->token->expires_in->getValue()
@@ -220,11 +193,6 @@ class TpayApi
             $authApi->setClientName($this->clientName);
         }
 
-        $fields = [
-            'client_id' => $this->clientId,
-            'client_secret' => $this->clientSecret,
-            'scope' => $this->scope,
-        ];
         $authApi->getNewToken($fields);
 
         if (200 !== $authApi->getHttpResponseCode()) {
@@ -239,5 +207,6 @@ class TpayApi
 
         $this->token = new Token();
         $this->token->setObjectValues($this->token, $authApi->getRequestResult());
+        $this->cache->set($cacheKey, $this->token, 7100);
     }
 }
